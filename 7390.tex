@@ -1,0 +1,79 @@
+\documentclass[oneside]{article}
+
+\usepackage[
+	paperwidth  = 6.1in,
+	paperheight = 9.25in,
+	margin      = 1.5cm,
+	top         = 1.5cm
+]{geometry}
+
+\usepackage{
+	amsmath,
+	amssymb,
+	amsthm,
+	bm,        % bold Greek letters
+	bookmark,  % replaces (and loads) hyperref
+	mathrsfs,  % mathscr
+	microtype, % improved formatting
+	stmaryrd,  % formal power series
+	tikz-cd,   % commutative diagrams
+	thmtools,  % fixes theorem referencing
+	Style/Style7390       % custom commands for, e.g. bold and script letters
+}
+\usepackage[hyperpageref]{backref}
+
+\hypersetup{
+	colorlinks = true,
+	linkcolor  = blue,
+	urlcolor   = cyan
+}
+
+\usepackage[
+alphabetic,
+backrefs,
+msc-links,
+nobysame,
+lite,
+]{amsrefs} % for bibliography
+
+\pagestyle{myheadings}
+\markright{\hfill Abelian Varieties\hfill}
+
+
+
+
+
+\title{Math 7390 -- Abelian Varieties}
+\author{Farbod Shokrieh}
+\date{Spring 2016 \\ \vspace{.2cm} \small{(\today \ draft)}}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\newpage
+\input{Chapters/contributors}
+\newpage
+\input{Chapters/1-introduction}
+%\newpage
+%\input{2-}
+%\newpage
+%\input{3-}
+%\newpage
+%\input{4-}
+%\newpage
+%\input{5-}
+%\newpage
+%\input{6-}
+%\newpage
+%\input{7-}
+
+
+
+\newpage
+
+\bibliographystyle{alpha}
+\bibliography{References/Refs7390}
+
+\end{document}
