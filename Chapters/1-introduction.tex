@@ -5,6 +5,10 @@
 
 \section{Introduction}
 
+\subsection{About this Course}
+This is an introductory course on the analytic and algebraic theory of abelian (and jacobian) varieties. We will start with the classical complex-analytic case to build some intuition. Then we will discuss the general theory over other fields. 
+
+We will not follow any specific books, but the following resources were used while preparing for the lectures:
 
 \cite{BirkenhakeLange}
 \cite{BLRNeron}
@@ -16,4 +20,92 @@
 \cite{MumfordTata3}
 \cite{CornellSilverman}
 
+\subsection{What are Abelian Varieites?}
 
+Origins of the theory of abelian varieties comes from a basic question in calculus! We know we can easily compute integrals of the form 
+$$\int \frac{1}{\sqrt{1-x^2}}dx$$ 
+by trigonometric substitution, but for integrals of the form 
+$$\int \frac{1}{\sqrt{f(x)}}dx$$ 
+where $\deg(f)\geq 3$, it turns out to be hard. However, even though people couldn't compute these integrals, they could see that there were identities of the form 
+$$\int_0^a \frac{1}{\sqrt{f(x)}}dx +\int_0^b \frac{1}{\sqrt{f(x)}}dx=\int_0^{a* b} \frac{1}{\sqrt{f(x)}}dx$$
+for some number $a*b$ obtained from $a$ and $b$. 
+
+
+``Abelian Varieties are the simplest possible spaces, just tori's and thus groups'' - D-Mumford.
+
+
+Abelian Varieties are useful in the following areas:
+\begin{itemize}
+\item Number Theory - class field theory; rationality versus transcendence; most of the serious things we know how to do in number theory involve working with moduli of abelian varieties (Fermat's last theorem, Faltings' theorem, etc).
+\item Dynamical Systems - solutions to certain Hamilton systems.
+\item Algebraic Geometry - If we're given a variety $X$ it's hard to understand, but we can get a handle on it by associating a canonical abelian variety $A(X)$ to it (such as Picard, Albanese, Intermediate Jacobian) and the good thing about $A(X)$ is that we can do a lot of linear algebra.
+\item Physics - theta functions that solve heat equations; string theory.
+\end{itemize}  
+
+For the most part of this course, we will work over the base field $k=\CC$; we see lots of very interesting ideas in this case, and we don't need any particularly hard theory to get a handle on it. One reason the theory over $\CC$ is important is that an abelian variety $A$ in a precise sense is just $$A=A^{an}=\CC^g/\Lambda$$ 
+where $\Lambda=\pi_1(A)\isom \ZZ^{2g}$ is a lattice, and so it is a torus. In other words, we have
+$$0\to \Lambda\to \CC^g\to A\to 0.$$
+
+Subtle remark: This identification makes sense in the ``analytic category'' but not in the algebraic category; the map $\CC^g\to A$ is not algebraic. So we can't study abelian varieties in this way solely through algebraic methods. In the analytic setting it's ``easy'' to understand line bundles, theta functions, etc. by going to $\CC^g$. (You can make sense of an analytification in nonarchimedean settings too, by using Berkovich spaces or formal schemes; this requires a lot more background but provides many important results.) Fortunately, there are some things from the complex-analytic setting which can be mimicked in the algebraic setting (e.g. the lattice $\Lambda$ can be related to the Tate module) and by using those algebraic analogues you can take the complex-analytic results over $\CC$ and try to reproduce them over other fields. 
+
+Some more advanced topics that might be covered in detail later in the class include (depending on audience interest):
+\begin{itemize}
+\item The theory over general field.
+\item Theta functions.
+\item Neron models.
+\item Non-archimedean uniformizations.
+\item Moduli and compactifications.
+\item Heights and metrized line bundles.
+\item Degenerating families.
+\end{itemize} 
+
+Now, let's get to actual math. In scheme-theoretic language - 
+for $k$ any field, a \emph{$k$-variety} is a geometrically integral $k$-scheme of finite type, and an \emph{abelian variety} over $k$ is a proper $k$-variety endowed with a structure of a $k$-group scheme. (This is the schematic definition. But we will not do it this way in this class.) We will be able to prove the following:
+
+\begin{theorem}
+Abelian Varieties are automatically abelian and projective.
+\end{theorem}
+
+Being abelian is easy to show, while being projective is much harder.
+
+\subsection{Why study Abelian Varieties?}
+
+More generally we can define an \emph{algebraic group} $G$ over $k$ as a connected, smooth $k$-group scheme. Examples include:
+\begin{itemize}
+\item affine algebraic groups (automatically subgroups of $\GL_n(k)$, i.e. linear algebraic groups)
+\item abelian varieties (think of this as the projective case)
+\end{itemize}
+
+The following theorem says that these are the only building blocks:
+
+\begin{theorem}[Chevalley's Theorem]
+Let $G$ be an algebraic group over $k$. Suppose $k$ is perfect. Then there exists a unique short exact sequence 
+$$0\to H \to G \to A \to 0$$
+where $H$ is linear and $A=G/H$ is abelian. 
+\end{theorem}
+
+A proof can be found in B. Conrad's notes. 
+
+\subsection{The Weierstrass Equation}
+In the 1850s, Weierstrass studied $E=E^{an}=\CC/\Lambda$, which is a complex group (2-dimensional torus with complex multiplication). He asked whether $E^{an}$ is always ``algebraic/algebraizable'', and showed the answer is actually yes. In fact, he proved more. 
+
+\begin{theorem}
+$E=E^{an}$ has the structure of a smooth projective curve of genus $1$. Its affine equation is given by 
+$$y^2=4x^3-60G_4x-140G_6$$
+where $G_m=\sum_{\lambda\in\Lambda^*} \frac{1}{\lambda^m}$ for $m\in \ZZ$. More precisely, you can write down the Weierstrass $\wp$-function
+$$\wp(z)=\frac{1}{z^2}+\sum_{\lambda\in\Lambda^*}\left(\frac{1}{(z-\lambda)^2}-\frac{1}{\lambda^2}\right)$$
+and compute
+$$y=\frac{dx}{dz}=\sum_{\lambda\in \Lambda} \frac{-2}{(2-\lambda)^3},$$
+and see that the pair $(x,y)=(\wp(z),\wp'(z))$ satisfies the affine equation above. The mapping given by 
+$$z+\Lambda\mapsto (\wp(z),\wp'(z))$$ induces a group isomorphism $\CC/\Lambda\isom E$ where $E$ is the projectivized elliptic curve.
+\end{theorem}
+
+
+
+What about higher dimensions? One direction is false: a general torus $\CC^g/\Lambda$ will not be algebraic. However, the converse is true; a general abelian variety $A$ will be (after analytification) of the form $\CC^g/\Lambda$, where $g=\dim(A)$. 
+
+We will prove this theorem later, but it is not easy. 
+
+\begin{theorem}
+The Weierstrass parametrization gives a bijection between lattices $\Lambda$ in $\CC$, and the set of isomorphism classes of pairs $(E,\omega)$ where $E/\CC$ are elliptic curves and $\omega$ are holomorphic differential forms. 
+\end{theorem}
