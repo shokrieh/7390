@@ -1,0 +1,309 @@
+% !TEX root = 7390.tex
+
+
+
+
+\section{Complex Tori}\label{Chapters/2-complextori}
+
+\subsection{Some GAGA principles}
+Algebraic varieties vs. (complex) analytic spaces. 
+
+If $X$ is an algebraic variety over $\CC$, we can associate $X^{an}$ which is a complex analytic space to it, by passing to a complex analytification; if $X$ is locally described by some set of equations in affine space, we can pass that open set the zero locus as a subset of $\CC^n$ (with its usual topology) and glue. 
+Here are some facts:
+
+\begin{itemize}
+\item 
+This construction is always functorial: an algebraic map $X\to Y$ can always be lifted to a holomorphic map $X^{an}\to Y^{an}$. 
+\item $X$ is proper/complete if and only if $X^{an}$ is compact. 
+\item $X$ is smooth/connected if and only if $X{an}$ is smooth/connected. 
+
+
+\item A complex analytic space $\mathfrak{X}$ is called \textbf{algebraic/algebraizable} if there exists a variety $X/\CC$ such that $\mathfrak{X}\isom X^{an}$. (Last time we explicitly showed that $\CC/\Lambda$ is algebraic via the Weierstrass $\wp$-functions.)
+\end{itemize}
+
+\subsection{Vector bundles and associated locally free sheaves}
+
+If $L$ is a vector bundle on $X$, then it passes to an analytic vector bundle $L^{an}$ on $X^{an}$. 
+This is functorial in the sense that if $f:F\to G$ is a morphism of vector bundles it passes to $f^{an}:F^{an}\to G^{an}$. It is \emph{not} true that all holomorphic vector bundles over $X^{an}$ are algebraizable! But we have:
+
+\begin{theorem}[Serre]
+\noindent 
+\begin{enumerate}
+\item Suppose $X$ is a proper (complete) algebraic variety over $\CC$. If there exists a holomorphic coherent sheaf $\mathcal{F}\to X^{an}$, then there exists unique algebraic coherent sheaf $F$ over $X$ such that $F^{an}=\mathcal{F}$.
+\item If there exists $\mathfrak{F}:\mathcal{F}\to \mathcal{G}$ homomorphism of holomorphic coherent sheaves on $X^{an}$, then there exists unique $f:F\to G$ such that $f^{an}=\mathfrak{f}$.
+\end{enumerate}
+\end{theorem}
+
+Define $H^i(X,L)$ as the $i$-th cohomology group with values in the locally free sheaf $L$. 
+
+\begin{theorem}[Serre]
+Let $X$ be a complete algebraic variety over $\CC$ and $F$ a coherent sheaf on $X$. Then the \emph{natural maps} 
+$$H^i(X,F)\to H^i(X^{an},F^{an})$$
+are isomorphisms of $\CC$-vector spaces.
+\end{theorem}
+
+\subsection{Complex tori}
+Let $V$ be a vector space over $\CC$, and $\Lambda\subset V$ a lattice (full rank discrete subgroup). We have $\Lambda$ act naturally on $V$ by addition; and then the quotient $X=V/\Lambda$ is a complex torus. 
+
+Some facts about a complex torus:
+\begin{itemize}
+\item it is a complex manifold.
+\item it inherits the structure of a complex Lie group over $\CC$.
+\item it is compact (because $\Lambda$ is a maximal rank lattice).
+\item it is an abelian complex Lie group.
+\item meromorphic functions on $X$ correspond to meromorphic $\Lambda$-periodic functions on $V$. 
+\end{itemize}
+
+Loosely speaking, 
+an (complex analytic) \emph{abelian variety} is a complex torus with ``sufficiently many'' (enough to give a closed embedding to a projective space) meromorphic functions. We will see that this is exactly what makes $X$ algebraizable and thus an algebraic abelian variety.
+
+\subsection{Compactness implies abelian}
+
+\begin{theorem}
+Any connected \emph{compact} complex Lie group $X$ is a complex torus.
+\end{theorem}
+
+\begin{proof}
+First, $X$ is abelian and so the commutator map $\Phi(x,y)=xyx^{-1}y^{-1}$ is continuous. Let $U$ be any neighbourhood of the identity element $1$, for $x\in X$, define open neighbourhoods $V_x,\tilde{V_x}$ such that $x\in V_x$, $1\in \tilde{V_x}$ and $\Phi(V_x,\tilde{V_x})\subset U$. (This can be done since $\Phi(x,1)=1$ and $\Phi$ is continuous.) 
+
+So we have
+$X=\cup_{x\in X} V_x$
+and by compactness, there exist $x_1,\cdots, x_r\in X$ such that
+$$X=\bigcup_{x\in \{x_1,\cdots,x_r\}} V_x.$$
+
+Let $W=\cap_{x_1,\cdots,x_r} \tilde{V_x}$, which is a non-empty open neighbourhood of $1$. So $\Phi(X,W)\subset U$. Since $U$ is arbitrary, we have $\Phi(X,W)=1$. 
+
+Since holomorphic functions on a compact set $X$ which is bounded must be constant, we have
+$\Phi(1,y)=1$ for all $y\in W$. Since $W$ is open and non-empty, by connectivity, 
+$$\Phi(x,y)=1$$
+for all $x,y\in X$. 
+
+Then, if $\pi:V\to X$ is a universal cover, $V$ inherits the structure of a simply connected complex Lie group and thus must be $\CC^g$. Moreover $\pi$ is homomorphic with discrete kernel, and by compactness of $X$ the kernel must be full rank.
+\end{proof}
+
+Another proof can be found in B. Conrad's \href{http://math.stanford.edu/~conrad/vigregroup/vigre04/abvaran.pdf}{notes}.
+
+
+
+Remarks: Once we have $X=V/\Lambda$, we see that $V$ is a universal cover of $X$. Moreover, $\Lambda=\pi(X,0)$, and since this is already abelian it is isomorphic to $\isom H_1(X,\ZZ)$. 
+Since $X$ is locally isomorphic to $V$, we can view $V$ as the tangent space at $0$, $T_0X$; then the covering map $\pi:V=T_0X\to X$ is actually the exponential map.
+
+
+\subsection{Period matrix}
+
+Given $X=V/\Lambda$, we can associate $\Pi$ a $g\times 2g$ complex matrix: fix $\{e_1,\cdots, e_g\}$ a $\CC$-basis for $V$ and $\{\lambda_1,\cdots,\lambda_{2g}\}$ a $\ZZ$-generator set for $\Lambda$. Define $\lambda_{ji}$ such that
+$$\lambda_j=\sum \lambda_{ji} e_i.$$
+
+Then the \textbf{period matrix} of $X$ is given by 
+$$\Pi:=
+\left(
+\begin{array}{ccc}
+\lambda_{1,1} & \cdots & \lambda_{1,2g}\\
+\vdots & \ddots & \vdots\\
+\lambda_{g,1} & \cdots & \lambda_{g,2g}\\
+\end{array}
+\right).$$
+
+Clearly, $\Pi$ determines $X$ but it depends on the choices. 
+
+Question: Given $\Pi\in M_{g\times 2g}(\CC)$, is there a complex torus such that $\Pi$ is the period matrix of $X$? 
+
+\begin{theorem}
+Let $P=\left(
+\begin{array}{c}
+\Pi\\
+\overline{\Pi}\\
+\end{array}
+\right)_{2g\times 2g}$, where $\overline{\Pi}$ denote the complex conjugate matrix of $\Pi$. Then $\Pi$ is the period matrix for some $\CC^g/\Lambda$ if and only if $P$ is nonsingular. 
+\end{theorem}
+
+\begin{proof}
+$\Pi$ is a period matrix if and only if the columns of $\Pi$ are $\RR$-linearly independent. 
+\end{proof}
+
+\subsection{Holomorphic maps, homomorphism and isogenies}
+Suppose $X=V/\Lambda$ and $X'=V'/\Lambda'$ with dimensions $g$ and $g'$ respectively. We want to study holomorphic maps $f:X\to X'$. There are two special examples:
+
+\begin{enumerate}
+\item homomorphisms (holomorphic and respect group structure); and
+\item translations (maps $X\to X$ by $x\mapsto x+x_0$ for some $x_0\in X$).
+\end{enumerate}
+
+The surprising thing is that that's \emph{all}! 
+
+\begin{theorem}
+Suppose $h:X\to X'$ is a holomorphic map between complex tori. Then 
+\begin{enumerate}
+\item there exists a unique homomorphism $f:X\to X'$ such that $h=t_{h(0)}\circ f$. That is,
+$$h(x)=f(x)+h(0)$$
+for all $x$.
+\item There exists a unique $\CC$-linear map $F:V\to V'$ with $F(\Lambda)\subset \Lambda'$ inducing $f$. 
+\end{enumerate}
+\end{theorem}
+
+
+\begin{proof}
+Let $f:=t_{-h(0)}\circ h$. Then we can lift $f\circ \pi: V\to X$ to $F:V\to V'$ where $V'$ is the universal cover of $X'$. Then $F$ is holomorphic and satisfies $F(0)=0$. $F$ is a $\CC$-linear map: fix $\lambda\in \Lambda$, by construction,
+$$F(v+\lambda)-F(v)\in \Lambda'$$
+and so by continuity it's constant. Therefore,
+$$F(v+\lambda)= F(v)+F(\lambda)$$
+for all $v\in V, \lambda\in \Lambda$. We skip the remaining details.
+\end{proof}
+
+
+\subsection{Hom-sets}
+Let $\Hom(X,X')$ be the set of all homomorphisms $f:X\to X'$. It is an abelian group. If $X=X'$, then we can define $\End(X):=\Hom(X,X')$. In this case, $\End(X)$ is actually a ring, where multiplication is given by composing endomorphisms. The above theorem gives us the following corollary:
+
+\begin{corollary}
+We have injective homomorphisms:
+\begin{enumerate}
+\item $\rho_{an}:\Hom(X,X')\to \Hom_\CC (V,V')$ given by $f\mapsto F$; and
+\item $\rho_{int}: \Hom(X,X')\to \Hom_\ZZ(\Lambda,\Lambda')$ given by $f\mapsto F|_\Lambda$.
+\end{enumerate}
+\end{corollary}
+
+Note that both of these homomorphisms respect endomorphism ring structures if $X=X'$: $\rho_*(f'\circ f)=\rho_*(f')\circ \rho_*(f)$, where $*=an, int$.
+
+\begin{theorem}
+$\Hom(X,X')\isom \ZZ^m$ for some $m\leq 4gg'$.
+\end{theorem}
+
+\begin{proof}
+Use the second isomorphism in the corollary, since $\Lambda\isom \ZZ^{2g}$ and $\Lambda'\isom \ZZ^{2g'}$, so  $\Hom_\ZZ(\Lambda,\Lambda')\isom \ZZ^{4gg'}$ and $\Hom(X,X')$ embeds in this.
+\end{proof}
+
+How do these relate to period matrices?
+Let $\Pi$ and $\Pi'$ be the period matrix for $X$ and $X'$ respectively. If we have $f:X\to X'$, then by picking bases we get that $\rho_{an}(f):V\to V'$ is given by some $A\in M_{g'\times g}(\CC)$ and $\rho_{int}(f):\Lambda\to \Lambda'$ given by some $R\in M_{2g'\times 2g}(\ZZ)$. Then the condition $F(\Lambda)\subset \Lambda'$ means $A\Pi=\Pi'R$. (The converse is also true: given four matrices with this property, then they correspond to a morphism between complex tori.) 
+
+What if $X=X'$? In this case, we can get 
+$$\left(
+\begin{array}{cc}
+A & 0\\
+0 & \overline{A}\\
+\end{array}\right)
+\left(
+\begin{array}{c}
+\Pi\\
+\overline{\Pi}\\
+\end{array}
+\right)=\left(
+\begin{array}{c}
+\Pi\\
+\overline{\Pi}\\
+\end{array}
+\right)R$$
+
+and thus 
+$\rho_{int}\otimes 1\isom \rho_{an}\oplus \bar{\rho_{an}}$ in $\End(X)\otimes_\ZZ \CC$. 
+
+\subsection{Kernels and Images}
+\begin{lemma}
+Given a homomorphism $f:X\to X'$. 
+\begin{enumerate}
+\item $Im(f)$ is a complex subtorus of $X'$.
+\item $\ker(f)$ is a closed subgroup of $X$ with finitely many component. The connected component of $1=id$ is a complex torus. 
+\end{enumerate}
+\end{lemma}
+
+The proof is fairly easy; for part (b) we're claiming that we have an extension 
+$$1\to X_0 \to G \to \Gamma \to 1$$
+with $X_0$ a complex torus and $\Gamma$ a finite abelian group. It is a good exercise to describe $\Gamma$ as a direct sum of cyclic groups in terms of $\Pi,\Pi',A,R$ (need to compute a Smith normal form somewhere).
+
+
+\subsection{Isogenies} 
+
+A homomorphism
+$f:X\to X'$ is called an \textbf{isogeny} if $f$ is surjective with finite kernel. Equivalently, $f$ is surjective and $\dim(X)=\dim(X')$. 
+
+\begin{example}[Essential example]
+Suppose $X=V/\Lambda$ is a complex torus and $\Gamma\subset X$ is a finite subgroup. Then $X/\Gamma=V/\pi^{-1}(\Gamma)$ is a complex torus and $X\to X/\Gamma$ is an isogeny. 
+\end{example}
+
+In fact, that's all! It is an easy exercise to show that all isogenies $X\to X/\Gamma$ over $\CC$ are of this form. We also have the following easy lemma:
+
+\begin{lemma}[Stein factorization]
+Any surjection $f:X\to X'$ of complex tori factors as a surjection $X\to X/(\ker f)_0$ (a quotient of $X$ by a complex subtorus) and an isogeny $X/(\ker f)_0 \to X'$.
+\end{lemma}
+ 
+For $f\in \Hom(X,X')$, we define $\deg(f)$ to be $|\ker f|$ if this is finite, and $0$ if otherwise. It is easy to check that $\deg(f)=[\Lambda':\rho_{int}(f)\Lambda]$. (Remark: If $X=X'$ then this index is $\deg(\rho_{int}(f))$; note that this determinant is $\geq 0$ since $\rho_{int}\otimes 1 = \rho_{an}\oplus \bar{\rho}_{an}$, and is $0$ if and only if the kernel is infinite.)
+
+\begin{lemma}
+Supppose $f:X\to X'$ and $f':X'\to X''$ are isogenies, then $f'\circ f$ is also an isogeny. 
+\end{lemma}
+
+\begin{proof}
+$\deg(f'\circ f)=\deg(f)\cdot \deg(f')$.
+\end{proof}
+
+A very important example is given by the ``multiplication-by-$n$'' map: Let $n\in \ZZ^+$, define 
+$n_X:X\to X$ by $x\mapsto nx$. Denote $X[n]:=\ker(n_X)$ the set of $n$-torsions in $A$. Then we have
+$$X[n]\isom \frac{\frac{1}{n} \Lambda}{\Lambda}\isom \frac{\Lambda}{n\Lambda}\isom (\ZZ/n)^{2g}.$$
+Therefore, $n_X$ has degree $n^{2g}$, and so it is an isogeny.
+
+\begin{corollary}
+Complex tori are divisible groups.
+\end{corollary}
+
+
+\begin{example}[Tate module]
+Let $\ell$ be a prime number. Define multiplication by $\ell$ maps $X[\ell^{n+1}]\to X[\ell^n]$. Then the \emph{Tate module} is given by 
+$$T_\ell(X)=\varprojlim X[\ell^n].$$
+In the case where $\Lambda$ is finitely generated, $T_\ell(X)$ is actually isomorphic to $\Lambda\otimes_\ZZ \ZZ_\ell$ and this is a subset of $\Lambda$. 
+Note that the definition of $T_\ell(X)$ makes sense over any fields (even if we don't have $\Lambda$ when we are not over $\CC$). Here in our setting it's easy to see that a morphism $X\to X'$ is determined by the induced map $T_\ell(X)\to T_\ell(X')$. Over general fields this is much, much harder! It's the \emph{Tate conjecture} which says that we have 
+$$\Hom_{\Gal}(T_\ell(X),T_\ell(X'))\isom \Hom(X,X').$$
+This conjecture was only proven over number fields by Faltings as an essential part of his proof of the Mordell conjecture. 
+\end{example}
+
+
+
+\subsection{Importance of isogenies}
+
+They are ``almost isomorphisms''. Namely, we have:
+
+\begin{theorem}
+Let $f:X\to X'$ be an isogeny and $n$ be the exponent of $\ker(f)$. (That is, $nx=0$ for all $x\in \ker(f)$.) Then there exists an isogeny $g:X'\to X$ such that 
+$$f\circ g=n_X,\ g\circ f=n_X.$$
+Moreover, such a $g$ is unique (up to isomorphism?).
+\end{theorem}
+
+\begin{proof}[sketch]
+Since $n$ is the exponent of $\ker f$, we have $\ker(f)\subset \ker(n_X)=X[n]$. Then there exists a unique $g:X'\to X$ with $g\circ f = n_X$, defined by $g(x'):=nx$ for some (all) $x$ where $f(x)=x'$. Then use the fact that $\deg(g)\deg(f)=\deg(n_X)$ and that $\deg(f),\deg(n_X)\not= 0$, so $\deg(g)\not= 0$ to get that $g$ is an isogeny; Then we just need to check that $g\circ f = n_X'$. 
+\end{proof}
+
+Define $\End_\QQ(X):=\End(X)\otimes \QQ$ and $\Hom_\QQ(X,X'):=\Hom(X,X')\otimes \QQ$. Then the degree function extends to these via
+$$\deg(rg):=r^{2g}\cdot \deg(f).$$
+
+\begin{corollary}
+\noindent
+\begin{enumerate}
+\item Isogeny is an equivalence relation.
+\item $f\in \End(X)$ is an isogeny if and only if it is invertible in $\End_\QQ(X)$. 
+\end{enumerate}
+\end{corollary}
+
+
+
+\subsection{Cohomology} 
+
+We have a lot of cohomology theories (Betti, de Rham, Dolbeault, Hodge decomposition, \dots).
+
+Betti cohomology is just singular cohomology of $X(\CC)$; if $X=V/\Lambda$, then we have the following facts:
+
+\begin{itemize}
+\item $\Lambda=\pi_1(X_0)\isom H_1(X,\ZZ)$.
+\item By the universal coefficient theorem, we have $H^1(X,\ZZ)=\Hom(\Lambda,\ZZ)$.
+\item If $n\geq 1$, we have a map $\wedge_{i=1}^n H^1(X,\ZZ)\to H^n(X,\ZZ)$ induced by cup product, and this is an isomorphism (follows from Kunneth formula). 
+\item Let $Alt^n(\Lambda,\ZZ):=\bigwedge_{i=1}^n \Hom(\Lambda,\ZZ)$ be all the $\ZZ$-valued alternating $n$-forms. Then we have $H^n\isom Alt^n(\Lambda,\ZZ)$. This gives a very explicit way of thinking about cohomology.
+\item $H_n(X,\ZZ)$ and $H^n(X,\ZZ)$ are free $\ZZ$-modules of rank $\binom{2g}{n}$.
+\item If we set $H^n(X,\CC):= H^n(X,\ZZ)\otimes \CC$, then we have
+$$H^n(X,\CC)\isom Alt_\RR^n(V,\CC)=\bigwedge_{i=1}^n\Hom_\RR(\Lambda,\CC)\isom \bigwedge_{i=1}^n H^1(X,\CC),$$ 
+and the de Rham theorem tells us 
+$H^n(X,\CC)\isom H_{DR}(X)$ where $H_{DR}(X)$ can be explicitly described as a complex vector space of invariant $n$-forms with basis $dx_{i_1}\wedge \cdots \wedge dx_{i_n}$ with $i_1<\cdots <i_n$. 
+\end{itemize}
+
+Now, we use the $\CC$-structure (really everthing is true for Kahler manifolds, but proofs and constructions are much more elementary for complex tori). Here we have a very nice decomposition
+
+$$H^n(X,\CC)\isom \bigoplus_{p+q=n} H^q(\Omega_X^p)$$ 
+
+Here, $H^q(\Omega_X^p)$ is isomorphic to the Dolbeault cohomology $H^{p,q}(X)$. In general, $H^q(\Omega_X^p)$ can be explicitly described as $\bigwedge^p\Omega \otimes \bigwedge^q\overline{\Omega}$ for $\Omega=\Hom_\CC(V,\CC)$ and $\overline{\Omega}=\Hom_{\overline{\CC}}(V,\CC)$.
+Set $\Omega_X^p:=(\bigwedge^p \Omega)\otimes \mathcal{O}_X$.

@@ -3,7 +3,7 @@
 
 
 
-\section{Introduction}\label{Chapter:Introduction}
+\section{Introduction}\label{Chapters/1-introduction}
 
 \subsection{About this Course}
 This is an introductory course on the analytic and algebraic theory of abelian (and jacobian) varieties. We will start with the classical complex-analytic case to build some intuition. Then we will discuss the general theory over other fields. 
@@ -86,7 +86,7 @@ where $H$ is linear and $A=G/H$ is abelian.
 
 A proof can be found in B. Conrad's notes. 
 
-\subsection{The Weierstrass Equation}
+\subsection{Some history}
 In the 1850s, Weierstrass studied $E=E^{an}=\CC/\Lambda$, which is a complex group (2-dimensional torus with complex multiplication). He asked whether $E^{an}$ is always ``algebraic/algebraizable'', and showed the answer is actually yes. In fact, he proved more. 
 
 \begin{theorem}
@@ -102,10 +102,11 @@ $$z+\Lambda\mapsto (\wp(z),\wp'(z))$$ induces a group isomorphism $\CC/\Lambda\i
 
 
 
-What about higher dimensions? One direction is false: a general torus $\CC^g/\Lambda$ will not be algebraic. However, the converse is true; a general abelian variety $A$ will be (after analytification) of the form $\CC^g/\Lambda$, where $g=\dim(A)$. 
-
-We will prove this theorem later, but it is not easy. 
+What about higher dimensions? One direction is false: a general torus $\CC^g/\Lambda$ will not be algebraic. However, the converse is true; a general abelian variety $A$ will be (after analytification) of the form $\CC^g/\Lambda$, where $g=\dim(A)$. We will prove this later, but it is not easy. 
 
 \begin{theorem}
 The Weierstrass parametrization gives a bijection between lattices $\Lambda$ in $\CC$, and the set of isomorphism classes of pairs $(E,\omega)$ where $E/\CC$ are elliptic curves and $\omega$ are holomorphic differential forms. 
 \end{theorem}
+
+Note that $\omega\in H^0(E^{an},\Omega)$ corresponds to $f(z)dz$ on $\CC$, where $f$ is periodic and holomorphic with $\Omega$. 
+Also note that the map $\CC\to \CC/\Omega$ is not algebraic. ($\CC^g/\Omega$ for $g=1$ is algebraic, while for $g\geq 2$ is usually not algebraic.) [fix]
