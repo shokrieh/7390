@@ -224,6 +224,8 @@ In fact, that's all! It is an easy exercise to show that all isogenies $X\to X/\
 \begin{lemma}[Stein factorization]
 Any surjection $f:X\to X'$ of complex tori factors as a surjection $X\to X/(\ker f)_0$ (a quotient of $X$ by a complex subtorus) and an isogeny $X/(\ker f)_0 \to X'$.
 \end{lemma}
+
+Remark: Stein factorization is a special case of a very general result (in complex theory by Stein and others, and in general in EGA III): any proper $f:X\to S$ factors as a map $X\to S'$ proper with connected fibers and $S'\to S$ finite. 
  
 For $f\in \Hom(X,X')$, we define $\deg(f)$ to be $|\ker f|$ if this is finite, and $0$ if otherwise. It is easy to check that $\deg(f)=[\Lambda':\rho_{int}(f)\Lambda]$. (Remark: If $X=X'$ then this index is $\deg(\rho_{int}(f))$; note that this determinant is $\geq 0$ since $\rho_{int}\otimes 1 = \rho_{an}\oplus \bar{\rho}_{an}$, and is $0$ if and only if the kernel is infinite.)
 
@@ -305,5 +307,103 @@ Now, we use the $\CC$-structure (really everthing is true for Kahler manifolds, 
 
 $$H^n(X,\CC)\isom \bigoplus_{p+q=n} H^q(\Omega_X^p)$$ 
 
-Here, $H^q(\Omega_X^p)$ is isomorphic to the Dolbeault cohomology $H^{p,q}(X)$. In general, $H^q(\Omega_X^p)$ can be explicitly described as $\bigwedge^p\Omega \otimes \bigwedge^q\overline{\Omega}$ for $\Omega=\Hom_\CC(V,\CC)$ and $\overline{\Omega}=\Hom_{\overline{\CC}}(V,\CC)$.
-Set $\Omega_X^p:=(\bigwedge^p \Omega)\otimes \mathcal{O}_X$.
+Here, $H^{p,q}(X):=H^q(\Omega_X^p)$ is isomorphic to the Dolbeault cohomology $H^{p,q}(X)$. In general, $H^q(\Omega_X^p)$ can be explicitly described as $\bigwedge^p\Omega \otimes \bigwedge^q\overline{\Omega}$ for $\Omega=\Hom_\CC(V,\CC)$ and $\overline{\Omega}=\Hom_{\overline{\CC}}(V,\CC)$.
+Also set $\Omega_X^p:=(\bigwedge^p \Omega)\otimes \mathcal{O}_X$. Right now we are not saying anything about what these vector spaces $H^{p,q}(X)$ are, but we will do that later on. We may also need ot return to this theory to prove for example vanishing results later; We will either do that, or just omit those proofs.
+
+\subsection{Sheaves on a topological space $X$}
+
+Let $\mathcal{O}(X)$ be the category in which objects are open subsets of $X$ and morphisms are inclusions $V\to U$ for $V\subset U$. (It turns out that you can generalize this and allow more general things for morphisms than just inclusions; this is how you get etale cohomology and other things.) Let $\mathcal{C}$ be any other category (for instance, Sets, Abelian groups and $R$-modules); A \textbf{presheaf} is a contravariant functor 
+$$F:\mathcal{O}(X)\to \mathcal{C}.$$
+(This means for each inclusion map $i:V\subset U$, we have the restriction map given by $rest_{V,U}: F(U)\to F(V)$, and this assignment is functorial.) A \textbf{sheaf} is a presheaf $F$ with some ``locality'' and ``gluing'' properties. Assume $\mathcal{C}$ has products. Then we require for any open cover $\{U_i\}$ of $U\in \mathcal{O}(X)$, we have an exact sequence
+$$0\to F(U) \overset{rest}{\to} \prod_i F(U_i)\rightrightarrows \prod_{i,j} F(U_i\cap U_j)$$
+(where the two parallel maps are ``restriction to the first index'' and ``restriction to the second index'' respectively.)
+
+\begin{example}
+Let $X=\CC$. Then we have the sheaf of holomorphic functions: $F(U)$ is the set of all holomorphic functions $U\to \CC$, and restriction maps are restriction of functions!
+\end{example}
+
+Morphisms of sheaves are natural transformations; this gives us the category of sheaves over $X$, $Shf_X$, in which the objects are sheaves on $X$ and morphisms are these.
+
+Next, a \textbf{ringed space} is a topological space $X$ together with a sheaf of rings $\mathcal{O}_X$; we call $\mathcal{O}_X$ the \textbf{structure sheaf} (usually some sheaf of holomorphic functions in this class). 
+Define a \textbf{locally ringed space} to be one such that all of the stalks $\mathcal{O}_{X,x}=\varinjlim_{U\ni x} F(U)$ are local rings. We may want to consider sheaves of $\mathcal{O}_X$-modules, that is, each $F(U)$ is a $\mathcal{O}_X(U)$-module respecting restriction maps. 
+
+\subsection{Abelian categories and cohomology}
+(Grothendieck's Tohoku paper) There are $4$ main examples of abelian categories to keep in mind:
+
+\begin{enumerate}
+\item The category of abelian groups (with homomorphisms).
+\item The category of $R$-modules for $R$ a commutative ring (with homomorphisms).
+\item The category of $G$-modules for $G$ a group (with $G$-equivariant homomorphisms: $\phi(g\cdot m)=g\cdot \phi(m)$).
+\item The category of $\mathcal{O}_X$-modules for $(X,\mathcal{O}_X)$ a ringed space (with morphisms of sheaves the morphisms). 
+\end{enumerate}
+
+In general there's an abstract definition of an abelian category; we are not going to say it precisely but roughly it is a category $\mathcal{A}$ in which addition of morphisms, a zero object, kernels and cokernels make sense.
+
+Suppose $F:\mathcal{A}\to \mathcal{B}$ is a covariant functor between abelian categories. If we start with an short exact sequence 
+$$0\to A \to B \to C \to 0$$
+in $\mathcal{A}$, we can hit it with the functor $F$ and get maps in $\mathcal{B}$, but no guarantee for exactness. We say that $F$ is \textbf{left exact} if for every such short exact sequence we do have
+$$0\to F(A)\to F(B)\to F(C)$$ 
+exact. 
+
+\begin{example}
+Let $\mathcal{A}$ be the category of $R$-module, $\mathcal{B}$ be the category of abelian groups and $D$ be a fixed object. Then $F(-)=\Hom_R(D,-)$ is a left exact covariant functor.
+\end{example}
+
+Cohomology lets us study the failure of exactness of 
+$$0\to F(A)\to F(B)\to F(C),$$
+i.e. the failure of surjectivity of $F(B)\to F(C)$. We want to continue the above exact sequence to the right and write a long exact sequence. In general, there are many ways to do this. But if $\mathcal{A}$ has ``enough injectives'' (a statement that holds for the categories we care about), then there is a ``canonical'' and ``minimal'' (in the sense that there is a universal property) way to do this. This is the \emph{right derived functors}; That is, functors $R^iF:\mathcal{A}\to \mathcal{B}$ for $i\geq 0$ with $R^0F=F$ giving us the following long exact sequence
+$$0\to F(A)\to F(B) \to F(C) \overset{c_1}{\to} R^1F(A)\to R^1F(B) \to R^1F(C)\overset{c_2}{\to} R^2F(A) \to \cdots$$
+plus satisfying some universal properties (an ``effaceable $\delta$-functor''). This is the covariant version; there's a similar one for contravariant functors. 
+
+\begin{example}
+Let $F(-):=\Hom_R(-,D)$ and $G(-):=\Hom_R(D,-)$ where $D$ is a fixed $R$-module. Both $F$ and $G$ are left-exact functors from $R$-modules to abelian groups, one contravariant and one covariant. More precisely, for any short exact sequence of $R$-modules
+$$0\to L \to M \to N \to 0,$$
+we have the following exact sequences
+$$0\to \Hom_R(N,D)\to \Hom_R(M,D)\to \Hom_R(L,D)$$
+and 
+$$0\to \Hom_R(D,L)\to \Hom_R(D,M)\to \Hom_R(D,N).$$
+
+In both cases, the derived functors are just the Ext groups $\Ext_R^i(-,D)$ and $\Ext_R^i(D,-)$
+which give us the long exact sequences
+$$0\to \Hom_R(N,D)\to \Hom_R(M,D)\to \Hom_R(L,D)\to \Ext_R^1(N,D)\to \Ext_R^1(M,D)\to \cdots$$
+and 
+$$0\to \Hom_R(D,L)\to \Hom_R(D,M)\to \Hom_R(D,N)\to \Ext_R^1(D,L)\to \Ext_R^1(D,M)\to \cdots$$
+
+So $R^i\Hom_R(-,D)=\Ext_R^i(-,D)$ and $R^i\Hom_R(D,-)=\Ext_R^i(D,-)$ (it is a nontrivial fact that these agree!). 
+\end{example}
+
+\begin{example}
+In the case of $G$-modules, let $A$ be an abelian group $A$ with a $G$ action $\phi: G\to \Aut(A)$, (that is, $A$ is a $\ZZ G$-module) with morphisms respecting $G$-action. Let $A^G$ be the group of $x\in A$ such that $g\cdot x=x$ for all $g\in G$. The functor we want in this case is $F(A)=A^G$ which takes $G$ -modules to abelian groups. Note that this functor is the same as $\Hom_{\ZZ G}(\ZZ,-)$, so its (left exact) derived functors are (abstractly) Ext-functors $\Ext_{\ZZ G}^i(\ZZ,-)$, but this doesn't really give us a good way to compute it. These are better known as the ``group cohomology of $G$ with coefficients in $A$'', denoted $H^i(G,A)$. 
+
+How do we compute this? 
+It turns out that $\ZZ$ has a very nice ``standard resolution'' (also called the ``bar resolution''), which is given by 
+$$F_n=\bigotimes_{i=0}^n \ZZ G.$$
+Using this, we get the following recipe: for $G$ a group and $A$ a $G$-module, we let $C^0(G,A)=A$ and $C^n(G,A)$ be the group of $A$-valued maps on $G^n=G\times \cdots\times G$ for $n\geq 1$. These $C^n$ are called the group of \textbf{$n$-cochains} of $G$ with values in $A$. We also define the \textbf{differential operators} $d_n: C^n(G,A)\to C^{n+1}(G,A)$ by 
+
+\begin{align*}
+d_n(f)(g_1,\cdots, g_{n+1}):= 
+&\ g_1\cdot f(g_2,\cdots, g_{n+1})\\
+&+\Sigma_{i=1}^n (-1)^i f(g_1,\cdots, g_{i-1},g_ig_{i+1},g_{i+2},\cdots, g_{n+1})\\
+&+(-1)^{n+1}f(g_1,\cdots, g_n).\\
+\end{align*}
+
+The cases of most interest are $n=0,1,2$:
+\begin{itemize}
+\item when $n=0$, we have $f=a\in C^0(G,A)=A$, and then we get 
+$$d_0(f)(g)=g\cdot a - a.$$
+\item when $n=1$, then $f$ is a function with one input and we have
+$$d_1(f)(g_1,g_2)=g_1\cdot f(g_2)-f(g_1g_2)+f(g_1).$$
+\item when $n=2$, then $f$ is a function with two inputs and we have
+$$d_2(f)(g,h,k)=g\cdot f(h,k) - f(gh,k)+f(g,hk)- f(g,h).$$
+Amazingly, people wrote down this formula correctly before the general theory came out.
+\end{itemize}
+
+It can be shown that $d_n\circ d_{n+1}=0$. Thus, we can define the group of \textbf{$n$-cocycles} as $Z^n(G,A):=\ker(d_n)$ for $n\geq 0$ and the group of \textbf{$n$-coboundaries} as $B^n(G,A):=\im(d_{n-1})$ for $n\geq 1$ (or $B^0(G,A)=1$ when $n=0$). Then we define the \textbf{$n$-th cohomology group} as
+$$H^n(G,A):=Z^n(G,A)/B^n(G,A).$$
+Note that $H^0(G,A)=A^G$. 
+\end{example}
+
+\begin{example}
+Let $(X,\mathcal{O}_X)$ be a ringed space, and $\mathcal{F}$ a $\mathcal{O}_X$-module. Let $\Gamma(X,-)$ be the ``global sections'' functor, $\mathcal{F}\mapsto \mathcal{F}(X)$, from $\mathbb{O}_X$-modules to $R$-modules for $\mathcal{O}_X(X)$. Here there is the Grothedieck derived cohomology functor, but there is also a more concrete one, the Cech cohomology. These are not equal in general! Fortunately they are equal in the settings we will be interested in.
+\end{example}
+

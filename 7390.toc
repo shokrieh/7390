@@ -15,3 +15,5 @@
 \contentsline {subsection}{\numberline {2.9}Isogenies}{10}{subsection.2.9}
 \contentsline {subsection}{\numberline {2.10}Importance of isogenies}{11}{subsection.2.10}
 \contentsline {subsection}{\numberline {2.11}Cohomology}{11}{subsection.2.11}
+\contentsline {subsection}{\numberline {2.12}Sheaves on a topological space $X$}{12}{subsection.2.12}
+\contentsline {subsection}{\numberline {2.13}Abelian categories and cohomology}{12}{subsection.2.13}
