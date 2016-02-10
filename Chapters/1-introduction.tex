@@ -95,7 +95,7 @@ $$y^2=4x^3-60G_4x-140G_6$$
 where $G_m=\sum_{\lambda\in\Lambda^*} \frac{1}{\lambda^m}$ for $m\in \ZZ$. More precisely, you can write down the Weierstrass $\wp$-function
 $$\wp(z)=\frac{1}{z^2}+\sum_{\lambda\in\Lambda^*}\left(\frac{1}{(z-\lambda)^2}-\frac{1}{\lambda^2}\right)$$
 and compute
-$$y=\frac{dx}{dz}=\sum_{\lambda\in \Lambda} \frac{-2}{(2-\lambda)^3},$$
+$$y=\frac{dx}{dz}=\sum_{\lambda\in \Lambda} \frac{-2}{(z-\lambda)^3},$$
 and see that the pair $(x,y)=(\wp(z),\wp'(z))$ satisfies the affine equation above. The mapping given by 
 $$z+\Lambda\mapsto (\wp(z),\wp'(z))$$ induces a group isomorphism $\CC/\Lambda\isom E$ where $E$ is the projectivized elliptic curve.
 \end{theorem}
