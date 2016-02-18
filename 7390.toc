@@ -17,3 +17,8 @@
 \contentsline {subsection}{\numberline {2.11}Cohomology}{11}{subsection.2.11}
 \contentsline {subsection}{\numberline {2.12}Sheaves on a topological space $X$}{12}{subsection.2.12}
 \contentsline {subsection}{\numberline {2.13}Abelian categories and cohomology}{12}{subsection.2.13}
+\contentsline {subsubsection}{\numberline {2.13.5}\v {C}ech cohomology}{16}{subsubsection.2.13.5}
+\contentsline {subsection}{\numberline {2.14}Back to complex tori (sort of)}{16}{subsection.2.14}
+\contentsline {subsubsection}{\numberline {2.14.1}Line bundles}{17}{subsubsection.2.14.1}
+\contentsline {subsubsection}{\numberline {2.14.2}Choices}{17}{subsubsection.2.14.2}
+\contentsline {subsubsection}{\numberline {2.14.3}Line bundles vs ``factors of automorphy''}{17}{subsubsection.2.14.3}

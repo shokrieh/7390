@@ -351,9 +351,9 @@ Let $\mathcal{A}$ be the category of $R$-module, $\mathcal{B}$ be the category o
 
 Cohomology lets us study the failure of exactness of 
 $$0\to F(A)\to F(B)\to F(C),$$
-i.e. the failure of surjectivity of $F(B)\to F(C)$. We want to continue the above exact sequence to the right and write a long exact sequence. In general, there are many ways to do this. But if $\mathcal{A}$ has ``enough injectives'' (a statement that holds for the categories we care about), then there is a ``canonical'' and ``minimal'' (in the sense that there is a universal property) way to do this. This is the \emph{right derived functors}; That is, functors $R^iF:\mathcal{A}\to \mathcal{B}$ for $i\geq 0$ with $R^0F=F$ giving us the following long exact sequence
+i.e. the failure of surjectivity of $F(B)\to F(C)$. We want to continue the above exact sequence to the right and write a long exact sequence. In general, there are many ways to do this. But if $\mathcal{A}$ has ``enough injectives'' (a statement that holds for the categories we care about), then there is a ``canonical'' and ``minimal'' (in the sense that there is a universal property) way to do this. There exist unique functors $R^iF:\mathcal{A}\to \mathcal{B}$ for $i\geq 0$ with $R^0F=F$ that give us the following long exact sequence
 $$0\to F(A)\to F(B) \to F(C) \overset{c_1}{\to} R^1F(A)\to R^1F(B) \to R^1F(C)\overset{c_2}{\to} R^2F(A) \to \cdots$$
-plus satisfying some universal properties (an ``effaceable $\delta$-functor''). This is the covariant version; there's a similar one for contravariant functors. 
+plus satisfying some universal properties (an ``effaceable $\delta$-functor''). These functors are called the \emph{right derived functors}. This is the covariant version; there's a similar one for contravariant functors. In general, it is hard to compute these $R^iF$. However, in the examples that we are interested in, there are easier ways of computing them.
 
 \begin{example}
 Let $F(-):=\Hom_R(-,D)$ and $G(-):=\Hom_R(D,-)$ where $D$ is a fixed $R$-module. Both $F$ and $G$ are left-exact functors from $R$-modules to abelian groups, one contravariant and one covariant. More precisely, for any short exact sequence of $R$-modules
@@ -404,6 +404,87 @@ Note that $H^0(G,A)=A^G$.
 \end{example}
 
 \begin{example}
-Let $(X,\mathcal{O}_X)$ be a ringed space, and $\mathcal{F}$ a $\mathcal{O}_X$-module. Let $\Gamma(X,-)$ be the ``global sections'' functor, $\mathcal{F}\mapsto \mathcal{F}(X)$, from $\mathbb{O}_X$-modules to $R$-modules for $\mathcal{O}_X(X)$. Here there is the Grothedieck derived cohomology functor, but there is also a more concrete one, the Cech cohomology. These are not equal in general! Fortunately they are equal in the settings we will be interested in.
+Let $(X,\mathcal{O}_X)$ be a ringed space, and $\mathcal{F}$ a $\mathcal{O}_X$-module. Let $\Gamma(-,X)$ be the ``global sections'' functor, $\mathcal{F}\mapsto \mathcal{F}(X)$, from $\mathbb{O}_X$-modules to $R$-modules for $R=\mathcal{O}_X(X)$. This functor is left-exact (to make sense of this we need to make sure we know what exact sequences of sheaves are - defining ``kernels'' is easy but to define ``images'' we need to sheafify). 
+
+Here there is the Grothedieck (right) derived cohomology functor, $R^i\Gamma(-,X)$, which we denote $H^i(X,-)$ (we also call $H^i(X,\mathcal{F})$ the \emph{sheaf cohomology of $X$ with values in $\mathcal{F}$}); in particular, we have $H^0(X,-)=\Gamma(-,X)$. This is given abstractly by the theory earlier in this section; but like group cohomology, we will really need to work with sheaf cohomology, so we need to a way to compute them explicitly.
+
+Here, we have a more concrete one, which is called the \emph{\v{C}ech cohomology}, $\check{H}^i(X,\mathcal{F})$. In general, the two cohomologies are not equal! Fortunately they are equal in the settings we will be interested in. 
+
+The \v{C}ech cohomology is more explicitly computable, and always gives us a map $\phi: H^i(X,\mathcal{F})\to \check{H}^i(X,\mathcal{F})$. We have:
+
+\begin{enumerate}
+\item For $i=0,1$, $\phi$ is an isomorphism.
+\item (Grothendieck): If $X$ is a Noetherian, separated scheme and $\mathcal{F}$ is a quasi-coherent $\mathcal{O}_X$-module, then $\phi$ is an isomorphism. 
+\item (Godement): If $X$ is a paracompact and Hausdorff topological space, then $\phi$ is an isomorphism.
+\end{enumerate}
+
+However, $\phi$ is not an isomorphism in general! Here are some counterexamples:
+
+\begin{itemize}
+\item In his T\^{o}hoku paper (p.177), Grothendieck provides a counterexample where $H^2\not= \check{H}^2$, for $X=\Aff^2$ with the Zariski topology and $\mathcal{F}$ comes from taking $\underline{\ZZ}$ and modifying it based on a space $Y$ that is a union of two circles. This example is explicit but the proof is somehow deep!
+\item A recent paper of Schr\"{o}er (arxiv post 1309.2524) gives a Hausdorff (not not paracompact) topological space constructed from $2$-dimensional discs that is a counterexample. 
+\end{itemize}
+
+\subsubsection{\v{C}ech cohomology}
+So how do we define \v{C}ech cohomology? The idea is that if $\mathcal{U}$ is an open cover on $X$, the ``nerve'' of $\mathcal{U}$ approximates $X$. We define a $q$-simplex $\sigma$ of $\mathcal{U}$ as an ordered collection of $q+1$ elements in $\mathcal{U}$ with nonempty intersection that we call $|\sigma|$. Suppose $\sigma=(U_i)$ (for $0\leq i \leq q$), we define $\partial_j \sigma:=(U_i)_{i\not= j}$ and then $\partial\sigma=\Sigma_{j=0}^q (-1)^{j+i}\partial_j\sigma$. Note that $|\sigma|=\Cap U_i$. 
+
+We then define \textbf{$q$-cochains} of $\mathcal{U}$ with coefficients in $\mathcal{F}$ to be the set $C^q(\mathcal{U},\mathcal{F})$ of functions $\sigma\mapsto f_\sigma \in \mathcal{F}(|\sigma|)$. Therefore, we get the \textbf{boundary maps} $C^q(\mathcal{U},\mathcal{F})\to C^{q+1}(\mathcal{U},\mathcal{F})$ by 
+$$(\delta_q \omega)(\sigma)=\Sigma_{j=0}^{q+1} (-1)^j \text{res}_{|\partial_j \sigma|,|\sigma|} \omega(\partial_j\sigma).$$
+
+One can check that $\delta_{q+1}\circ \delta_q=0$ and hence can define \textbf{cocycles} $Z^q(\mathcal{U},\mathcal{F}):=\ker(\delta_q)$ and \textbf{coboundaries} $B^q(\mathcal{U},\mathcal{F}):=Im(\delta_{q-1})$, and then the \textbf{\v{C}ech cohomology} of $\mathcal{U}$ is given by 
+$$\check{H}^q(\mathcal{U},\mathcal{F}):=Z^q(\mathcal{U},\mathcal{F})/B^q(\mathcal{U},\mathcal{F}).$$
+
+So this gives us the cohomology $\check{H}^i(\mathcal{U},\mathcal{F})$ of an open cover $\mathcal{U}$; However, we want a cohomology $\check{H}^i(X,\mathcal{F})$ associated to the whole space $X$! There are two ways to solve this:
+
+\begin{enumerate}
+\item If $X$ has a ``good'' cover $\mathcal{U}$ (with all finite intersections of $U_i$ to be contractible), then $\check{H}^i(\mathcal{U},\mathcal{F})$ is canonical.
+
+\item In general, we can define $\check{H}^i(\mathcal{X},\mathcal{F})$ as $\varinjlim_{\mathcal{U}} \check{H}^i(\mathcal{U},\mathcal{F})$. But then we need to make sense of this direct limit. (It might be over an index set that is a proper class?) [fix farbod]
+\end{enumerate}
+
+Remark: Let $G$ be a topological group. Let $BG=K(G,1)$ be the \emph{Eilenberg-MacLane space}. (For example, $B\ZZ=S^1$.) Note that $\pi_1=G$ and $\pi_n=0$ for all $n>1$. Then if $A$ is a $G$-module, the sheaf cohomology $H^n(BG,\underline{A})$ (here $\underline{A}$ is the constant sheaf, which is the sheafification of the constant presheaf) is isomorphic to the usual CW complex cohomology $H^n(BG,A)$ and to the group cohomology $H^n(G,A)$.  
 \end{example}
+
+\subsection{Back to complex tori (sort of)}
+We want to understand line bundles on a locally ringed space $(X,\mathcal{O}_X)$. For now, we can think of it as a complex manifold or a variety. Let $\mathcal{F}$ be a sheaf. We call $\mathcal{F}$ (globally) \textbf{free} if $\mathcal{F}=\bigoplus_{i=1}^r \mathcal{O}_X$ is the direct sum of copies of the structure sheaf; $r$ is called the \textbf{rank} of $\mathcal{F}$. $\mathcal{F}$ is called \textbf{locally free} if there exists an open cover $\{U_i\}$ such that each $\mathcal{F}|_{U_i}$ is free. (There is a correspondence between locally free sheaves $\mathcal{F}$ of rank $n$ and vector bundles of rank $n$. If $\pi:E\to X$ is a vector bundle, we get a locally free sheaf with $\mathcal{F}(U)$ being the sections of $\pi$ over $U$; conversely, if $\mathcal{F}$ is locally free, we can construct an associated line bundle as $\coprod U_i\times \CC^n$ modulo gluing data.) 
+
+\subsubsection{Line bundles}
+
+Line bundles are vector bundles of rank $1$ (equivalently, locally free sheaves of rank $1$). Our goal is to give a cohomological interpretation on the set of line bundles. Let $\pi:L\to X$ be a line bundle. Let $\{U_\alpha\}$ be an open cover with trivializations given by (holomorphic) $\phi_\alpha: L|_\alpha\isomto U_\alpha\times \CC$ where $L|_\alpha:=\pi^{-1}[U_\alpha]$. Define the \textbf{transition functions} for $L$ with respect to $\{\phi_\alpha\}$ as $g_{\alpha\beta}:U_\alpha\cap U_\beta \to \CC^*$ which are given by 
+$$g_{\alpha\beta}(z):=\phi_\alpha\circ \phi_\beta^{-1}|_{L_z}$$
+where $L_z:=\{z\}\times \CC$. By itself this is a linear (and hence holomorphic) map on $\{z\}\times \CC$, which is determined by the complex number we are calling $g_{\alpha\beta}(z)$. We check that 
+$g_{\alpha\beta}\circ g_{\beta\alpha}=1$ (so it is nonzero) and also $g_{\alpha\beta}\circ g_{\beta\gamma}\circ g_{\gamma\alpha}=1$. Rewriting this latter condition gives a cocycle condition
+$$g_{\alpha\beta}g_{\gamma\beta}^{-1}g_{\gamma\alpha}=1.$$
+
+To summarize, a line bundle (trivialized by an open cover $\mathcal{U}$) determines a collection of 
+\begin{itemize}
+\item holomorphic functions $g_{\alpha\beta}:U_\alpha\cap U_\beta\to \CC^\times$; which satisfy 
+\item $g_{\alpha\beta}\circ g_{\beta\alpha}=1$, and
+\item $g_{\alpha\beta}g_{\gamma\beta}^{-1}g_{\gamma\alpha}=1$.
+\end{itemize}
+
+Conversely, if we are given $\{g_{\alpha\beta}\}$ satisfying these properties, then we can construct a line bundle $L$ with transition functions $\{g_{\alpha\beta}\}$ as a quotient of $\coprod U_\alpha\times \CC$ by the appropriate gluing relations. 
+
+\subsubsection{Choices}
+If $f_\alpha\in\mathcal{O}^\times(U_\alpha)$ is a nonvanishing holomorphic function on $U_\alpha$, and we construct new trivializations $\phi'_\alpha=f_\alpha\circ \phi_\alpha$, then the new transition functions $g_{\alpha\beta}'=\frac{f_\alpha}{f_\beta}g_{\alpha\beta}$
+give the same bundle $L$. 
+
+Now, the collection of $\{g_{\alpha\beta}\in \mathcal{O}^\times (U_\alpha\cap U_\beta)\}$ is a \v{C}ech $1$-cochain. The conditions we wrote down that it satisfies implies that it is actually a $1$-cocycles. Moreover, the ambiguity mentioned above is exactly the $1$-coboundaries. Therefore, we can then conclude the set of (isomorphism classes of) line bundles $\Pic(X)$ is isomorphic to $H^1(X,\mathcal{O}_X^*)$. Moreover, this is a group homomorphism; for the group structure on line bundles coming from tensor product and the group structure naturally showing up on $H^1(X,\mathcal{O}_X^\times)$. 
+
+\subsubsection{Line bundles vs ``factors of automorphy''}
+Let $X$ be a complex torus, and $\tilde{X}=\CC^g$ its universal cover, with $\pi:\tilde{X}\to X$ the covering map. 
+\begin{theorem}
+There exists a canonical exact sequence 
+$$0\to H^1(\pi(X),H^0(\tilde{X},\mathcal{O}_{\tilde{X}}^\times))\overset{\phi}{\to} H^1(X,\mathcal{O}_X^\times)\to H^1(\tilde{X},\mathcal{O}_{\tilde{X}}^\times).$$
+\end{theorem}
+
+The first term in the above exact sequence is the group of \emph{``factors of automorphy''} and the latter two are Picard groups as above.
+
+\begin{corollary}
+If $\pi^*(L)$ is trivial, then it is completely described by a ``factor of automorphy''.
+\end{corollary}
+
+\begin{corollary}
+If $\Pic(\tilde{X})=0$ (eg when $\tilde{X}=\CC^g$), then $\phi$ is an isomorphism.
+\end{corollary}
 
