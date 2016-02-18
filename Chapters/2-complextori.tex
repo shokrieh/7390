@@ -488,3 +488,107 @@ If $\pi^*(L)$ is trivial, then it is completely described by a ``factor of autom
 If $\Pic(\tilde{X})=0$ (eg when $\tilde{X}=\CC^g$), then $\phi$ is an isomorphism.
 \end{corollary}
 
+\section{Lecture: Feb 18, 2016}
+Last time: If $H^n(BG,\underline{M})\isom H^n(G,M)$, then $M$ has a triial $G$ action.
+Also $H^1(X,\mathcal{O}_X^\times)$ means invertible elements with respect to multiplication. (For example, if $f$ is analytic with $f(0)\not=0$, then $1/f$ is analytic when close to zero.)
+
+Goal of today: prove the Theorem from last time.
+The $1$-cochains $C^1(G,M)$ where $G=\pi_1(X)$ and $M=H^0(\tilde{X},\mathcal{O}_X^\times)$. Note that $M$ contains elements like holomorphic $g:\tilde{X}\to \CC^\times$. Therefore,, for $h:G\to M\in C^1(G,M)$, we can naturally get holomorphic $f:G\times \tilde{X}\to \CC^\times$. Note that $G$ acts on $\tilde{X}$ by $g\cdot \tilde{x}$ which gives $f(\tilde{x})\cdot g=f(g\cdot \tilde{x})$.
+
+Also, note that the $1$-cocycles satisfy 
+$$h(\mu)\cdot \lambda \times h(\lambda \mu)^{-1}\times h(\lambda)=1.$$
+
+Therefore, we have the following cocycle condition: For $\lambda,\mu\in \pi_1(X), \tilde{x}\in \tilde{X}$,
+$$f(\lambda\mu,\tilde{x})=f(\mu,\lambda\tilde{x})f(\lambda,\tilde{x})$$
+
+Also the $1$-coboundary condition: For $h_1\in M=C^0(G,M)$,
+$$f(\lambda,\tilde{x})=\frac{h_1(\lambda,\tilde{x})}{h_1(\tilde{x})}$$
+and we define $H^1(G,M)=Z^1/B^1$ like before.
+
+Now, each $f\in Z^1(G,M)$ gives a Line Bundle on $X$. Let $L=\tilde{X}\times \CC\to \tilde{X}$ be the line bundle map. Then $G=\pi_1(X)$ acts on $\tilde{X}$, and so acts on $L$: $\lambda\cdot(\tilde{x},t)=(\lambda\cdot \tilde{x},f(\lambda,\tilde{x})t)$.
+It is easy to check that this action is
+\begin{itemize}
+\item free (If $g\cdot *=*$ for some $g$ and $*$, then $g=id$.)
+\item properly discontinuous (For all $K_1,K_2$ compact subsets, $\{g\in G:gK_1\cap K_2\not=\emptyset\}$ is finite.)
+\end{itemize}
+
+There is a theorem saying that complex manifolds came from complex manifolds moding out free proper disc actions. Therefore, the induced $L'\to X$ is a holomorphic line bundle. And this gives a map $Z^1(G,M)\to H^1(X,\mathcal{O}_X^\times)$. 
+
+Proof of Theorem: 
+First we will show that there is a map $\phi_1$ given by
+$$0\to H^1(G,M)\overset{\phi_1}{\to} \ker(H^1(X,\mathcal{O}_X^\times)\to H^1(\tilde{X},\mathcal{O}_X^\times)).$$
+and then we will try to prove that $\phi_1$ is an isomorphism.
+
+First, for existence of $\phi_1$, we can just take the above map. Or a more explicit solution for this is given by the following: Let $\pi:\tilde{X}\to X$ be the covering map. Then fix a cover $\{U_i\}_I$ such that for all $i\in I$, there exists $W_i\subset \pi_i^{-1}(U_i)$, with biholomorphic $\pi_i:=\pi|_{W_i}:W_i\to U_i$. For all $i,j$, there exists unique $\lambda_{i,j}\in\pi_1(X)$ such that for $x\in U_i\cap U_j$, 
+$\pi_j^{-1}(x)=\lambda_{ij}\cdot \pi_i^{-1}(x)$. It is clear that $\lambda_{ij}\cdot \lambda_{jk}=\lambda_{ik}$. Therefore, now we have a map $Z^1(G,M)\to Z^1(X,\mathcal{0}_X^\times)$ (note that $Z^1(X,\mathcal{O}_X^\times)$ surjects onto $H^1(X,\mathcal{O}_X^\times)$) given by 
+$$f\mapsto \{g_{ij}\in \mathcal{O}_X^\times (U_i\cap U_j)\}$$
+where $g_{ij}(x)=f(\lambda_{ij},\pi_i^{-1}(x))$. It is easy to check the $1$-cocycle condition
+$$g_{ij}g_{jk}=g_{ik}.$$
+
+(Explicitly, $g_{ij}(x)g_{jk}(x)=f(\lambda_{ij},\pi_i^{-1}(x))f(\lambda_{jk},\pi_j^{-1}(x))=f(\lambda_{ij}\lambda_{jk},\pi_i^{-1}(x))=f(\lambda_{ik},\pi_i^{-1}(x))=g_{ik}(x)$.)
+
+It is easy to check that $\ker(\phi_1\supset B^1(G,M))$. [farbod fill in detail] 
+It is also easy to check that $Im(\phi)$ lies in $\ker(H^1(X,\mathcal{O}_X^\times)\to H^1(\tilde{X},\mathcal{O}_X^\times))$.
+
+Now, we want to show that $\phi_1$ is an isomorphism. 
+To do this, we want to find an inverse map. That is, given $L\in \ker(H^1(X,\mathcal{O}_X^\times)\to H^1(\tilde{X},\mathcal{O}_X^\times))$, we want to find $f\in H^1(G,M)$ such that $L=phi_1(f)$. 
+(We want an explicit expression for this inverse map, we will use it very often when computing things.)
+
+
+We know that $\pi^*L$ is trivial. So we fix $\alpha:\pi^*L\isomto \tilde{X}\times \CC$. (Note that $G$ acts on $\pi^*L$, and hence via $\alpha$, $G$ also acts on $\tilde{X}\times G$.) For all $\lambda\in G$, there exists automorphisms $\phi_\lambda$ of $\tilde{X}\times \CC$ such that 
+$\phi_\lambda(\tilde{x},t)=(\lambda\cdot \tilde{x},f(\lambda,\tilde{x})t)$. It is easy to check that 
+\begin{itemize}
+\item $f(\lambda,\tilde{x})\in Z^1(G,M)$
+\item For another map $\alpha':\pi^*L\to \tilde{X}\times \CC$, we have 
+$$\phi_\lambda'(\tilde{x},t)=(\lambda\cdot \tilde{x},h(\lambda\tilde{x})f(\lambda\tilde{x})h(\tilde{x})^{-1}t)$$
+where $\alpha'\alpha^{-1}(\tilde{x},t)=(\tilde{x},h(\tilde{x})t)$. 
+\end{itemize}
+(End of proof)
+
+In fact, via a similar proof, one can also prove the following:
+
+Theorem: Let $\mathcal{F}$ be a sheaf of abelian groups on $X$. Let $G=\pi_1(X)$ and $M=H^0(\tilde{X},\pi^*\mathcal{F})$. Then for each $n\geq 0$, there exist canonical homomorphisms $\phi_n:H^n(G,M)\to H^n(X,\mathcal{F})$. Moreover, 
+\begin{itemize}
+\item when $n=1$, for each $f\in Z^1(G,M)$, we have 
+$(\phi_1 f)_{ij}=f(\lambda_{ij},\pi_i^{-1})$. 
+\item when $n=2$, for each $f\in Z^2(G,M)$, we have 
+$(\phi_2 f)_{ijk}=f(\lambda_{ij},\lambda_{jk},\pi_i^{-1})$. 
+\end{itemize}
+
+XXXXXXX
+
+Our next goal: describe global sections $H^0(X,L)=\Gamma(L,X)$ in terms of $\phi_1(f)=L$, where $L\in \ker(H^1(X,\mathcal{O}_X^\times)\to H^1(\tilde{X},\mathcal{O}_X^\times))$. 
+
+Since $\phi^*L$ is trivial, if we fix $\alpha:\phi^*L\isomto \tilde{X}\times \CC$, we get $f\in Z^1(G,M)$. Observe that there exists a canonical isomorphism between $H^0(X,L)\isomto H^0(\tilde{X},\pi^*L)^G$. But now, via $\alpha$, we have $H^0(\tilde{X}m\pi^*L)^G\isom H^0(\tilde{X},\tilde{X}\times \CC)^G$, which is explicitly given by
+$$\phi_\lambda(\tilde{x},t)=(\lambda\cdot \tilde{x}, f(\lambda,\tilde{x})t).$$
+
+And $H^0(\tilde{X},\tilde{X}\times \CC)^G=\{\vartheta:\tilde{X}\overset{hol}{\to}\CC: \vartheta(\lambda,\tilde{x})=f(\tilde{\lambda},\tilde{x})\vartheta(x)\}$ and $f$ here is called a ``factor of automorphy''. 
+
+Important remark: all the above depends on $\alpha$. 
+
+Remark: One can check functoriality. 
+
+
+Back to $X=V/\Lambda$ complex torus. 
+
+Proposition: Every holomorphic line bundle on $X$ pulls back to a trivial bundle on $V$. 
+Sketch of proof: 
+\begin{itemize}
+\item exponential sequence:
+$$0\to \underline{\ZZ}\to \mathcal{O}_V\overset{e^{2\pi i}}{\to}\mathcal{O}_V^\times \to 1$$
+($\underline{\ZZ}$ is the constant sheaf of $\ZZ$.)
+
+\item $\overline{\partial}$-Poincare lemma
+\item $H^2(V,\ZZ)=0$.
+\end{itemize}
+
+This induces the exact sequence:
+$$\cdots \to H^1(V,\mathcal{O}_V)\to H^1(V,\mathcal{O}_V^\times)\to H^2(V,\ZZ)\to \cdots$$
+First term is trivial by the $\overline{\partial}$-Poincare lemma, and last term is trivial by $H^2(V,\ZZ)=0$. Therefore, the middle is also trivial. 
+
+Corollary:
+$\Pic(X):=H^1(X,\mathcal{O}_X^\times)\isom H^1(\Omega,H^0(V,\mathcal{O}_V^\times))$.
+
+Griffiths-Harris? [fix]
+
+Next time: next goal: Appell-Humbert (Lefschetz)
