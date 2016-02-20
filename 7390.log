@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.6.30)  18 FEB 2016 11:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.6.30)  20 FEB 2016 01:36
 entering extended mode
 **7390.tex
 (7390.tex
@@ -912,7 +912,37 @@ Overfull \hbox (1.11043pt too wide) in paragraph at lines 481--482
  of \OT1/cmr/m/it/10 (-20) ``factors of automorphy''
  []
 
-[17] [18] [19]) [20] (7390.bbl
+[17] [18]
+LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 554.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 562.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 562.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 562.
+
+[19]
+Overfull \hbox (0.17122pt too wide) in paragraph at lines 572--574
+[]$\OML/cmm/m/it/10 H[]\OT1/cmr/m/n/10 (-20) ([]\OML/cmm/m/it/10 ; [] \OMS/cmsy
+/m/n/10  \U/msb/m/n/10 C\OT1/cmr/m/n/10 (-20) )[]$ then cor-re-sponds to the s
+et $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 # \OT1/cmr/m/n/10 (-20) : [] [] \U/msb/m
+/n/10 C \OT1/cmr/m/n/10 (-20) : \OML/cmm/m/it/10 #\OT1/cmr/m/n/10 (-20) (\OML/c
+mm/m/it/10 ; []\OT1/cmr/m/n/10 (-20) ) = \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (-2
+0) ([]\OML/cmm/m/it/10 ; []\OT1/cmr/m/n/10 (-20) )\OML/cmm/m/it/10 #\OT1/cmr/m/
+n/10 (-20) (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 (-20) )\OMS/cmsy/m/n/10 g$\OT1/cm
+r/m/n/10 (-20) .
+ []
+
+Package hyperref Info: bookmark level for unknown proposition defaults to 0 on 
+input line 580.
+) [20] (7390.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 68--68
 []\OT1/cmr/m/n/8 (+20) James S. Milne, \OT1/cmr/m/it/8 (+20) Abelian va-ri-etie
 s (v2.00)\OT1/cmr/m/n/8 (+20) , 2008. Avail-able at
@@ -931,13 +961,13 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 79.
  ) 
 Here is how much of TeX's memory you used:
- 21054 strings out of 493671
- 390892 string characters out of 3141417
- 489618 words of memory out of 3000000
- 23660 multiletter control sequences out of 15000+200000
- 26268 words of font info for 157 fonts, out of 3000000 for 9000
+ 21067 strings out of 493671
+ 391108 string characters out of 3141417
+ 489617 words of memory out of 3000000
+ 23664 multiletter control sequences out of 15000+200000
+ 26376 words of font info for 158 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 61i,15n,84p,948b,661s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 61i,15n,84p,948b,659s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/
@@ -963,9 +993,9 @@ fonts/euler/eufm10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/am
 sfonts/symbols/msam10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public
 /amsfonts/symbols/msbm10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
 lic/amsfonts/symbols/msbm7.pfb>
-Output written on 7390.pdf (21 pages, 436313 bytes).
+Output written on 7390.pdf (21 pages, 440525 bytes).
 PDF statistics:
- 501 PDF objects out of 1000 (max. 8388607)
- 152 named destinations out of 1000 (max. 500000)
- 20693 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 514 PDF objects out of 1000 (max. 8388607)
+ 159 named destinations out of 1000 (max. 500000)
+ 20701 words of extra memory for PDF output out of 20736 (max. 10000000)
 

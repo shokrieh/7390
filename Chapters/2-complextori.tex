@@ -426,7 +426,7 @@ However, $\phi$ is not an isomorphism in general! Here are some counterexamples:
 \end{itemize}
 
 \subsubsection{\v{C}ech cohomology}
-So how do we define \v{C}ech cohomology? The idea is that if $\mathcal{U}$ is an open cover on $X$, the ``nerve'' of $\mathcal{U}$ approximates $X$. We define a $q$-simplex $\sigma$ of $\mathcal{U}$ as an ordered collection of $q+1$ elements in $\mathcal{U}$ with nonempty intersection that we call $|\sigma|$. Suppose $\sigma=(U_i)$ (for $0\leq i \leq q$), we define $\partial_j \sigma:=(U_i)_{i\not= j}$ and then $\partial\sigma=\Sigma_{j=0}^q (-1)^{j+i}\partial_j\sigma$. Note that $|\sigma|=\Cap U_i$. 
+So how do we define \v{C}ech cohomology? The idea is that if $\mathcal{U}$ is an open cover on $X$, the ``nerve'' of $\mathcal{U}$ approximates $X$. We define a $q$-simplex $\sigma$ of $\mathcal{U}$ as an ordered collection of $q+1$ elements in $\mathcal{U}$ with nonempty intersection that we call $|\sigma|$. Suppose $\sigma=(U_i)$ (for $0\leq i \leq q$), we define $\partial_j \sigma:=(U_i)_{i\not= j}$ and then $\partial\sigma=\Sigma_{j=0}^q (-1)^{j+i}\partial_j\sigma$. Note that $|\sigma|=\cap U_i$. 
 
 We then define \textbf{$q$-cochains} of $\mathcal{U}$ with coefficients in $\mathcal{F}$ to be the set $C^q(\mathcal{U},\mathcal{F})$ of functions $\sigma\mapsto f_\sigma \in \mathcal{F}(|\sigma|)$. Therefore, we get the \textbf{boundary maps} $C^q(\mathcal{U},\mathcal{F})\to C^{q+1}(\mathcal{U},\mathcal{F})$ by 
 $$(\delta_q \omega)(\sigma)=\Sigma_{j=0}^{q+1} (-1)^j \text{res}_{|\partial_j \sigma|,|\sigma|} \omega(\partial_j\sigma).$$
@@ -442,7 +442,7 @@ So this gives us the cohomology $\check{H}^i(\mathcal{U},\mathcal{F})$ of an ope
 \item In general, we can define $\check{H}^i(\mathcal{X},\mathcal{F})$ as $\varinjlim_{\mathcal{U}} \check{H}^i(\mathcal{U},\mathcal{F})$. But then we need to make sense of this direct limit. (It might be over an index set that is a proper class?) [fix farbod]
 \end{enumerate}
 
-Remark: Let $G$ be a topological group. Let $BG=K(G,1)$ be the \emph{Eilenberg-MacLane space}. (For example, $B\ZZ=S^1$.) Note that $\pi_1=G$ and $\pi_n=0$ for all $n>1$. Then if $A$ is a $G$-module, the sheaf cohomology $H^n(BG,\underline{A})$ (here $\underline{A}$ is the constant sheaf, which is the sheafification of the constant presheaf) is isomorphic to the usual CW complex cohomology $H^n(BG,A)$ and to the group cohomology $H^n(G,A)$.  
+Remark: Let $G$ be a topological group. Let $BG=K(G,1)$ be the \emph{Eilenberg-MacLane space}. (For example, $B\ZZ=S^1$.) Note that $\pi_1=G$ and $\pi_n=0$ for all $n>1$. Then if $A$ is a $G$-module, the sheaf cohomology $H^n(BG,\underline{A})$ (here $\underline{A}$ is the constant sheaf, which is the sheafification of the constant presheaf) is isomorphic to the usual CW complex cohomology $H^n(BG,A)$ and to the group cohomology $H^n(G,A)$, if $A$ has a trivial $G$-action. (If $A$ has a nontrivial $G$-action we can still make sense of this but the $H^n(BG,\underline{A})$ needs to be reinterpreted in terms of ``local coefficient systems''.)
 \end{example}
 
 \subsection{Back to complex tori (sort of)}
@@ -478,7 +478,7 @@ There exists a canonical exact sequence
 $$0\to H^1(\pi(X),H^0(\tilde{X},\mathcal{O}_{\tilde{X}}^\times))\overset{\phi}{\to} H^1(X,\mathcal{O}_X^\times)\to H^1(\tilde{X},\mathcal{O}_{\tilde{X}}^\times).$$
 \end{theorem}
 
-The first term in the above exact sequence is the group of \emph{``factors of automorphy''} and the latter two are Picard groups as above.
+The first term in the above exact sequence is the group of \emph{``factors of automorphy''} and the latter two are Picard groups as above. (Note that in general $\mathcal{O}_X^\times$ is the sheaf of invertible elements in our rings with respect to multiplication. In our holomorphic setting, this is equivalent to the sheaf of nonvanishing functions, because you can prove that if $f$ is holomorphic and nonzero, then $1/f$ is holomorphic.)
 
 \begin{corollary}
 If $\pi^*(L)$ is trivial, then it is completely described by a ``factor of automorphy''.
@@ -488,31 +488,28 @@ If $\pi^*(L)$ is trivial, then it is completely described by a ``factor of autom
 If $\Pic(\tilde{X})=0$ (eg when $\tilde{X}=\CC^g$), then $\phi$ is an isomorphism.
 \end{corollary}
 
-\section{Lecture: Feb 18, 2016}
-Last time: If $H^n(BG,\underline{M})\isom H^n(G,M)$, then $M$ has a triial $G$ action.
-Also $H^1(X,\mathcal{O}_X^\times)$ means invertible elements with respect to multiplication. (For example, if $f$ is analytic with $f(0)\not=0$, then $1/f$ is analytic when close to zero.)
-
-Goal of today: prove the Theorem from last time.
-The $1$-cochains $C^1(G,M)$ where $G=\pi_1(X)$ and $M=H^0(\tilde{X},\mathcal{O}_X^\times)$. Note that $M$ contains elements like holomorphic $g:\tilde{X}\to \CC^\times$. Therefore,, for $h:G\to M\in C^1(G,M)$, we can naturally get holomorphic $f:G\times \tilde{X}\to \CC^\times$. Note that $G$ acts on $\tilde{X}$ by $g\cdot \tilde{x}$ which gives $f(\tilde{x})\cdot g=f(g\cdot \tilde{x})$.
+Now, we prove the theorem above.
+\begin{proof}
+The $1$-cochains $C^1(G,M)$ where $G=\pi_1(X)$ and $M=H^0(\tilde{X},\mathcal{O}_X^\times)$. Note that $M$ contains elements like holomorphic $g:\tilde{X}\to \CC^\times$. Therefore, for $(h:G\to M)\in C^1(G,M)$, we can naturally get holomorphic $f:G\times \tilde{X}\to \CC^\times$. Note that $G$ acts on $\tilde{X}$ by $g\cdot \tilde{x}$ which gives $f(\tilde{x})\cdot g=f(g\cdot \tilde{x})$.
 
 Also, note that the $1$-cocycles satisfy 
-$$h(\mu)\cdot \lambda \times h(\lambda \mu)^{-1}\times h(\lambda)=1.$$
+$$(h(\mu)\cdot \lambda) (h(\lambda \mu)^{-1})(h(\lambda))=1.$$
 
 Therefore, we have the following cocycle condition: For $\lambda,\mu\in \pi_1(X), \tilde{x}\in \tilde{X}$,
 $$f(\lambda\mu,\tilde{x})=f(\mu,\lambda\tilde{x})f(\lambda,\tilde{x})$$
 
 Also the $1$-coboundary condition: For $h_1\in M=C^0(G,M)$,
-$$f(\lambda,\tilde{x})=\frac{h_1(\lambda,\tilde{x})}{h_1(\tilde{x})}$$
+$$f(\lambda,\tilde{x})=\frac{h_1(\lambda\cdot\tilde{x})}{h_1(\tilde{x})}$$
 and we define $H^1(G,M)=Z^1/B^1$ like before.
 
-Now, each $f\in Z^1(G,M)$ gives a Line Bundle on $X$. Let $L=\tilde{X}\times \CC\to \tilde{X}$ be the line bundle map. Then $G=\pi_1(X)$ acts on $\tilde{X}$, and so acts on $L$: $\lambda\cdot(\tilde{x},t)=(\lambda\cdot \tilde{x},f(\lambda,\tilde{x})t)$.
+Now, each $f\in Z^1(G,M)$ gives a Line Bundle on $X$. Let $L=\tilde{X}\times \CC\to \tilde{X}$ be the trivial line bundle map. Then $G=\pi_1(X)$ acts on $\tilde{X}$, and so acts on $L$: $\lambda\cdot(\tilde{x},t)=(\lambda\cdot \tilde{x},f(\lambda,\tilde{x})t)$.
 It is easy to check that this action is
 \begin{itemize}
 \item free (If $g\cdot *=*$ for some $g$ and $*$, then $g=id$.)
 \item properly discontinuous (For all $K_1,K_2$ compact subsets, $\{g\in G:gK_1\cap K_2\not=\emptyset\}$ is finite.)
 \end{itemize}
 
-There is a theorem saying that complex manifolds came from complex manifolds moding out free proper disc actions. Therefore, the induced $L'\to X$ is a holomorphic line bundle. And this gives a map $Z^1(G,M)\to H^1(X,\mathcal{O}_X^\times)$. 
+There is a theorem saying that complex manifolds came from complex manifolds moding out free properly discontinuous actions. Therefore, the induced $L'\to X$ is a holomorphic line bundle. And this gives a map $Z^1(G,M)\to H^1(X,\mathcal{O}_X^\times)$. 
 
 Proof of Theorem: 
 First we will show that there is a map $\phi_1$ given by
@@ -520,22 +517,26 @@ $$0\to H^1(G,M)\overset{\phi_1}{\to} \ker(H^1(X,\mathcal{O}_X^\times)\to H^1(\ti
 and then we will try to prove that $\phi_1$ is an isomorphism.
 
 First, for existence of $\phi_1$, we can just take the above map. Or a more explicit solution for this is given by the following: Let $\pi:\tilde{X}\to X$ be the covering map. Then fix a cover $\{U_i\}_I$ such that for all $i\in I$, there exists $W_i\subset \pi_i^{-1}(U_i)$, with biholomorphic $\pi_i:=\pi|_{W_i}:W_i\to U_i$. For all $i,j$, there exists unique $\lambda_{i,j}\in\pi_1(X)$ such that for $x\in U_i\cap U_j$, 
-$\pi_j^{-1}(x)=\lambda_{ij}\cdot \pi_i^{-1}(x)$. It is clear that $\lambda_{ij}\cdot \lambda_{jk}=\lambda_{ik}$. Therefore, now we have a map $Z^1(G,M)\to Z^1(X,\mathcal{0}_X^\times)$ (note that $Z^1(X,\mathcal{O}_X^\times)$ surjects onto $H^1(X,\mathcal{O}_X^\times)$) given by 
+$\pi_j^{-1}(x)=\lambda_{ij}\cdot \pi_i^{-1}(x)$. It is clear that $\lambda_{ij}\cdot \lambda_{jk}=\lambda_{ik}$. Therefore, now we have a map $Z^1(G,M)\to Z^1(X,\mathcal{O}_X^\times)$ (note that $Z^1(X,\mathcal{O}_X^\times)$ maps onto $H^1(X,\mathcal{O}_X^\times)$) given by 
 $$f\mapsto \{g_{ij}\in \mathcal{O}_X^\times (U_i\cap U_j)\}$$
 where $g_{ij}(x)=f(\lambda_{ij},\pi_i^{-1}(x))$. It is easy to check the $1$-cocycle condition
 $$g_{ij}g_{jk}=g_{ik}.$$
 
 (Explicitly, $g_{ij}(x)g_{jk}(x)=f(\lambda_{ij},\pi_i^{-1}(x))f(\lambda_{jk},\pi_j^{-1}(x))=f(\lambda_{ij}\lambda_{jk},\pi_i^{-1}(x))=f(\lambda_{ik},\pi_i^{-1}(x))=g_{ik}(x)$.)
 
-It is easy to check that $\ker(\phi_1\supset B^1(G,M))$. [farbod fill in detail] 
+So we have a well defined map 
+$$Z^1(G,M)\to \check{Z}^1(X,\mathcal{O}_X^\times)\surjects \check{H}^1(X,\mathcal{O}_X^\times).$$
+It is easy to check that the kernel of this map contains $B^1(G,M)$, so this descends to a homomorphism $H^1(G,M)\to \check{H}^1(X,\mathcal{O}_X^\times)$. (To check this: if we have a $1$-coboundary $f(\lambda,x)=h(\lambda\tilde{x})/h(x)$, this will go to a \v{C}ech $1$-cocycle
+$$g_{ij}(x)=\frac{h(\lambda_{ij}\pi_i^{-1}(x))}{h(\pi_i^1(x)}=\frac{h(\pi_j^{-1}(x))}{h(\pi_i^{-1}(x))}.$$
+This tells us $g_{ij}(x)$ is a \v{C}ech $1$-coboundary so is trivial in $\check{H}^1(X,\mathcal{O}_X^\times)$.)
 It is also easy to check that $Im(\phi)$ lies in $\ker(H^1(X,\mathcal{O}_X^\times)\to H^1(\tilde{X},\mathcal{O}_X^\times))$.
 
 Now, we want to show that $\phi_1$ is an isomorphism. 
-To do this, we want to find an inverse map. That is, given $L\in \ker(H^1(X,\mathcal{O}_X^\times)\to H^1(\tilde{X},\mathcal{O}_X^\times))$, we want to find $f\in H^1(G,M)$ such that $L=phi_1(f)$. 
+To do this, we want to find an inverse map. That is, given $L\in \ker(H^1(X,\mathcal{O}_X^\times)\to H^1(\tilde{X},\mathcal{O}_X^\times))$, we want to find $f\in H^1(G,M)$ such that $L=\phi_1(f)$. 
 (We want an explicit expression for this inverse map, we will use it very often when computing things.)
 
 
-We know that $\pi^*L$ is trivial. So we fix $\alpha:\pi^*L\isomto \tilde{X}\times \CC$. (Note that $G$ acts on $\pi^*L$, and hence via $\alpha$, $G$ also acts on $\tilde{X}\times G$.) For all $\lambda\in G$, there exists automorphisms $\phi_\lambda$ of $\tilde{X}\times \CC$ such that 
+We know that $\pi^*L$ is trivial. So we fix $\alpha:\pi^*L\isomto \tilde{X}\times \CC$. (Note that $G$ acts on $\pi^*L$, and hence via $\alpha$, $G$ also acts on $\tilde{X}\times \CC$.) For all $\lambda\in G$, there exists automorphisms $\phi_\lambda$ of $\tilde{X}\times \CC$ such that 
 $\phi_\lambda(\tilde{x},t)=(\lambda\cdot \tilde{x},f(\lambda,\tilde{x})t)$. It is easy to check that 
 \begin{itemize}
 \item $f(\lambda,\tilde{x})\in Z^1(G,M)$
@@ -543,11 +544,12 @@ $\phi_\lambda(\tilde{x},t)=(\lambda\cdot \tilde{x},f(\lambda,\tilde{x})t)$. It i
 $$\phi_\lambda'(\tilde{x},t)=(\lambda\cdot \tilde{x},h(\lambda\tilde{x})f(\lambda\tilde{x})h(\tilde{x})^{-1}t)$$
 where $\alpha'\alpha^{-1}(\tilde{x},t)=(\tilde{x},h(\tilde{x})t)$. 
 \end{itemize}
-(End of proof)
+\end{proof}
 
 In fact, via a similar proof, one can also prove the following:
 
-Theorem: Let $\mathcal{F}$ be a sheaf of abelian groups on $X$. Let $G=\pi_1(X)$ and $M=H^0(\tilde{X},\pi^*\mathcal{F})$. Then for each $n\geq 0$, there exist canonical homomorphisms $\phi_n:H^n(G,M)\to H^n(X,\mathcal{F})$. Moreover, 
+\begin{theorem}
+Let $\mathcal{F}$ be a sheaf of abelian groups on $X$. Let $G=\pi_1(X)$ and $M=H^0(\tilde{X},\pi^*\mathcal{F})$. Then for each $n\geq 0$, there exist canonical homomorphisms $\phi_n:H^n(G,M)\to H^n(X,\mathcal{F})$. Moreover, 
 \begin{itemize}
 \item when $n=1$, for each $f\in Z^1(G,M)$, we have 
 $(\phi_1 f)_{ij}=f(\lambda_{ij},\pi_i^{-1})$. 
@@ -555,40 +557,52 @@ $(\phi_1 f)_{ij}=f(\lambda_{ij},\pi_i^{-1})$.
 $(\phi_2 f)_{ijk}=f(\lambda_{ij},\lambda_{jk},\pi_i^{-1})$. 
 \end{itemize}
 
-XXXXXXX
+\end{theorem}
 
-Our next goal: describe global sections $H^0(X,L)=\Gamma(L,X)$ in terms of $\phi_1(f)=L$, where $L\in \ker(H^1(X,\mathcal{O}_X^\times)\to H^1(\tilde{X},\mathcal{O}_X^\times))$. 
+\subsection{Global sections of $H^0(X,L)$}
 
-Since $\phi^*L$ is trivial, if we fix $\alpha:\phi^*L\isomto \tilde{X}\times \CC$, we get $f\in Z^1(G,M)$. Observe that there exists a canonical isomorphism between $H^0(X,L)\isomto H^0(\tilde{X},\pi^*L)^G$. But now, via $\alpha$, we have $H^0(\tilde{X}m\pi^*L)^G\isom H^0(\tilde{X},\tilde{X}\times \CC)^G$, which is explicitly given by
+Our next goal is to describe global sections of $H^0(X,L)=\Gamma(L,X)$ in terms of $\phi_1(f)=L$, where $L\in \ker(H^1(X,\mathcal{O}_X^\times)\to H^1(\tilde{X},\mathcal{O}_X^\times))$. 
+
+Since $\phi^*L$ is trivial, if we fix a trivialization $\alpha:\pi^*L\isomto \tilde{X}\times \CC$, 
+this gives us an explicit cocycle 
+$f\in Z^1(G,M)$ (giving the cohomology class $\phi_1^{-1}(L)$). 
+Observe that there exists a canonical isomorphism between $H^0(X,L)\isomto H^0(\tilde{X},\pi^*L)^G$. And then we have (via $\alpha$) an isomorphism $H^0(\tilde{X},\pi^*L)^G\isom H^0(\tilde{X},\tilde{X}\times \CC)^G$, which is explicitly given by
 $$\phi_\lambda(\tilde{x},t)=(\lambda\cdot \tilde{x}, f(\lambda,\tilde{x})t).$$
 
-And $H^0(\tilde{X},\tilde{X}\times \CC)^G=\{\vartheta:\tilde{X}\overset{hol}{\to}\CC: \vartheta(\lambda,\tilde{x})=f(\tilde{\lambda},\tilde{x})\vartheta(x)\}$ and $f$ here is called a ``factor of automorphy''. 
-
-Important remark: all the above depends on $\alpha$. 
-
-Remark: One can check functoriality. 
+$H^0(\tilde{X},\tilde{X}\times \CC)^G$ then corresponds to the set $\{\vartheta:\tilde{X}\overset{hol}{\to}\CC: \vartheta(\lambda,\tilde{x})=f(\tilde{\lambda},\tilde{x})\vartheta(x)\}$. So $H^0(X,L)$ is in bijection with the set of theta functions $\vartheta$ with $f$ as its factor of automorphy. 
+(Remark: This does depend on the trivialization and thus the specific form of $f$; but changing $\alpha$ changes $f$ in a predictable way and thus changes the set of $\vartheta$.) Also, one can check functoriality of everything we've done.
 
 
-Back to $X=V/\Lambda$ complex torus. 
+Now, let's get back to the case where $X=V/\Lambda$ is complex torus. 
 
-Proposition: Every holomorphic line bundle on $X$ pulls back to a trivial bundle on $V$. 
-Sketch of proof: 
+
+\begin{proposition}
+Every holomorphic line bundle on $X$ pulls back to a trivial bundle on $V$. 
+\end{proposition}
+
+\begin{proof}[Sketch of proof]
+We need
 \begin{itemize}
-\item exponential sequence:
+\item the \emph{exponential sequence} of sheaves:
 $$0\to \underline{\ZZ}\to \mathcal{O}_V\overset{e^{2\pi i}}{\to}\mathcal{O}_V^\times \to 1$$
 ($\underline{\ZZ}$ is the constant sheaf of $\ZZ$.)
 
-\item $\overline{\partial}$-Poincare lemma
+\item the $\overline{\partial}$-Poincar\'{e} lemma; and
 \item $H^2(V,\ZZ)=0$.
 \end{itemize}
 
 This induces the exact sequence:
 $$\cdots \to H^1(V,\mathcal{O}_V)\to H^1(V,\mathcal{O}_V^\times)\to H^2(V,\ZZ)\to \cdots$$
-First term is trivial by the $\overline{\partial}$-Poincare lemma, and last term is trivial by $H^2(V,\ZZ)=0$. Therefore, the middle is also trivial. 
+First term is trivial by the $\overline{\partial}$-Poincare lemma, and last term is trivial by $H^2(V,\ZZ)=0$. Therefore, $H^1(V,\mathcal{O}_V^\times)$ is also trivial. So, all line bundles on $V$ are trivial. 
+\end{proof}
 
-Corollary:
+
+
+\begin{corollary}
+The above exact sequence gives an isomorphism
 $\Pic(X):=H^1(X,\mathcal{O}_X^\times)\isom H^1(\Omega,H^0(V,\mathcal{O}_V^\times))$.
+\end{corollary}
 
-Griffiths-Harris? [fix]
+The proof can be found in Griffiths-Harris. [farbod add reference]
 
-Next time: next goal: Appell-Humbert (Lefschetz)
+\subsection{Next time} We will talk about the exponential exact sequence, and generalize to $X$. We will then get a similar long exact sequence, but here $H^2(X,\ZZ)$ is nontrivial, and the map $H^1(X,\mathcal{O}_X^\times)\to H^2(X,\ZZ)$ is extremely important! Our next goal is the Appell-Humbert theorem, which is actually due to Lefschetz.

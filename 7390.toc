@@ -22,4 +22,5 @@
 \contentsline {subsubsection}{\numberline {2.14.1}Line bundles}{17}{subsubsection.2.14.1}
 \contentsline {subsubsection}{\numberline {2.14.2}Choices}{17}{subsubsection.2.14.2}
 \contentsline {subsubsection}{\numberline {2.14.3}Line bundles vs ``factors of automorphy''}{17}{subsubsection.2.14.3}
-\contentsline {section}{\numberline {3}Lecture: Feb 18, 2016}{18}{section.3}
+\contentsline {subsection}{\numberline {2.15}Global sections of $H^0(X,L)$}{20}{subsection.2.15}
+\contentsline {subsection}{\numberline {2.16}Next time}{20}{subsection.2.16}
