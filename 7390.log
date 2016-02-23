@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.6.30)  20 FEB 2016 01:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.6.30)  23 FEB 2016 14:12
 entering extended mode
 **7390.tex
 (7390.tex
@@ -831,7 +831,16 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 13.
 
 
-LaTeX Warning: Reference `section:TTT' on page 2 undefined on input line 15.
+LaTeX Warning: Reference `Chapters/appendix' on page 2 undefined on input line 
+13.
+
+
+LaTeX Warning: Reference `Chapters/appendix' on page 2 undefined on input line 
+14.
+
+
+LaTeX Warning: Reference `Chapters/appendix' on page 2 undefined on input line 
+15.
 
 
 LaTeX Warning: Reference `section:TTT' on page 2 undefined on input line 16.
@@ -942,13 +951,24 @@ r/m/n/10 (-20) .
 
 Package hyperref Info: bookmark level for unknown proposition defaults to 0 on 
 input line 580.
-) [20] (7390.bbl
+[20]
+Overfull \hbox (0.4996pt too wide) in paragraph at lines 646--647
+[]\OT1/cmr/m/n/10 (-20) Recall that $\OML/cmm/m/it/10 H[]\OT1/cmr/m/n/10 (-20) 
+(\OML/cmm/m/it/10 X; \U/msb/m/n/10 Z\OT1/cmr/m/n/10 (-20) ) \OMS/cmsy/m/n/10 ' 
+\OML/cmm/m/it/10 H[]\OT1/cmr/m/n/10 (-20) (\OML/cmm/m/it/10 X; \U/msb/m/n/10 Z\
+OT1/cmr/m/n/10 (-20) ) [] \OML/cmm/m/it/10 H[]\OT1/cmr/m/n/10 (-20) (\OML/cmm/m
+/it/10 X; \U/msb/m/n/10 Z\OT1/cmr/m/n/10 (-20) ) \OMS/cmsy/m/n/10 ' []\OT1/cmr/
+m/n/10 (-20) (\OML/cmm/m/it/10 ; \U/msb/m/n/10 Z\OT1/cmr/m/n/10 (-20) ) [] [](
+\OML/cmm/m/it/10 ; \U/msb/m/n/10 Z\OT1/cmr/m/n/10 (-20) )$ which
+ []
+
+[21]) [22] (Chapters/appendix.tex) [23] (7390.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 68--68
 []\OT1/cmr/m/n/8 (+20) James S. Milne, \OT1/cmr/m/it/8 (+20) Abelian va-ri-etie
 s (v2.00)\OT1/cmr/m/n/8 (+20) , 2008. Avail-able at
  []
 
-) [21]
+) [24]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 79.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 79.
  (7390.aux)
@@ -958,16 +978,19 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 79.
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 79.
  ) 
 Here is how much of TeX's memory you used:
- 21067 strings out of 493671
- 391108 string characters out of 3141417
- 489617 words of memory out of 3000000
- 23664 multiletter control sequences out of 15000+200000
- 26376 words of font info for 158 fonts, out of 3000000 for 9000
+ 21101 strings out of 493671
+ 391576 string characters out of 3141417
+ 489618 words of memory out of 3000000
+ 23673 multiletter control sequences out of 15000+200000
+ 26484 words of font info for 159 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 61i,15n,84p,948b,659s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 61i,15n,84p,948b,661s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/
@@ -992,10 +1015,11 @@ amsfonts/cm/cmti8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/ams
 fonts/euler/eufm10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/am
 sfonts/symbols/msam10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public
 /amsfonts/symbols/msbm10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/symbols/msbm7.pfb>
-Output written on 7390.pdf (21 pages, 440525 bytes).
+lic/amsfonts/symbols/msbm7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/p
+ublic/hoekwater/stmary10.pfb>
+Output written on 7390.pdf (24 pages, 466370 bytes).
 PDF statistics:
- 514 PDF objects out of 1000 (max. 8388607)
- 159 named destinations out of 1000 (max. 500000)
- 20701 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 570 PDF objects out of 1000 (max. 8388607)
+ 180 named destinations out of 1000 (max. 500000)
+ 20749 words of extra memory for PDF output out of 24883 (max. 10000000)
 

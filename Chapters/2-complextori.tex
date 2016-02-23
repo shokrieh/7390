@@ -605,4 +605,92 @@ $\Pic(X):=H^1(X,\mathcal{O}_X^\times)\isom H^1(\Omega,H^0(V,\mathcal{O}_V^\times
 
 The proof can be found in Griffiths-Harris. [farbod add reference]
 
-\subsection{Next time} We will talk about the exponential exact sequence, and generalize to $X$. We will then get a similar long exact sequence, but here $H^2(X,\ZZ)$ is nontrivial, and the map $H^1(X,\mathcal{O}_X^\times)\to H^2(X,\ZZ)$ is extremely important! Our next goal is the Appell-Humbert theorem, which is actually due to Lefschetz.
+
+
+\subsection{The exponential sequence and the first Chern class}
+
+In this section, we will talk about the exponential exact sequence, and generalize to $X$. We will then get a similar long exact sequence, but here $H^2(X,\ZZ)$ is nontrivial, and the map $H^1(X,\mathcal{O}_X^\times)\to H^2(X,\ZZ)$ is extremely important! Our next goal is the Appell-Humbert theorem, which is actually due to Lefschetz.
+
+On any complex manifold $(X,\mathcal{O}_X)$, the sequence of sheaves 
+$$0\to \underline{\ZZ}\to \mathcal{O}_X\overset{exp}{\to} \mathcal{O}_X^\times \to 1$$
+is exact, where the map $exp:\mathcal{O}_X\to \mathcal{O}_X^\times$ is the exponential map, given on open sets by  
+$exp(U):\mathcal{O}_X(U)\to \mathcal{O}_X^\times(U)$ by 
+$$f\mapsto e^{2\pi i f}.$$
+It is easy to check that this map is holomorphic  with multiplicative inverse $e^{-2\pi i f}$. 
+
+
+Exactness of the sequence 
+$$0\to \underline{\ZZ}\to \mathcal{O}_X\to \mathcal{O}_X^\times$$
+is straightforward; the kernel of $exp:\mathcal{X}(U)\to \mathcal{O}_X^\times(U)$ are the locally constant $\ZZ$-valued functions, which are $\underline{\ZZ}(U)$. What about the surjectivity of $\mathcal{O}_X\to \mathcal{O}_X^\times$? This asks about the existence of logarithms. Well, taking complex logarithms are not always ``globally'' possible! However, they are ``locally'' possible; for any $f\in \mathcal{O}_X^\times(U)$ and any $x\in U$, we can find a contractible neighborhood $V$ of $x$ with $V\subset U$, and then $res_V(f)$ does have a logarithm. So $\mathcal{O}_X(U)\to \mathcal{O}_X^\times (U)$ is surjective for small enough $U$, and this is enough for the sheaf map $\mathcal{O_X}\to \mathcal{O}_X^\times$ to be considered surjective (the cokernel is a presheaf which sheafifies to $0$).
+For example, $z\in \mathcal{O}^\times(\CC-\{0\})$ has logarithm if you restrict to a small enough open set. 
+
+So now we have the long exact sequence that measures the failure of surjectivity of the exponential function, which will give us 
+$$0\to H^0(X,\underline{\ZZ})\to H^0(X,\mathcal{O}_X)\to H^0(X,\mathcal{O}_X^\times)\to H^1(X,\underline{\ZZ})\to \cdots$$
+
+so surjectivity of the global exponential map is controlled by $H^1(X,\underline{\ZZ})$, a ``generalized winding number''. Continuing we get
+
+$$\cdots\to H^1(X,\mathcal{O}_X)\to H^1(X,\mathcal{O}_X^\times) \to H^2(X,\ZZ)\to H^2(X,\mathcal{O}_X)\to \cdots$$
+and beyond this we won't really care.
+
+\subsubsection{The first Chern class}
+Note that $\Pic(X)=H^1(X,\mathcal{O}_X^\times)$ and $H^1(X,\mathcal{O}_X^\times) \to H^2(X,\ZZ)$ in the above sequence is called the \textbf{first chern class map}, denoted by $c_1$. Also, $Im(c_1)$ is called the \textbf{N\'{e}ron-Severi group} of $X$, denoted by $NS(X)$. 
+
+Remark: We can thus write this as $NS(X)\isom \Pic(X)/\Pic^0(X)$ where $\Pic^0(X)$ is the subgroup of $\Pic(X)$ consisting of line bundles $L$ with $c_1(L)=0$. This is just rephrasing the definition above, but we can also prove that $\Pic^0(X)$ is equal to the connected component of of the origin in $\Pic(X)$.
+
+\begin{theorem}[Severi, N\'{e}ron]
+$NS(X)$ is always a finitely generated abelian group.
+\end{theorem}
+
+Severi proved the theorem for $k=\CC$ and N\'{e}ron proved for more general fields, but we are not going to make that precise. We define $\rho(X)$ to be the rank of $NS(X)$, which is the \textbf{Picard number} of $X$. We will see that $\rho(X)\leq h^{1,1}(X)=g^2$. 
+
+Recall that $H^2(X,\ZZ)\isom H^1(X,\ZZ)\bigwedge H^1(X,\ZZ)\isom \Hom(\Lambda,\ZZ)\bigwedge \Hom(\Lambda,\ZZ)$ which we are going to denote by $\text{Alt}^2(\Lambda,\ZZ)$. Note that $\text{Alt}^2(\Lambda,\ZZ)$ contains $\ZZ$-valued bilinear alternating $2$-forms. 
+
+\subsection{First Chern class for complex tori}
+When $X=V/\Lambda$ ($V\isom \CC^g$) is a complex torus, the exponential sequence gives 
+$$H^0(V,\mathcal{O}_V)\to H^0(V,\mathcal{O}_V^\times)\to 0$$
+because $H^1(V,\underline{\ZZ})=0$. So any non-vanishing global form $f$ is $e^{2\pi i g} $ for some $g\in \mathcal{O}_V$. Recall that $H^1(\Lambda,H^0(V,\mathcal{O}_V^\times))\isom H^1(X,\mathcal{O}_X^\times)$. So given $L$, one has a factor of automorphy $(f:\Lambda\times V\to \CC^\times)\in Z^1(\Lambda,H^0(V,\mathcal{O}_V^\times))$. We assume $f=e^{2\pi i g}$ for $g:\Lambda \times V\to \CC$. 
+
+\begin{theorem}
+With the canonical isomorphism discussed before, we have 
+$$c_1(L)=E_L(\cdot,\cdot)$$
+where
+$$E_L(\lambda,\mu)=g(\mu,v+\lambda)+g(\lambda,v)-g(\lambda,v+\mu)-g(\mu, v)$$
+for $\lambda,\mu\in \Lambda$ and $v\in V$.
+\end{theorem}
+
+It is a good exercise to show that 
+\begin{itemize}
+\item $E_L$ is independent of $v$. (Using the fact that $f\in Z^1$.)
+\item $E_L$ is an alternating $2$-form, $\ZZ$-valued and also bilinear. 
+\end{itemize}
+ 
+
+\begin{theorem}
+For any $E:V\times V\to \RR$ which is an alternating $\RR$-valued bilinear form on $H^2(X,\RR)$, the following are equivalent:
+\begin{enumerate}
+\item $E=c_1(L)$ for some $L\in \Pic(X)$.
+\item $E(\Lambda,\Lambda)\subset \ZZ$ and $E(iv,iw)=E(v,w)$ for $i\in V$.
+\end{enumerate}
+\end{theorem}
+
+These two theorems turn out to be very useful! We will skip the proofs for now. 
+
+It is an easy fact from Linear Algebra that there is a one-to-to correspondence between Hermitian forms $H$ on $V$ ($H:V\times V\to \CC$ such that $H(v,w)=\overline{H(w,v)}$ for all $w,v\in CC$) and the set of alternating bilinear forms $E:V\times V\to \RR$ satisfying $E(iv,iw)=E(v,w)$ for all $i\in V$. In fact, the correspondence maps are explicitly given by 
+$H\mapsto Im(H)$
+and 
+$E\mapsfrom E(iv,w)+iE(v,w)$. 
+
+\begin{corollary}
+$NS(X)$ is exactly the set of alternating bilinear forms $E: V\times V\to \RR$ such that $E(\Lambda,\Lambda)\subset \ZZ$ and $E(iv,iw)=E(v,w)$ for all $v,w,i\in V$. By the above correspondence, $NS(X)$ also equals the set of Hermitian forms $H:V\times V\to \CC$ such that $Im H(\Lambda,\Lambda)\subset \ZZ$. 
+\end{corollary}
+
+
+\subsection{Next time}
+Our next goal is to show that the exact sequence 
+$$0\to \Pic^0(X)\to \Pic(X)\to NS(X)\to 0$$
+is essentially
+$$0\to \Hom(\Lambda,\CC_1)\to P(\Lambda)\to NS(X)\to 0$$
+where $\CC_1=\{z\in \CC:\ |z|=1\}$. This is due to Appell-Humbert (Lefschetz). [fix: what is lefschetz and what is $P(\Lambda)$?] 
+
+
+

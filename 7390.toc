@@ -23,4 +23,10 @@
 \contentsline {subsubsection}{\numberline {2.14.2}Choices}{17}{subsubsection.2.14.2}
 \contentsline {subsubsection}{\numberline {2.14.3}Line bundles vs ``factors of automorphy''}{17}{subsubsection.2.14.3}
 \contentsline {subsection}{\numberline {2.15}Global sections of $H^0(X,L)$}{20}{subsection.2.15}
-\contentsline {subsection}{\numberline {2.16}Next time}{20}{subsection.2.16}
+\contentsline {subsection}{\numberline {2.16}The exponential sequence and the first Chern class}{20}{subsection.2.16}
+\contentsline {subsubsection}{\numberline {2.16.1}The first Chern class}{21}{subsubsection.2.16.1}
+\contentsline {subsection}{\numberline {2.17}First Chern class for complex tori}{22}{subsection.2.17}
+\contentsline {subsection}{\numberline {2.18}Next time}{22}{subsection.2.18}
+\contentsline {section}{\numberline {3}Appendix}{23}{section.3}
+\contentsline {subsection}{\numberline {3.1}Poincar\'{e} lemma, De Rham cohomology, Dolbeault cohomology}{23}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Classical Poincar\'{e} lemma}{23}{subsubsection.3.1.1}
