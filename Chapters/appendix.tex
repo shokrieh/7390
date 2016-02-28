@@ -43,18 +43,18 @@ This shows that $0\rightarrow\underline{\mathbb{R}}\xrightarrow{d}\Omega^0\xrigh
 Use the complex structure one can have splitting $T^*_p={T^*}'_p+{T^*}{''}_p$, where ${T^*}'$ is spanned by $dz_j$ and ${T^*}{''}$ is spanned by $\overline{dz_j}$. This gives spitting $\bigwedge^nT^*_p=\bigoplus_{p+q=n}\bigwedge^p({T^*}')\otimes \bigwedge^q({T^*}{''})$. A smooth section of $\bigwedge^p({T^*}')\otimes \bigwedge^q({T^*}{''})=\Omega^{p,q}$ is called a $(p,q)$-form. The set of smooth $(p,q)$ forms can be denoted by $A^{p,q}(M)$, $\Omega^{p,q}(M)$, $\Gamma(\Omega^{p,q},M)$ or $H^0(M,\Omega^{p,q})$. The decomposition of $\Omega^n$ induces a decomposition $d=\partial+\overline{\partial}$, where $\partial: \Omega^{p,q}\rightarrow\Omega^{p+1,q}$, $\overline{\partial}:\Omega^{p,q}\rightarrow\Omega^{p,q+1}$. By writing them down in local coordinates one can check $\overline{\partial}^2=0$, hence there is a chain complex:
 $$0\rightarrow\Omega^{p,0}\xrightarrow{\partial}\Omega^{p,1}\xrightarrow{\partial}\Omega^{p,2}\dots$$
 Its cohomology is denoted as $H^{p,*}_\partial(M)$. 
-The $\overline{\partial}$-Poincar\'e lemma says that on a polydisc $D$, $H^{p,q}_\partial(D)=0$ when $q\geq 1$. Hence, let $\Omega^p_{hol}$ be the sheaf of holomorphic $p$-forms, then $0\rightarrow\Omega^p_{hol}\xhookrightarrow{}\Omega^{p,0}\xrightarrow{\overline{\partial}}\dots$ is exact, therefore we have $H^{p,q}_{\overline{\partial}}=H^q(M,\Omega^p_{hol})$. \\
+The $\overline{\partial}$-Poincar\'e lemma says that on a polydisc $D$, $H^{p,q}_\partial(D)=0$ when $q\geq 1$. Hence, let $\Omega^p_{hol}$ be the sheaf of holomorphic $p$-forms, then $0 \rightarrow\Omega^p_{\rm hol} \xhookrightarrow{}\Omega^{p,0} \xrightarrow{\overline{\partial}}\dots$ is exact, therefore we have $H^{p,q}_{\overline{\partial}}=H^q(M,\Omega^p_{hol})$. \\
 
 \begin{example}
 When $q\geq\dim(M)$, $H^{0,q}(M)=H^q(M,\mathcal{O}_M)=0$. When $q\geq 1$, $H^q(\mathbb{C}^n,\mathcal{O})=0$. When $D$ is a polydisc in $\mathbb{C}^n$, $H^{p,0}(D)=H^0(D,\mathcal{O}_D)\oplus\wedge^p\mathbb{C}^n$. 	
 \end{example}
 
 \subsection{Hodge decomposition}
-The decomposition on complex tori can be described as follows: let $X=V/\Lambda$ be a complex torus, $e_1,\dots e_g$ is a complex bases of $V$ and the corresponding coordinate functions are $v_1,\dots v_g$. Then $H^n(X)=IF^n(X)=\bigwedge^n span\{dv_j,\overline{dv_j}\}=\bigoplus_{p+q=n}IF^{p,q}(X)$, where $IF^{p,q}$ is formed by the $\wedge$ of $p$ $dv_j$ and $q$ $\overline{dv_j}$.\\
+The decomposition on complex tori can be described as follows: let $X=V/\Lambda$ be a complex torus, $e_1,\dots e_g$ is a complex bases of $V$ and the corresponding coordinate functions are $v_1,\dots v_g$. Then $H^n(X)=IF^n(X)=\bigwedge^n span\{dv_j,d\overline{v}_j\}=\bigoplus_{p+q=n}IF^{p,q}(X)$, where $IF^{p,q}$ is formed by the $\wedge$ of $p$ $dv_j$ and $q$ $d\overline{v}_j$.\\
  
 In general, we have: 
 \begin{theorem}
-	If $X$ is a compact complex manifold with a Euclidean, or K\"ahler metric (e.g. smooth complex projective varieties), then $H^n(M)=\bigoplus_{p+q=n}H^{p,q}$, and $H^{p,q}=\overline{H^{q,p}}$.
+	If $X$ is a compact complex manifold with a Euclidean, or K\"ahler metric (e.g. smooth complex projective varieties), then $H^n(M , \CC)=\bigoplus_{p+q=n}H^{p,q}(M)$, and $H^{p,q}=\overline{H^{q,p}}$.
 \end{theorem}
 
 	 
