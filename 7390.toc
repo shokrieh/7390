@@ -28,8 +28,7 @@
 \contentsline {subsection}{\numberline {2.17}First Chern class for complex tori}{23}{subsection.2.17}
 \contentsline {subsection}{\numberline {2.18}Next time}{23}{subsection.2.18}
 \contentsline {section}{\numberline {3}Appendix}{24}{section.3}
-\contentsline {subsection}{\numberline {3.1}Poincar\'{e} lemma, De Rham cohomology, Dolbeault cohomology}{24}{subsection.3.1}
-\contentsline {subsubsection}{\numberline {3.1.1}Classical Poincar\'{e} lemma}{24}{subsubsection.3.1.1}
-\contentsline {subsection}{\numberline {3.2}de Rham cohomology}{24}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Dolbeault cohomology}{25}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Hodge decomposition}{25}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.1}Poincar\'{e} lemmas, De Rham cohomology, Dolbeault cohomology}{24}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Classical Poincar\'{e} lemma and De Rham cohomology}{24}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.5}$\overline {\partial }$ Dolbeault cohomology}{25}{subsubsection.3.1.5}
+\contentsline {subsection}{\numberline {3.2}Hodge decomposition}{26}{subsection.3.2}
