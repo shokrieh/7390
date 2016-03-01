@@ -685,12 +685,82 @@ $NS(X)$ is exactly the set of alternating bilinear forms $E: V\times V\to \RR$ s
 \end{corollary}
 
 
-\subsection{Next time}
-Our next goal is to show that the exact sequence 
-$$0\to \Pic^0(X)\to \Pic(X)\to NS(X)\to 0$$
-is essentially
-$$0\to \Hom(\Lambda,\CC_1)\to P(\Lambda)\to NS(X)\to 0$$
-where $\CC_1=\{z\in \CC:\ |z|=1\}$. This is due to Appell-Humbert (Lefschetz). [fix: what is lefschetz and what is $P(\Lambda)$?] 
+\subsection{Appell-Humbert Theorem}
 
+In this section we are going to see an explicit description of $NS(X),\Pic(X),\Pic^0(X)$ for $X=V/\Lambda$ a complex torus. Recall that we had an explicit description of $NS(X)$ already: it corresponds to the set of Hermitian forms $H:V\times V\to \CC$ with $Im(\Lambda,\Lambda)\subset \ZZ$. Define $\Pic^0(X)$ to be the collection of line bundles such that the first chern group on them are trivial. That is, 
+$$\Pic^0(X)=\ker(\Pic(X)\overline{c_1}{\to} H^2(X,\ZZ)).$$
+So, we have the following short exact sequence:
+$$0\to \Pic^0(X)\to \Pic(X)\to NS(X)\to 0$$
+
+The Appell-Humbert theorem is going to give another (more explicit) short exact sequence that is isomorphic to the one above. 
+
+
+Let $T_1=\{z\in \CC^\times: |z|=1\}$ be the unit circle in $\CC$. Given a Hermitian form $H$ in $NS(X)$, a character $\chi:\Lambda\to T_1$ is called a \textbf{semi-character} for $H$ if for all $\lambda,\mu\in \Lambda$, we have
+$$\chi(\lambda+\mu)=\chi(\lambda)\chi(\mu)e^{\pi i Im H(\lambda\mu)}.$$
+
+Let $P(\Lambda)$ be the set of $(H,\chi)$ with $H\in NS(X)$ such that $\chi$ is a semi-character for $H$.
+
+Remarks: Note that when $H=0$, this is just a usual character. Also, $P(\Lambda)$ is a group under
+$$(H_1,\chi_1)\circ (H_2,\chi_2):=(H_1+H_2,\chi_1\chi_2).$$
+
+Note that we have the following exact sequence:
+$$0\to \Hom(\Lambda,T_1)\to P(\Lambda)\to NS(X)$$
+where the second map is given by $x\mapsto (0,x)$ and third map by $(H,\chi)\mapsto H$. And therefore we have a map $P(\Lambda)\to \Pic(X)\isom H^1(\Lambda,M)$ (where $M=H^0(V,\mathcal{O}^\times_V)$) given by
+$$(H,\chi)\mapsto a_{(H,\chi)}(\cdot,\cdot)+B^1(\Lambda,M)$$
+where $a_{(H,\chi)}(\lambda,v):=\chi(\lambda)e^{(\pi H(\lambda,v)+\pi/2 H(v,v))}$. It is easy to check that 
+$$a_{(H,\chi)}(\lambda,\mu,v)=a_{(H,\chi)}(\lambda,\mu+v)a_{(H,\chi)}(\mu,v).$$ 
+This gives us an isomorphism 
+$$L(H,\chi)\isom \frac{V\times \CC}{\Lambda}$$
+where $\Lambda$ acts as $\lambda\circ (v,t)=(v+\lambda,a(\lambda,v)t)$. We have the following facts:
+
+\begin{enumerate}
+\item $P(\Lambda)\to \Pic(X)$ is a group homomorphism. (Easy to prove.)
+\item The map given by composing $P(\Lambda)\to \Pic(X) \overset{c_1}{\to} NS(X)$ is the same as the ``forget $\chi$'' map. In particular, the map $\alpha:P(\Lambda)\to NS(X)$ defined by $(H,\chi)\mapsto H$ is surjective (since $c_1$ is). 
+\end{enumerate}
+
+By these facts, we hence have the following theorem.
+
+\begin{theorem}
+The following is a commutative diagram of short exact sequences:
+\[
+\xymatrix{
+0 \ar[r] &\Hom(\Lambda,T_1) \ar[r] \ar[d]^{\alpha'} &P(\Lambda) \ar[r] \ar[d]^{\alpha} &NS(X) \ar[r] \ar[d]^= &0\\
+0 \ar[r] &\Pic^0(X) \ar[r] &\Pic(X) \ar[r] &NS(X) \ar[r] &0
+}
+\]
+where $\alpha'$ is the restriction of $\alpha$ to $\Hom(\Lambda,T_1)$. 
+\end{theorem}
+
+Once we have shown that $\alpha'$ is an isomorphism in the proof, we will have a very explicit way to talk about $\Pic(X)$ - not only have we parametrized line bundles by $(H,\chi)$, such a pair even leads to a distinguished cocycle in the cohomology class to work with.
+
+
+\begin{proof}
+We already knew that the right-hand square in the above diagram commutes, and this implies that $\alpha'$ restricts to what we want (and the left-hand square commutes arbitrarily). So we just need to show that $\alpha'$ and $\alpha$ are isomorphisms. It suffices to show that $\alpha'$ is an isomorphism, since then the five-lemma implies $\alpha$ is. 
+
+First, we start with a diagram
+
+\[
+\xymatrix{
+H^1(X,\ZZ) \ar[r] &H^1(X,\mathcal{O}_X) \ar[r] &H^1(X,\mathcal{O}_X^\times) \ar[d]^= \ar[r]^{c_1} &H^2(X,\ZZ)\\
+&H^1(X,\CC) \ar@{->>}[u] \ar[r]^\epsilon &H^1(X,\mathcal{O}_X^\times)}
+\]
+
+
+
+Here, the surjective map is actually a projection which comes from the folllowing: By the Hodge decomposition, we have $H^1(X,\CC)\isom H^{1,0}(X)\bigoplus H^{0,1}(X)$ for which by the Dolbeault cohomology is isomorphic to $H^0(X,\Omega_X)\bigoplus H^1(X,\mathcal{O}_X)$. So we have a projection from $H^1(X,\CC)\surjects H^1(X,\mathcal{O}_X)$. 
+
+Next, by taking the sheaf map $\underline{\CC}^\times \to \mathcal{O}_X^\times$ which takes a locally constant function $f$ to the locally constant nonvanishing function $\exp(2\pi if)$; this induces a map $\epsilon: H^1(X,\underline{\CC})\to H^1(X,\mathcal{O}_X^\times)$ on cohomology. 
+
+To see that the diagram commutes, note that since $\Pic^0(X)$ is the image of $\epsilon: H^1(X,\CC)\to H^1(X,\mathcal{O}_X^\times) \isom H^1(\Lambda,M))$, every element $L\in \Pic^0(X)$ is represented by a $1$-cech cocycle (that is, an element of $Z^1(X,\mathcal{O}_X^\times)$) with constant coefficients. Therefore, $H^1(X,\CC)\to H^1(X,\mathcal{O}_X^\times$ implies that the corresponding class in $H^1(\Lambda,M)$ is represented by a factor of automorphy (an element of $Z^1(\Lambda,M)$) with constant coefficients, that is, $f(\lambda,v)$ is independent of $v$. 
+
+We claim that $\alpha'$ is surjective. Let $L\in \Pic^0(X)$ with $f\in Z^1(\Lambda,M)$ with ``constant coefficient'' (i.e. $f(\lambda,v)$ is independent of $v$). Then we have
+$$f(\lambda+\mu,\tilde{x})=f(\lambda,\mu+\tilde{x})f(\mu,\tilde{x}).$$
+So $f$ gives a homomorphism $f:\Lambda\to \CC^\times$. Define $g$ by $f=e^{2\pi i g}$, then obviously we have
+$$g(\lambda+\mu)=g(\lambda)+g(\mu) \pmod{\ZZ}.$$
+Therefore, $Im(g):\Lambda\to \RR$ is a homomorphism, which induces a linear map $Im(g):V\to \RR$. Define $\ell: V\to \CC$ by $v\mapsto Im(g)(iv)+iIm(g)(v)$. Then $e^{2\pi i \ell(v)}\in H^0(V,\mathcal{O}_V^\times)$ for all $v\in V$. Therefore we have 
+$$X_L(\lambda,v)=f(\lambda) \cdot e^{2\pi i \ell(v)-2\pi i \ell(v+\lambda)}.$$
+Next time we will check that $\lambda_L\in \Hom(\Lambda,T_1)$ is independent of $v$ and has values in $T_1$ and therefore $f$ is in $Z^1(M,\Lambda)$ and so $\alpha'$ is a surjection. 
+
+\end{proof}
 
 

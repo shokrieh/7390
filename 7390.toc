@@ -26,9 +26,9 @@
 \contentsline {subsection}{\numberline {2.16}The exponential sequence and the first Chern class}{21}{subsection.2.16}
 \contentsline {subsubsection}{\numberline {2.16.1}The first Chern class}{22}{subsubsection.2.16.1}
 \contentsline {subsection}{\numberline {2.17}First Chern class for complex tori}{23}{subsection.2.17}
-\contentsline {subsection}{\numberline {2.18}Next time}{23}{subsection.2.18}
-\contentsline {section}{\numberline {3}Appendix}{24}{section.3}
-\contentsline {subsection}{\numberline {3.1}Poincar\'{e} lemmas, De Rham cohomology, Dolbeault cohomology}{24}{subsection.3.1}
-\contentsline {subsubsection}{\numberline {3.1.1}Classical Poincar\'{e} lemma and De Rham cohomology}{24}{subsubsection.3.1.1}
-\contentsline {subsubsection}{\numberline {3.1.5}$\overline {\partial }$ Dolbeault cohomology}{25}{subsubsection.3.1.5}
-\contentsline {subsection}{\numberline {3.2}Hodge decomposition}{26}{subsection.3.2}
+\contentsline {subsection}{\numberline {2.18}Appell-Humbert Theorem}{23}{subsection.2.18}
+\contentsline {section}{\numberline {3}Appendix}{26}{section.3}
+\contentsline {subsection}{\numberline {3.1}Poincar\'{e} lemmas, De Rham cohomology, Dolbeault cohomology}{26}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Classical Poincar\'{e} lemma and De Rham cohomology}{26}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.5}$\overline {\partial }$ Dolbeault cohomology}{27}{subsubsection.3.1.5}
+\contentsline {subsection}{\numberline {3.2}Hodge decomposition}{28}{subsection.3.2}
