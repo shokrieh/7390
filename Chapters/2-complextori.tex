@@ -758,9 +758,139 @@ $$f(\lambda+\mu,\tilde{x})=f(\lambda,\mu+\tilde{x})f(\mu,\tilde{x}).$$
 So $f$ gives a homomorphism $f:\Lambda\to \CC^\times$. Define $g$ by $f=e^{2\pi i g}$, then obviously we have
 $$g(\lambda+\mu)=g(\lambda)+g(\mu) \pmod{\ZZ}.$$
 Therefore, $Im(g):\Lambda\to \RR$ is a homomorphism, which induces a linear map $Im(g):V\to \RR$. Define $\ell: V\to \CC$ by $v\mapsto Im(g)(iv)+iIm(g)(v)$. Then $e^{2\pi i \ell(v)}\in H^0(V,\mathcal{O}_V^\times)$ for all $v\in V$. Therefore we have 
-$$X_L(\lambda,v)=f(\lambda) \cdot e^{2\pi i \ell(v)-2\pi i \ell(v+\lambda)}.$$
-Next time we will check that $\lambda_L\in \Hom(\Lambda,T_1)$ is independent of $v$ and has values in $T_1$ and therefore $f$ is in $Z^1(M,\Lambda)$ and so $\alpha'$ is a surjection. 
+$$\chi_L(\lambda,v)=f(\lambda) \cdot e^{2\pi i \ell(v)-2\pi i \ell(v+\lambda)}.$$
+is in $Z^1(\Lambda,M)$, that is, a $1$-coboundary. But now $\chi_L\in \Hom(\Lambda,T_1)$. To check this, 
+$$\chi_L(\lambda,v)=e^{2\pi i g(\lambda)-2\pi i \ell(v)}=e^{2\pi i (Re g(\lambda)-Im g(i\lambda))}\in T_1$$
+as $Re g(\lambda)-Im g(i\lambda)\in \RR$. Moreover, this last expression is independent of $v$. Therefore, $f$ and $e^{2\pi i \ell(\cdot)}$ are homomorphisms and hence $\chi_L$ is also a homomorphism.
+
+To show that $\alpha'$ is injective, 
+suppose $\chi_1$ and $\chi_2$ both give $L\in \Pic(X)$, then we can write
+$$\chi_1(\lambda)=\chi_2(\lambda)\cdot \frac{h(\lambda+v)}{h(v)}$$
+where $\frac{h(\lambda+v)}{h(v)}$ is a $1$-coboundary. Since $|\chi_1|=|\chi_2|=1$,, we have $|h(\lambda+v)|=|h(v)|$ for all $v,\lambda$. Hence $h$ is bounded. By the Liouville theorem $h$ is constant and so $\chi_1=\chi_2$. 
 
 \end{proof}
 
 
+\subsection{Canonical factors}
+Recall that in the proof of the Appell-Humbert Theorem, we expressed $\alpha$ as the map given by 
+$$(H,\chi)\mapsto a_{(H,\chi)} (\lambda,v)=\chi(\lambda)e^{\pi (H(\lambda,v)+1/2 H(\lambda,\lambda))}$$
+where $H=c_1(L)$. We define the \textbf{canonical factor} of $(H,\chi)$ to be $a_{(H,\chi)}$. In fact, most questions about line bundles boil down to explicit computations on these $a_{(H,\chi)}$! 
+
+First, let us see some basic properties:
+\begin{enumerate}
+\item $\chi(n\lambda)=\chi(\lambda)^n$ for all $\lambda$.
+\item $a_L(\lambda,v+w)=a_L(\lambda,v)e^{\pi H(w,\lambda)}$.
+\item $\frac{1}{a_L(\lambda,v)}=a_L(-\lambda,v)e^{-\pi H(\lambda,\lambda)}$. 
+\end{enumerate}
+
+\subsection{Behaviour of line bundles under holomorphic maps}
+Recall that holomorphic maps are given by compositions of translations and homomorphisms. 
+
+\begin{lemma}
+If $t_x:X\to X$ is given by $y\mapsto x+y$ and we also have a map $L=L(H,\chi)\to X$, 
+
+\[
+\xymatrix{
+L \ar@{.>}[r]^{t^*_x} \ar[d] & L \ar[d]\\
+X \ar[r]^{t_x} & X\\
+}
+\]
+
+
+then the pullback map is given by  
+$$t_x^* L(H,\chi)=L(H,\chi e^{2\pi i Im H(\tilde{x},\cdot)})$$
+where $\tilde{x}$ is a lift of $x$ to the universal cover $V$. 
+\end{lemma}
+
+
+\begin{lemma}
+If we have a map between complex tori $f:X'\to X$ where $X'=V'/\Lambda'$ and $X=V/\Lambda$. Suppose $L=L(H,\chi)\in \Pic(X)$, then 
+$$f^* L(H,\chi)=L(f^*_{an} H,f^*_{Int}\chi).$$
+\end{lemma}
+
+\begin{corollary}[Theorem of squares]
+For $v,w\in X$ and $L\in \Pic(X)$, we have $t^*_{v+w}L\isom t^*_v L\otimes t^*_wL \otimes L^{-1}$.
+\end{corollary}
+
+\begin{proof}
+For $L=L(H,\chi)$, we have $t^*_x L(H,\chi)=L(H,\chi e^{2\pi i Im(H(\lambda,v))})$.
+\end{proof}
+
+
+\begin{corollary}[Theorem of cubes for complex tori]
+Let $X_1,X_2,X_3$ be complex tori. Let $L$ be a line bundle on $X_1\times X_2\times X_3$.  If the restrictions of $L$ on $X_1\times X_2\times \{0\}, X_1\times \{0\}\times X_3$ and $\{0\}\times X_2\times X_3$ are trivial, then $L$ is also trivial on $X_1\times X_2\times X_3$.
+\end{corollary}
+
+Remark: the theorem of cubes works if $X_1,X_2,X_3$ are just complete varieties. Even more, Mumford p.55 [farbod reference] says the theorem still holds if one of them is just connected. 
+
+\begin{corollary}
+For $n\in \ZZ$, let $n_X:X\to X$ be the multiplication-by-$n$ map $x\mapsto nx$. If $L\in \Pic(X)$, then 
+$$n_X^*L = L^{\frac{n^2+n}{2}}\bigotimes (-1)^* L^{\frac{n^2-n}{2}}$$
+where $L^k$ is the tensor product $L\bigotimes \cdots \bigotimes L$ of $k$ copies of $L$.
+\end{corollary}
+
+\begin{proof}
+Write $L=L(H,\chi)$. Then 
+$$L^{\frac{n^2+n}{2}}\bigotimes (-1)^* L^{\frac{n^2-n}{2}}= L(\frac{n^2+n}{2}H + (-1)^* \frac{n^2-n}{2}H,\chi^{\frac{n^2+n}{2}}\times (-1)^*\chi ^{\frac{n^2-n}{2}}).$$
+Since $(-1)^* H(u,v)= H(-u,-v)=H(u,v)$ and $(-1)^*\chi(\lambda)=\chi(-\lambda)=\frac{1}{\chi(\lambda)}$, this is equal to 
+$$L(n^2H,\chi^n)=L(n^*H, n^*\chi(\cdot))=n^* L(H,\chi).$$
+\end{proof}
+
+A line bundle $L$ is called \textbf{symmetric} if $(-1)^*L=L$. 
+
+\begin{corollary}
+If $L$ is symmetric, then
+$n_X^* L = L^{n^2}$.
+\end{corollary}
+
+\begin{lemma}
+$L=L(H,\chi)$ is symmetric if and only if $\chi(\lambda)=\pm 1$ for all $\lambda\in \Lambda$. 
+\end{lemma}
+
+\begin{proof}
+Since $(-1)^* L(H,\chi)=L(H,\frac{1}{\chi})$, we have $\chi^2(\cdot )=1$.
+\end{proof}
+
+\subsection{Dual complex tori}
+Our goal of this section is to show that any complex torus $X=V/\Lambda$ has a dual $\hat{X}$ with functorial properties. Moreover, given $L\in \Pic(X)$, one has $\varphi_L:X\to \hat{X}$. We will also talk about $X\times \hat{X}$, Poincar\'{e} bundles and biextensions. 
+
+First of all, the Appell-Humbert theorem tells us that we have an isomorphism 
+$$\Hom(\Lambda,T_1)\isom \Pic^0(X).$$
+But in the case of complex tori, we have $\Hom(\Lambda,T_1)\isom \Hom(\ZZ^{2g},S^1)\isom (\RR/\ZZ)^{2g}$. Is $\Pic^0(X)$ naturally a complex torus? The answer is yes! This is because we have a canonical isomorphism $\Pic^0(X)\isomfrom \hat{X}$ from the dual complex torus. 
+
+Recall that the cotangent space at $\underline{0}$ is given by 
+$$\Omega=\Hom_\CC(V,\CC)=\{\ell:V\to \CC:\ \ell(av+bw)=a\ell(v)+b\ell(w),\ \forall a,b\in \CC, v,w\in V \}$$ where $V$ is the tangent space at $0$. We have a conjugate of $\Omega$ given by
+$$\overline{\Omega}=\Hom_{\overline{\CC}}(V,\CC)=\{\ell:V\to \CC:\ \ell(av+bw)=\overline{a}\ell(v)+\overline{b}\ell(w),\ \forall a,b\in \CC, v,w\in V \}.$$
+Then we claim that we have a functional 
+$$\overline{\Omega}\isomto \Hom_\RR(V,\RR).$$
+Note that $\Hom_\RR(V,\RR)\isom \RR^{2g}$.
+It is not hard to see that the inverse maps are given by $\ell \mapsto K=Im (\ell)$ and $\ell \mapsfrom K$ where $\ell(v):=-K(iv)+iK(v)$. It follows that 
+$$\langle \cdot, \cdot \rangle:\overline{\Omega}\times V\to \RR$$
+defined by 
+$$\langle \ell, v\rangle = Im \ell(v)$$
+is $\RR$-bilinear and is non-degenerate. 
+By non-degenerate, we mean
+\begin{itemize}
+\item If $\langle \ell,v\rangle=0$ for all $\ell$, then $v=0$; and
+\item If $\langle \ell,v\rangle=0$ for all $v$, then $\ell=0$.
+\end{itemize}
+
+
+Therefore, 
+$$\hat{\Lambda}:=\{\ell \in \overline{\Omega}:\ \langle \ell,\lambda\rangle\in \ZZ\ \forall \lambda\in \Lambda\}$$
+is a lattice (full rank, i.e. $\isom \ZZ^{2g}$) in $\overline{\Omega}$. We then define 
+$$\hat{X}=\hat{\Omega}/\hat{\Lambda}$$
+to be the \textbf{``dual''} of $X$. 
+\begin{theorem}
+There is a canonical isomorphism 
+$$\hat{X}\isomto \Pic^0(X)$$
+induced by $\overline{\Omega}\to \Hom(\Lambda,T_1)$ which maps $\ell\mapsto e^{2\pi i Im\ell (\cdot)}$ where $Im \ell(\cdot)=\langle \ell,\cdot\rangle$. 
+\end{theorem}
+
+\begin{proof}
+By non-degeneracy, the map is surjective. Also the kernel by definition is just $\hat{\Lambda}$. 
+\end{proof}
+
+\begin{corollary}
+$\Pic^0(X)=\hat{X}$ is a complex torus.
+\end{corollary}
