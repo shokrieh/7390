@@ -894,3 +894,149 @@ By non-degeneracy, the map is surjective. Also the kernel by definition is just 
 \begin{corollary}
 $\Pic^0(X)=\hat{X}$ is a complex torus.
 \end{corollary}
+
+\subsection{Basic functorial properties of $\hat{X}$}
+
+Here are some of the basic functorial properties of $\hat{X}$:
+
+\begin{enumerate}
+\item For $f:X_1\to X_2$ homomorphism with $f_{an}:V_1\to V_2$, then $f_{an}^*:\overline{\Omega_2}\to \overline{\Omega_1}$ satisfies 
+$$f_{an}^*(\hat{\Lambda}_2)\subset \hat{\Lambda}_1.$$
+So we get a homomorphism $\hat{f}:\hat{X_2}\to \hat{X_1}$. Moreover, 
+
+\[
+\xymatrix{
+\hat{X}_2 \ar[d]^{\hat{f}}\ar[r]^= &\Pic^0(X_2) \ar[d]^{f^*}\ar[r]^= & \Hom(\Lambda_2,T_1) \ar[d]^{f_{int}^*}\\
+\hat{X}_1 \ar[r]^= &\Pic^0(X_1) \ar[r]^= &\Hom(\Lambda_1,T_1)
+}
+\]
+commutes.
+
+\item If $f:X_1\to X_2, g:X_2\to X_3$ are homomorphisms, then 
+$$\widehat{g\circ f}=\hat{f}\circ \hat{g}.$$
+Also, $\hat{Id_X}= Id_{\hat{X}}$ with $\hat{\hat{X}}=X$ and hence $\hat{\hat{f}}=f$. 
+
+\end{enumerate}
+
+As a consequence, we see that $\hat{(\cdot)}$ is a contravariant functor on the category of complex tori.
+
+\begin{lemma}
+The functor $\hat{(\cdot)}$ is exact. That is, for all short exact sequences 
+$$0\to X_1 \to X_2 \to X_3 \to 0,$$
+we have 
+$$0\to \hat{X}_3\to \hat{X}_2 \to \hat{X}_1\to 0.$$
+
+\end{lemma} 
+
+\begin{proof}
+An easy application of the snake lemma gives us the short exact sequence
+$$0\to \Lambda_1\to \Lambda_2\to \Lambda_3\to 0.$$
+Since $\Lambda_3$ is a projective (free) $\ZZ$-module, we therefore have 
+$$0\to \Hom(\Lambda_3,T_1)\to \Hom(\Lambda_2,T_1)\to \Hom(\Lambda_1,T_1)\to 0.$$
+Lastly, $\Hom(\Lambda_i,T_1)\isom \Pic^0(X_i)\isom \hat{X_i}$.
+\end{proof}
+
+
+\subsection{Isogenies and duality}
+
+If $f:X_1\to X_2$ is an isogeny, what can we say about $\hat{f}$?
+
+\begin{proposition}
+Let $f:X_1\to X_2$ be an isogeny, with dual homomorphism $\hat{f}=\hat{X}_2\to \hat{X}_1$. Then 
+\begin{enumerate}[(a)]
+\item $\hat{f}$ is an isogeny.
+\item $\ker(\hat{f})=\Hom(\ker(f),T_1)$.
+\item $\deg(\hat{f})=\deg(f)$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}[Sketch of proof]
+We have $\ker(\hat{f})\isom \ker(\Hom(\Lambda_2,T_1)\overset{f_{int}^*}{\to}) \Hom(\Lambda_1,T_1)\isom \ker(\Hom(\Lambda_2/ f_{int}^*(\Lambda_1)),T_1)$. But $\Lambda_2/f_{int}^*(\Lambda_1)\isom \ker(f)$.
+\end{proof}
+
+\subsection{Line bundels v.s. duality}
+
+Do line bundles descend under isogeny? 
+
+\begin{proposition}
+Suppose $f:X_1\to X_2$ is an isogeny. Let $L\in \Pic(X_1)$. As before, we write $L=L(h,\chi)$. The following are equivalent:
+\begin{enumerate}
+\item $L=f^* M$ for some $M\in \Pic(X_2)$.
+\item The image of $H(f_{an}^{-1}\Lambda_2, f_{an}^{-1} \Lambda_2)$ is contained in $\ZZ$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+First statement implies the second follows from the pull-back formula above. 
+Now, assume the image of $H(f_{an}^{-1}\Lambda_2, f_{an}^{-1} \Lambda_2)$ is contained in $\ZZ$, then $H_1:=(f_{an}^{-1})^* H\in NS(X_2)$. So there exists $\tilde{M}\in \Pic(X_2)$ with $c_1(\tilde{M})=H_1$. By the pull-back formula, $c_1(f^* \tilde{M})=H$. Then $c_1(L\bigotimes (f^* \tilde{M})^{-1})=0$. Since $\hat{f}:\Pic^0(X_2)\to \Pic^0(X_1)$ is surjective, there exists $N\in \Pic^0(X_2)$ such that $f^* N = L\bigotimes (f^* \tilde{M})^{-1}$. Now, $M=N\bigotimes \tilde{M}$ does the job!
+\end{proof}
+
+So far, what we have for duality is very basic. But in the next section, we will see something highly nontrivial. 
+
+\subsection{Line bundles and maps $X\to \tilde{X}$}
+Let $L\in \Pic(X)$. We write the map $\varphi_L:X\to \tilde{X}=\Pic^0(X)$ which is given by 
+$$x\mapsto t_x^* L\bigotimes L^{-1}.$$ 
+
+Here are some facts about this $\varphi_L$:
+
+\begin{enumerate}
+
+\item
+First of all, $\varphi_L$ is well defined, since $c_1(t_x^* L\bigotimes L^{-1})=0$.
+
+
+\item $\varphi_L$ is a group homomorphism. To see this, recall that
+by the theorem of squares, we have
+$$f_{x+y}^* L\bigotimes L^{-1}\isom t_x^*L \bigotimes L^{-1} \bigotimes t_y^*L\otimes L.$$
+
+
+\item $\varphi_L$ has the analytic representation $\varphi_H:V\to \overline{\Omega}$ given by 
+$$v\mapsto H(v,\cdot ).$$
+(This follows from the fact that $\varphi_L(x)=L(0,e^{2\pi i Im(H(v,\cdot))})$.)
+
+\item $\varphi_L$ only depends on $c_1(L)=H$.
+\item $\varphi_{L\bigotimes M}=\varphi_L + \varphi_M$.
+
+\item For any $L\in \Pic(X)$, the diagram 
+\[
+\xymatrix{
+X \ar[r]^{\varphi_L} &\hat{X} \ar[d]^{\hat{f}}\\
+Y \ar[u]^{f} \ar[r]_{\varphi_{f^*(L)}} & \hat{Y}\\
+}
+\]
+commutes. 
+
+\end{enumerate}
+
+\subsection{Kernel of $\varphi_L$}
+Define $K(L)$ to be $\ker(\varphi_L:X\to \tilde{X})$. Here are some basic properties of $K(L)$:
+\begin{enumerate}
+\item Let $\Lambda(L):=\{v\in V:\ Im(H(v,\lambda))\in \ZZ\ \forall \lambda\in \Lambda\}=\varphi_H^{-1}(\hat{\Lambda})$. Then 
+$$K(L)\isom \Lambda(L)/\Lambda.$$
+Note that hence $K(L)$ only depends on $H=c_1(L)$. 
+
+\item $K(L\bigotimes P)\isom K(L)$ for $P\in \Pic^0(X)$.
+\item $K(L)=X$ if $L\in \Pic^0(X)$.
+\item $K(L^n)=n_X^{-1} K(L)$
+where $L^n=L\bigotimes \cdots \bigotimes L$ ($n$-copies) and $n_X^{-1}$ is the inverse isogeny.
+
+\item $K(L)=n_X K(L^n)$ if $n\not= 0$. 
+\end{enumerate}
+
+For the last two facts, recall that for $L=L(H,\chi)$, we have $L^n=L(nH,\chi^n)$. Hence, $L_1\bigotimes L_2=L_1\bigotimes L_2(H_1+H_2,\chi_1\chi_2)$. Also, $\Lambda(L^n)=\{v\in V:\ Im(H(nv,\lambda))\in \ZZ,\ \forall \lambda\in \Lambda\}=\{\frac{1}{n} v\in V:\ v\in \Lambda(L)\}$. 
+
+Recall that $H(\cdot, \cdot)$ is called \textbf{non-degenerate} if 
+\begin{itemize}
+\item $H(v,w)=0$ for all $v$ implies $w=0$; and
+\item $H(v,w)=0$ for all $w$ implies $v=0$.
+\end{itemize}
+
+We say that $L\in \Pic(X)$ is \textbf{non-degenerate} if $c_1(L)=H$ is non-degenerate. (Equivalently, the associated alternating form $Im(H)$ is non-degenerate.) 
+
+\begin{lemma}
+\noindent
+\begin{enumerate}
+\item $L$ is non-degenerate if and only if $K(L)$ is finite.
+\item $\deg(\varphi_L)=\det(Im(H))=[\Lambda(L):L]$.
+\end{enumerate}
+\end{lemma}

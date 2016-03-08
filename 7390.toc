@@ -30,8 +30,13 @@
 \contentsline {subsection}{\numberline {2.19}Canonical factors}{26}{subsection.2.19}
 \contentsline {subsection}{\numberline {2.20}Behaviour of line bundles under holomorphic maps}{26}{subsection.2.20}
 \contentsline {subsection}{\numberline {2.21}Dual complex tori}{27}{subsection.2.21}
-\contentsline {section}{\numberline {3}Appendix}{29}{section.3}
-\contentsline {subsection}{\numberline {3.1}Poincar\'{e} lemmas, De Rham cohomology, Dolbeault cohomology}{29}{subsection.3.1}
-\contentsline {subsubsection}{\numberline {3.1.1}Classical Poincar\'{e} lemma and De Rham cohomology}{29}{subsubsection.3.1.1}
-\contentsline {subsubsection}{\numberline {3.1.5}$\overline {\partial }$ Dolbeault cohomology}{30}{subsubsection.3.1.5}
-\contentsline {subsection}{\numberline {3.2}Hodge decomposition}{31}{subsection.3.2}
+\contentsline {subsection}{\numberline {2.22}Basic functorial properties of $\mathaccentV {hat}05E{X}$}{28}{subsection.2.22}
+\contentsline {subsection}{\numberline {2.23}Isogenies and duality}{29}{subsection.2.23}
+\contentsline {subsection}{\numberline {2.24}Line bundels v.s. duality}{30}{subsection.2.24}
+\contentsline {subsection}{\numberline {2.25}Line bundles and maps $X\to \mathaccentV {tilde}07E{X}$}{30}{subsection.2.25}
+\contentsline {subsection}{\numberline {2.26}Kernel of $\varphi _L$}{31}{subsection.2.26}
+\contentsline {section}{\numberline {3}Appendix}{32}{section.3}
+\contentsline {subsection}{\numberline {3.1}Poincar\'{e} lemmas, De Rham cohomology, Dolbeault cohomology}{32}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Classical Poincar\'{e} lemma and De Rham cohomology}{32}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.5}$\overline {\partial }$ Dolbeault cohomology}{33}{subsubsection.3.1.5}
+\contentsline {subsection}{\numberline {3.2}Hodge decomposition}{34}{subsection.3.2}
