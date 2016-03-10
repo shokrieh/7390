@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.6.30)  10 MAR 2016 11:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.6.30)  10 MAR 2016 11:30
 entering extended mode
 **7390.tex
 (7390.tex
@@ -1202,9 +1202,6 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 84.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 84.
  ) 
 Here is how much of TeX's memory you used:
@@ -1245,9 +1242,9 @@ ic/amsfonts/symbols/msbm7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pu
 blic/hoekwater/stmary10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publ
 ic/xypic/xyatip10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/xyp
 ic/xybtip10.pfb>
-Output written on 7390.pdf (40 pages, 590392 bytes).
+Output written on 7390.pdf (40 pages, 591099 bytes).
 PDF statistics:
- 849 PDF objects out of 1000 (max. 8388607)
+ 852 PDF objects out of 1000 (max. 8388607)
  304 named destinations out of 1000 (max. 500000)
  20853 words of extra memory for PDF output out of 24883 (max. 10000000)
 
