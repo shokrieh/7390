@@ -1040,3 +1040,134 @@ We say that $L\in \Pic(X)$ is \textbf{non-degenerate} if $c_1(L)=H$ is non-degen
 \item $\deg(\varphi_L)=\det(Im(H))=[\Lambda(L):L]$.
 \end{enumerate}
 \end{lemma}
+
+\subsection{Poincar\'{e} bundle:}
+
+We have seen that for $X$ a complex torus, 
+\begin{enumerate}[(a)]
+\item a point in $\hat{X}=\Pic^0(X)$ gives a line bundle on $X$;
+\item a point on $X=\hat{\hat{X}}=\Pic^0(\hat{X})$ gives a line bundle on $\hat{X}$.
+\end{enumerate}
+So, does there exist a (universal) line bundle on $X\times \hat{X}$ such that (a) and (b) are ``shadows'' of that line bundle? The answer is yes!
+
+A \textbf{Poincar\'{e} bundle} is a holomorphic line bundle $\mathcal{P}$ on $X\times \hat{X}$ satisfying 
+\begin{enumerate}
+\item $\mathcal{P}|_{X\times \{L\}}\isom L$;
+\item $\mathcal{P}|_{\{0\}\times\hat{X}}$ is the trivial line bundle on $\hat{X}$.
+\end{enumerate}
+
+\begin{theorem}
+There exists a Poincar\'{e} bundle on $X\times \hat{X}$ uniquely determined up to isomorphism.
+\end{theorem}
+
+\begin{proof}
+First note that we have 
+$$X\times \hat{X}\isom V\times \overline{\Omega}/\Lambda\times \hat{\Lambda}.$$
+
+For the existence, we define $H:(V\times \overline{\Omega})\times (V\times \overline{\Omega})\to \CC$ by 
+$$((v_1,\ell_1),(v_2,\ell_2))\mapsto \overline{\ell_2(v_1)}+\ell_1(v_2)$$
+which is in fact a Hermitian form. (In particular, it is non-degenerate!) Note that
+$$Im(H(\Lambda\times \hat{\Lambda},\Lambda\times \hat{\Lambda}))\subset \ZZ.$$
+So there exist $\mathcal{L}=L(H,\chi)$ for semi-characters $\chi$. We then define $\chi_0: \Lambda\times \hat{\Lambda}\to T_1$ by 
+$$(\lambda,\ell_0)\mapsto e^{\pi i Im(\ell_0(\lambda))}$$
+which is indeed a semi-character for $H$. 
+
+Now, we claim that $\mathcal{P}=L(H,\chi_0)$ is a Poincar\'{e} bundle. To see this, we consider the associated canonical factor 
+$$a_\mathcal{P}((\lambda,\ell_0),(v,\ell))=\chi((\lambda,\ell_0))\cdot e^{\pi(H((\lambda,\ell_0),(v,\ell))+\frac{1}{2}H((\lambda,\ell_0),(\lambda,\ell_0)))}.$$
+Now, what is left is just the checkings:
+\begin{enumerate}
+\item For any $L\in \hat{X}=\Pic^0(X)$, we have $L=L(0,e^{2\pi i Im(\ell(\cdot))})$ for some $\ell\in \overline{\Omega}$. Note that 
+$$a_L(\lambda,v)=e^{2\pi i Im(\ell(\lambda))}.$$
+ Therefore, 
+$\mathcal{P}|_{X\times \{L\}}$ corresponds to $a_\mathcal{P}|_{(\Lambda,0)\times(V\times \{\ell\})}$ but $$a_\mathcal{P}((\lambda,0),(v,\ell))=e^{\pi \ell(\lambda)}.$$
+Now, multiplication by the $1$-coboundary $e^{\pi \overline{\ell(v)}}/e^{\pi \overline{\ell(v+\lambda)}}$ takes $a_\mathcal{P}((\lambda,0),(v,\ell))$ to $a_L(\lambda,v)$. Therefore, $\mathcal{P}|_{X\times \{L\}}\isom L$.
+\item $\mathcal{P}_{\{0\}\times \hat{X}}$ has $a_\mathcal{P}((0,\ell_0),(0,\ell))=1$ as $1$-cocycle. So it is trivial.
+\end{enumerate}
+
+Uniqueness of the Poincar\'{e} bundle follows from the \emph{Seesaw Principle}: Let $X,Y$ be compact complex manifolds and $\mathcal{L}$ be a holomorphic line bundle on $X\times Y$. If $L|_{X\times \{z\}}$ is trivial for all $z\in \mathcal{U}$ where $\mathcal{U}$ is an open dense subset of $Y$, and if $L|_{\{x_0\}\times Y}$ is trivial for some $x_0\in X$, then $L$ is trivial. 
+
+
+
+
+\end{proof}
+
+Here are some remarks:
+\begin{itemize}
+\item Poincar\'{e} line bundles are non-degenerate.
+\item Let $T$ be any \emph{normal} complex analytic space and $X$ be a complex torus. If $L$ is a line bundle on $X\times T$ such that 
+\begin{enumerate}
+\item $L|_{X\times \{t\}}\in \Pic^0(X)$ for all $t\in T$ (If $T$ is connected, it suffices to check that there exists $t\in T$ such that this is true); and
+\item $L|_{\{0\}\times T}$ is trivial;
+\end{enumerate} 
+
+then there exists a unique holomorphic $\psi: T\to \hat{X}$ such that $L\isom (id\times \psi)^* \mathcal{P}$. That is, $\mathcal{P}$ factors through $\psi$. (The proof of this uses \emph{Zariski's main theorem} and a more general Seesaw Principle.)
+
+\end{itemize}
+
+\subsection{A few applications of Poincar\'{e} bundles}
+
+Let $L_1,L_2$ be line bundles on $X$. We say that $L_1$ is \textbf{analytically equivalent} to $L_2$, denoted by $L_1\sim_{an} L_2$ if there exist a connected complex analytic space $T$, a line bundle $L$ on $X\times T$ and $t_1,t_2\in T$ such that 
+$$L|_{X\times \{t_i\}}\isom L_i.$$
+
+\begin{proposition}
+Let $L_1,L_2$ be line bundles on a complex torus $X=V/\Lambda$.
+The following are equivalent:
+\begin{enumerate}
+\item $L_1\sim_{an} L_2$.
+\item $L_1\bigotimes L_2^{-1}\in \Pic^0(X)$.
+\item $\varphi_{L_1}=\varphi_{L_2}$.
+\item $c_1(L_1)=c_1(L_2)$.
+\end{enumerate}
+
+\end{proposition}
+
+For a complex torus $X$, we use $\Pic^H(X)$ to denote the classes in $\Pic(X)/\Pic^0(X)$.
+
+\begin{corollary}
+Let $X=V/\Lambda$ be a complex torus. Then
+there is a correspondence between analytic equivalence classes of $X$ and $\Pic^H(X)$.
+\end{corollary}
+
+Now we prove the proposition.
+
+\begin{proof}
+We already know that (2), (3) and (4) implies one and other. To show that (2) implies (1), assume that $L_1\bigotimes L_2^{-1} \in \Pic^0(X)$ and $p:X\times \hat{X}\to X$ is the projection map. Then $L=p^* L_2\bigotimes \mathcal{P}$ is a line bundle on $X\times \hat{X}$ such that 
+$L|_{X\times \{0\}}\isom L_2$ and $L|_{X\times \{L_1\bigotimes L_2^{-1}\}}\isom L_1$. 
+
+Now to show that (1) implies (4), suppose $L_1\sim_{an} L_2$, that is, there exist complex analytic space $T$, a line bundle $L$ on $X\times T$ such that $L|_{X\times \{t_i\}}\isom L_i$. Consider $T\to H^2(X,\ZZ)$ given by $t\mapsto c_1(L|_{X\times \{t\}})$ is continuous and the image is discrete and so it is a constant map. This implies that $c_1(L_1)=c_1(L_2)$. 
+
+\end{proof}
+
+
+\begin{lemma}
+Let $L,L'\in \Pic(X)$. Suppose $L$ is non-degenerate, then $L\sim_{an} L'$ if and only if there exists $x\in X$ such that $L'\isom t_x^* L$. 
+\end{lemma}
+
+\begin{proof}
+The ``if'' direction is always true. To show the ``only if'' direction, $L\sim_{an} L'$ is equivalent to saying that $L'\bigotimes L^{-1}\in \Pic^0(X)$. But since $L$ is non-degenerate, $\varphi_L:X\to \Pic^0(X)$ defined by $x\mapsto t_x^*L\bigotimes L^{-1}$ is surjective. So there exists $x\in X$ such that $t_x^*L \bigotimes L^{-1}\isom L'\bigotimes L^{-1}$. 
+\end{proof}
+
+Given a homomorphism $f:X\to \hat{X}$, does there exist a line bundle $L$ such that $f=\varphi_L$?
+
+\begin{theorem}
+Let $X=V\Lambda$ be a complex torus and $f:X\to \hat{X}$ a homomorphism with $f_{an}:V\to \overline{\Omega}$. The following are equivalent:
+\begin{enumerate}
+\item $f=\varphi_L$ for $L\in \Pic(X)$.
+\item $F:V\times V\to \CC$ defined by 
+$$(v,w)\mapsto f_{an}(v)(w)$$
+is Hermitian.
+\end{enumerate}
+\end{theorem}
+
+The proof to this theorem is pretty elementary, straight-forward and uses the following lemma:
+\begin{lemma}
+Let $M\in \Pic(X)$ and $n\in \ZZ$. Then the following are equivalent:
+\begin{enumerate}
+\item $M=L^n$ for some $L\in \Pic(X)$.
+\item $X[n]\subset K(M)$ where $K(M)$ is the kernel of $\varphi_M:X\to \hat{X}$. 
+\end{enumerate}
+
+\end{lemma}
+
+\subsection{Biextension of Abelian groups}
+A Poincar\'{e} bundle $\mathcal{P}$ is a biextension of $X\times \hat{X}$ by $\CC^\times$. Then we will define an object $Bi-ext(B\times C,A)$. 

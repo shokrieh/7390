@@ -35,8 +35,11 @@
 \contentsline {subsection}{\numberline {2.24}Line bundels v.s. duality}{30}{subsection.2.24}
 \contentsline {subsection}{\numberline {2.25}Line bundles and maps $X\to \mathaccentV {tilde}07E{X}$}{30}{subsection.2.25}
 \contentsline {subsection}{\numberline {2.26}Kernel of $\varphi _L$}{31}{subsection.2.26}
-\contentsline {section}{\numberline {3}Appendix}{32}{section.3}
-\contentsline {subsection}{\numberline {3.1}Poincar\'{e} lemmas, De Rham cohomology, Dolbeault cohomology}{32}{subsection.3.1}
-\contentsline {subsubsection}{\numberline {3.1.1}Classical Poincar\'{e} lemma and De Rham cohomology}{32}{subsubsection.3.1.1}
-\contentsline {subsubsection}{\numberline {3.1.5}$\overline {\partial }$ Dolbeault cohomology}{33}{subsubsection.3.1.5}
-\contentsline {subsection}{\numberline {3.2}Hodge decomposition}{34}{subsection.3.2}
+\contentsline {subsection}{\numberline {2.27}Poincar\'{e} bundle:}{31}{subsection.2.27}
+\contentsline {subsection}{\numberline {2.28}A few applications of Poincar\'{e} bundles}{33}{subsection.2.28}
+\contentsline {subsection}{\numberline {2.29}Biextension of Abelian groups}{34}{subsection.2.29}
+\contentsline {section}{\numberline {3}Appendix}{35}{section.3}
+\contentsline {subsection}{\numberline {3.1}Poincar\'{e} lemmas, De Rham cohomology, Dolbeault cohomology}{35}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Classical Poincar\'{e} lemma and De Rham cohomology}{35}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.5}$\overline {\partial }$ Dolbeault cohomology}{36}{subsubsection.3.1.5}
+\contentsline {subsection}{\numberline {3.2}Hodge decomposition}{37}{subsection.3.2}
