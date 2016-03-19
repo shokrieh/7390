@@ -40,11 +40,11 @@
 \contentsline {subsection}{\numberline {2.29}The Poincare-Bundle as a Biextension}{34}{subsection.2.29}
 \contentsline {paragraph}{}{34}{section*.2}
 \contentsline {paragraph}{}{35}{section*.3}
-\contentsline {section}{\numberline {3}Cohomologies of Line Bundles on Complex Tori}{35}{section.3}
+\contentsline {subsection}{\numberline {2.30}Cohomologies of Line Bundles on Complex Tori}{35}{subsection.2.30}
 \contentsline {paragraph}{}{35}{section*.4}
 \contentsline {paragraph}{}{35}{section*.5}
-\contentsline {section}{\numberline {4}Appendix}{37}{section.4}
-\contentsline {subsection}{\numberline {4.1}Poincar\'{e} lemmas, De Rham cohomology, Dolbeault cohomology}{37}{subsection.4.1}
-\contentsline {subsubsection}{\numberline {4.1.1}Classical Poincar\'{e} lemma and De Rham cohomology}{37}{subsubsection.4.1.1}
-\contentsline {subsubsection}{\numberline {4.1.5}$\overline {\partial }$ Dolbeault cohomology}{38}{subsubsection.4.1.5}
-\contentsline {subsection}{\numberline {4.2}Hodge decomposition}{39}{subsection.4.2}
+\contentsline {section}{\numberline {3}Appendix}{37}{section.3}
+\contentsline {subsection}{\numberline {3.1}Poincar\'{e} lemmas, De Rham cohomology, Dolbeault cohomology}{37}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Classical Poincar\'{e} lemma and De Rham cohomology}{37}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.5}$\overline {\partial }$ Dolbeault cohomology}{38}{subsubsection.3.1.5}
+\contentsline {subsection}{\numberline {3.2}Hodge decomposition}{39}{subsection.3.2}
