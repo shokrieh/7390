@@ -1286,3 +1286,116 @@ $(\chi_0)_{\mid \Lambda}$ is a semicharacter for $H$
 $L_0:=L(H,\chi_0)\in \text{Pic}^H(X)$ is a distinguished element of $\text{Pic}^H(X)$ with respect to the decomposition of $V$.
 \end{definition}
 \end{paragraph}
+
+\begin{paragraph}{}Throughout this lecture $X=V/\lambda$ is a complex torus.\begin{lemma}
+Let $V=V_1\oplus V_2$ be a decomposition for $H\in NS(X)$, assume that $H$ is non-degenerate 
+\begin{enumerate}
+\item $L_0=L(H,\chi_0)$ is the unique element in $Pic^H(X)$ where the semi character $\chi_0$ is trivial on $\Lambda_1=V_1\cap \Lambda$ and $\Lambda_2=V_2\cap \Lambda$.
+\item For $L\in \Pic^H(X)$, there is a $c\in V$ uniquely determined up to translation by $\Lambda(L)$ such that if $\bar{c}$ denotes the class of $c$ modulo $\Lambda(L)$,
+\begin{equation*}
+L\simeq t_{\bar{c}}^* L_0 
+\end{equation*}
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+\begin{enumerate}
+\item We saw last time that $\chi_0$ restricted to $\lambda$ was a character, since $\chi_0(\lambda):=e^{\pi i E(\lambda_1,\lambda_2)}$ and each $V_i$ is totally isotropic, it follows that $\chi_0$ is trivial on both $\Lambda_1$ and $\Lambda_2$.
+\item
+Certainly, since $L$ and $L_0$ have the same Chern class $H$ it follows that there is a $c\in V$ such that $L\simeq t_{c}^* L_0$, $c$ modulo $\Lambda$ is thus uniquely determined upto the kernel of $\phi_L=\Lambda(L)/\Lambda$, and thus $c\in V$ is uniquely determined up to $\Lambda(L)$.
+\end{enumerate}
+\end{proof}
+\begin{definition} Let $L$ be a non-degenerate line bundle. $c$ modulo $\Lambda(L)$ is called the class of the line bundle $L$ with respect to the decomposition of $V=V_1\oplus V_2$ into totally isotropic spaces for $H$.
+\end{definition}
+We shall discuss proceed to describe the global sections of line-bundles. In doing so, we need to extend the canonical factor to $V\times V$. Recall that the canonical factor associated to a line-bundle is defined by the equation 
+\begin{equation*}
+a_L(\lambda, v):=\chi(\lambda) e^{H(v,\lambda)+\frac{1}{2} H(\lambda, \lambda)}
+\end{equation*}
+\begin{definition}
+Let $L$ be a non-degenerate line bundle with characteristic $c$. We extend the canonical factor $a_L$ to a function on $V\times V$ using the characteristic of $L$, 
+\begin{equation*}
+a_L(u,v):=\chi_0(u) e^{2\pi i E(c,u)} e^{\pi(H(u,v)+\frac{1}{2} H(u,u))}
+\end{equation*}
+\end{definition}
+Note that the term $\chi_0(u) e^{2\pi i E(c,u)}$ restricts to $\chi$ on $\lambda\times \lambda$ since $c$ is the characteristic and translation by $c$ changes the character by $e^{2\pi i E(c,u)}$. 
+\begin{proposition}
+Let $L$ be a line bundle with $H=c_1(L)$ non degenerate, let $V=V_1\oplus V_2$ be a decomposition for $V$ into isotropic subspaces with respect to $L$, for $u,v,w\in V$,
+\begin{enumerate}
+\item $a_L(u,v+w)= a_L(u,v) e^{\pi H(w,u)}$
+\item $a_L(u+v,w)=a_L(u,v+w) a_L(v,w) e^{2\pi i E(u_1, u_2)}$
+\item $a_L(u,v)^{-1}= a_L(-u,v) \chi_0(u)^{-2} e^{-\pi H(u,u)}$
+\item If $L'=t_w^* L$ then $a_{L'}(u,v)=a_L(u,v)e^{2\pi i E(w,u)}$
+\end{enumerate}
+
+\end{proposition}
+\begin{proof}
+Excercise
+\end{proof}
+\begin{lemma}
+Let $L$ be a non-degenerate line bundle and $V=V_1\oplus V_2$ decomposition of $V$
+\begin{enumerate}
+\item $\Lambda(L)=\Lambda(L)_1\oplus \Lambda(L)_2$ where $\Lambda(L)_i:=V_i\cap \Lambda(L)$
+\item $K(L)=K_1\oplus K_2$ where $K_i=\Lambda(L)_i/\Lambda_i\simeq \oplus_{j=1}^g \mathbb{Z}/ d_i \mathbb{Z}$ where $(d_1,\dots, d_g)$ is the type of $L$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+$(2)$ follows from $(1)$ it suffices to prove $(1)$. The containment $\Lambda(L)\supseteq \Lambda(L)_1\oplus \Lambda(L)_2$ is clear since we are using a decomposition of $V$ into isotropic spaces. $v\in \Lambda(L)$, $v=v_1+v_2$ a decomposition for $v$ we need to show that $v_1,v_2\in \Lambda(L)$, indeed we need only show that $v_1\in \Lambda(L)$. Note that $E(v_1, \lambda_1)=E(v_2, \lambda_2)=0$. Hence,
+\begin{equation*}
+E(v_1,\lambda)=E(v_1,\lambda_2)=E(v, \lambda_2)\in \ZZ
+\end{equation*}
+thus $v_1\in \Lambda(L)$.
+\end{proof}
+Now define two intermediate lattices between $\Lambda$ and $\Lambda(L)$, namely, $\Lambda'=\Lambda(L)_1\oplus \Lambda_2$ and $\Lambda''=\Lambda_1\oplus \Lambda(L)_2$, let $X'=V/\Lambda'= X/K_1$ and $X''=V/\Lambda''=X/K_2$ (with $K_i$ defined in Lemma 1.5). Let $P_i:X\rightarrow X/K_i=:X_i$ be the quotient isogenies. The restrictions of $a_L$ to $\Lambda'\times V$ and $\Lambda''\times V$ are $1-cocycles$ defining line bundles $M_1\rightarrow X_1$ and $M_2\rightarrow X_2$ which pull back to $L$ under $P_1$ and $P_2$ to the line bundle $L$ on $X$. Moreover since $P_i$ comes from taking a $v$ modulo $\Lambda$ to $v$ $\Lambda'$ or $\Lambda''$, the characteristic of $M_i$ is the same as the characteristic of $L$.
+\end{paragraph}
+\subsection{Theta Functions}
+\begin{paragraph}
+{}Assume $H$ is positive definite, we shall describe a basis for $H^0(X,L)$. Let $H=c_1(L)$ be the chern class of $L$. Let $X=V/\Lambda$ and $\pi:V\rightarrow X$ the exponential map. From previous lectures recall that the global sections may be described as functions $\vartheta:V\rightarrow \mathbb{C}$ with automorphy factor $f\in Z^1(\Lambda, H^0(V, O_V^*))$, ie, satisfying
+\begin{equation*}
+\vartheta(v+\lambda)=f(v,\lambda) \vartheta(v)
+\end{equation*}
+Note that changing $f$ by a co-boundary amounts to replacing the space space with an isomorphic vector space.
+\end{paragraph}
+\subsection{Classical Factors of Automorphy}
+\begin{paragraph}
+{} We are trying to get a more suitable factor replacing $H$ which is assumed to be positive definite. Let $L(H,\chi)$, $V=V_1\oplus V_2$ a decomposition for $L$, also $E=Im H$. 
+\begin{lemma}
+$V=V_2\oplus i V_2$ and so $V_2$ generates $V$ as a $\mathbb{C}$ vector space. 
+\end{lemma}
+\begin{proof}
+$U=V_2\cap i V_2 $ is a $\mathbb{C}$ subspace. For all $v,w\in U$, we have that 
+\begin{equation*}
+H(v,w)=E(iv,w)+iE(v,w)=0
+\end{equation*}
+since $iv$ is also in $U\subseteq V_2$. $H$ is positive definite and so $U=0$. Since $V_2$ has dimension $g$ so does $iV_2$ and so $V=V_2\oplus i V_2$.
+\end{proof}
+Since $E=0$ on $V_2$, then $H=\text{Re} H=E(i.,.)$ is a symmetric real valued form on $V_2$. 
+\end{paragraph}
+\begin{paragraph}
+{}Let $B:V\times V\rightarrow \CC$ be the $\CC$ bilinear extension of $H_{\mid V_2\times V_2}$, note that since $V=V_2\oplus i V_2$ a unique $\CC$ bilinear extension $B$ exists. $H-B$ is then a hermitian form, it satisfies the properties 
+\begin{enumerate}
+\item $(H-B)(v,w)=\begin{cases}
+0 &\mbox{if } w\in V_2\\
+2i E(v,w) &\mbox{if } v\in V_2
+\end{cases}$
+\item $\text{Re}(H-B)$ is positive definite on $V_1$
+\end{enumerate}
+\begin{definition}
+The classical factor of automorphy $e_L:\Lambda\times V\rightarrow \CC^{\times}$ is defined as
+\begin{equation*}
+e_L(\lambda, v)=\chi(\lambda) e^{\pi((H-B)(\lambda,v)-\frac{1}{2} (H-B)(\lambda, \lambda))}=a_L(\lambda,v) (\frac{e^{\frac{\pi}{2} B(v,v)}}{e^{\frac{\pi}{2} B(v+\lambda,v+\lambda)}})
+\end{equation*}
+\end{definition}
+\begin{definition}
+Classical theta functions are the functions with automorphy factor $e_L$.
+\end{definition}
+\begin{enumerate}
+\item When the type is $(1,1,\dots, 1)$ the polarization is said to be principal as noted earlier. The classical theta function associated to a principal polarization is unique up to scalar multiple. These were studied by Riemann, so they really are classical.
+\item $e_L(\lambda, \lambda_2)=1$ allows us expand theta functions in fourier series.
+\end{enumerate}
+\begin{definition}
+Let $L$ be a line bundle with $E:=\text{Im} c_1(L)$ and type $(d_1,\dots, d_g)$. The Pfaffian of $E$, $Pf(E):=d_1\dots d_g$. This is indeed $\sqrt{\text{det} E}$.
+\end{definition}
+We shall prove the following theorem next time.
+\begin{theorem}
+Let $L$ be a positive definite line-bundle on $X$, then, $h^0(X,L)=Pf(E)$
+\end{theorem}
+\end{paragraph}

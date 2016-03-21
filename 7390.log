@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.6.30)  19 MAR 2016 16:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.6.30)  21 MAR 2016 00:40
 entering extended mode
 **7390.tex
 (7390.tex
@@ -1172,7 +1172,7 @@ mr/m/n/10 (-20) (\OML/cmm/m/it/10 v; `\OT1/cmr/m/n/10 (-20) ))$
 [32] [33]
 Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
 nput line 1178.
- [34] [35]) [36] (Chapters/appendix.tex [37]
+ [34] [35] [36] [37] [38]) [39] (Chapters/appendix.tex [40]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 49.
@@ -1189,13 +1189,13 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 49.
 
-[38] [39] [40]) [41] (7390.bbl
+[41] [42] [43]) [44] (7390.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 68--68
 []\OT1/cmr/m/n/8 (+20) James S. Milne, \OT1/cmr/m/it/8 (+20) Abelian va-ri-etie
 s (v2.00)\OT1/cmr/m/n/8 (+20) , 2008. Avail-able at
  []
 
-) [42]
+) [45]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 84.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 84.
  (7390.aux)
@@ -1208,11 +1208,11 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 84.
  ) 
 Here is how much of TeX's memory you used:
- 24506 strings out of 493671
- 436409 string characters out of 3141417
- 584024 words of memory out of 3000000
- 26833 multiletter control sequences out of 15000+200000
- 29679 words of font info for 178 fonts, out of 3000000 for 9000
+ 24559 strings out of 493671
+ 437059 string characters out of 3141417
+ 584022 words of memory out of 3000000
+ 26835 multiletter control sequences out of 15000+200000
+ 30111 words of font info for 182 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  61i,15n,84p,3215b,671s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
@@ -1245,9 +1245,9 @@ ic/amsfonts/symbols/msbm7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pu
 blic/hoekwater/stmary10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publ
 ic/xypic/xyatip10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/xyp
 ic/xybtip10.pfb>
-Output written on 7390.pdf (42 pages, 608189 bytes).
+Output written on 7390.pdf (45 pages, 628894 bytes).
 PDF statistics:
- 890 PDF objects out of 1000 (max. 8388607)
- 327 named destinations out of 1000 (max. 500000)
- 22397 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 959 PDF objects out of 1000 (max. 8388607)
+ 370 named destinations out of 1000 (max. 500000)
+ 22413 words of extra memory for PDF output out of 24883 (max. 10000000)
 

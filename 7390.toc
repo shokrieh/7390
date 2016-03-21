@@ -43,8 +43,14 @@
 \contentsline {subsection}{\numberline {2.30}Cohomologies of Line Bundles on Complex Tori}{35}{subsection.2.30}
 \contentsline {paragraph}{}{35}{section*.4}
 \contentsline {paragraph}{}{35}{section*.5}
-\contentsline {section}{\numberline {3}Appendix}{37}{section.3}
-\contentsline {subsection}{\numberline {3.1}Poincar\'{e} lemmas, De Rham cohomology, Dolbeault cohomology}{37}{subsection.3.1}
-\contentsline {subsubsection}{\numberline {3.1.1}Classical Poincar\'{e} lemma and De Rham cohomology}{37}{subsubsection.3.1.1}
-\contentsline {subsubsection}{\numberline {3.1.5}$\overline {\partial }$ Dolbeault cohomology}{38}{subsubsection.3.1.5}
-\contentsline {subsection}{\numberline {3.2}Hodge decomposition}{39}{subsection.3.2}
+\contentsline {paragraph}{}{36}{section*.6}
+\contentsline {subsection}{\numberline {2.31}Theta Functions}{38}{subsection.2.31}
+\contentsline {paragraph}{}{38}{section*.7}
+\contentsline {subsection}{\numberline {2.32}Classical Factors of Automorphy}{38}{subsection.2.32}
+\contentsline {paragraph}{}{38}{section*.8}
+\contentsline {paragraph}{}{39}{section*.9}
+\contentsline {section}{\numberline {3}Appendix}{40}{section.3}
+\contentsline {subsection}{\numberline {3.1}Poincar\'{e} lemmas, De Rham cohomology, Dolbeault cohomology}{40}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Classical Poincar\'{e} lemma and De Rham cohomology}{40}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.5}$\overline {\partial }$ Dolbeault cohomology}{41}{subsubsection.3.1.5}
+\contentsline {subsection}{\numberline {3.2}Hodge decomposition}{42}{subsection.3.2}
