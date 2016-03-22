@@ -1317,7 +1317,7 @@ a_L(u,v):=\chi_0(u) e^{2\pi i E(c,u)} e^{\pi(H(u,v)+\frac{1}{2} H(u,u))}
 \end{equation*}
 \end{definition}
 Note that the term $\chi_0(u) e^{2\pi i E(c,u)}$ restricts to $\chi$ on $\lambda\times \lambda$ since $c$ is the characteristic and translation by $c$ changes the character by $e^{2\pi i E(c,u)}$. 
-\begin{proposition}
+\begin{proposition}\label{thelemma}
 Let $L$ be a line bundle with $H=c_1(L)$ non degenerate, let $V=V_1\oplus V_2$ be a decomposition for $V$ into isotropic subspaces with respect to $L$, for $u,v,w\in V$,
 \begin{enumerate}
 \item $a_L(u,v+w)= a_L(u,v) e^{\pi H(w,u)}$
@@ -1394,8 +1394,85 @@ Classical theta functions are the functions with automorphy factor $e_L$.
 \begin{definition}
 Let $L$ be a line bundle with $E:=\text{Im} c_1(L)$ and type $(d_1,\dots, d_g)$. The Pfaffian of $E$, $Pf(E):=d_1\dots d_g$. This is indeed $\sqrt{\text{det} E}$.
 \end{definition}
-We shall prove the following theorem next time.
-\begin{theorem}
-Let $L$ be a positive definite line-bundle on $X$, then, $h^0(X,L)=Pf(E)$
-\end{theorem}
 \end{paragraph}
+
+Later we will see that 
+If $L$ is a positive definite line-bundle on $X$, then, $h^0(X,L)=Pf(E)$.
+
+
+\begin{lemma}
+$H^0(X,L)\isom H^0(X,L_0)$.
+\end{lemma}
+
+\begin{proof}
+The idea is to present $H^0$ with classical theta functions. We claim that $H^0(X,L)\to H^0(X,L_0)$ by $\vartheta(\cdot)\mapsto e^{\pi(H-B)(\cdot,C)}\vartheta(\cdot-C)=\tilde{\vartheta}(\cdot)$ is an isomorphism of $\CC$-vector spaces. Once we have that, then we only need to show $\tilde{\vartheta}(\cdot)$ is a theta function for the $1$-cocycle $e_{L_0}(\cdot,\cdot)$. This is an easy computation, and the statement follows from the fact that if $L=t_\epsilon^* L^0$ then $e_L(\lambda,v)=e_{L_0}(\lambda,v)e^{2\pi i E(C,\lambda)}$ and \ref{thelemma}.
+\end{proof}
+
+\begin{lemma}
+$h^0(X,L_0)\leq Pf(E)$.
+\end{lemma}
+
+\begin{proof}
+Let $\vartheta\in H^0(X,L_0)$ be a classical theta function. That is $\vartheta(v+\lambda)=e_{L_0}(\lambda,v)\vartheta(v)$ for all $\lambda\in \Lambda$ and $v\in V$. If $\lambda_2\in \Lambda_2$ (where $\Lambda=\Lambda_1\bigoplus \Lambda_2$), then $e_{L_0}(\lambda_2,v)=1$, and so $\vartheta(v+\lambda_2)=\vartheta(v)$ for all $\lambda_2\in \Lambda_2, v\in V$. And therefore, we have a Fourier series! The Fourier series for $\vartheta$ is of the following form: 
+$$\vartheta(v)=\sum_{\lambda\in \Lambda(L)_1}\alpha_\lambda e^{\pi (H-B)(v,\lambda)}.$$
+One way to get this is by properties of $H-B$ from earlier discussions. Alternatively, one can use the fact that there exist suitable coordinates $V=(v_1,\cdots, v_g)^T$ and $\lambda=(\lambda_1,\cdots,\lambda_g)^T$ such that $e^{\pi(H-B)(v,\lambda)}=e^{-2\pi i v^T\lambda}$. 
+Also note that for $\lambda_1\in \Lambda_1$, we have $\vartheta(v+\lambda_1)=e_{L_0}(\lambda_1,v)\vartheta(v)$. Therefore, 
+$\alpha_{\lambda-\lambda_1}=\alpha_\lambda e_{L_0}(\lambda_1,0)^{-1}e^{\pi(H-B)(\lambda_1,\lambda)}$ for all $\lambda_1\in \Lambda_1,\lambda\in \Lambda(L)_1$. 
+Now if we fix $a_\lambda$ for $\lambda\in \Lambda(L)_1$ varying over representatives of $\Lambda(L)_1/\Lambda_1=K(L)_1$, then all other $a_\lambda$ are fixed by our above expression of $\alpha_{\lambda-\lambda_1}$. Therefore, $h^0\leq |K(L)_1|=d_1\cdots d_g$. 
+\end{proof}
+
+Remark: When $X=V/\Lambda$ is a complex torus and $H\in NS(X)$ is positive definite of type $(d_1,\cdots,d_g)$ with symplectic basis $\{\lambda_1,\cdots,\lambda_g;\mu_1,\cdots,\mu_g\}$ for $\Lambda$ for $Im(H)=E$. Then $D=diag(d_1,\cdots, d_g)$ with $d_i>0$ and $V=V_1\oplus V_2=\langle \lambda_i\rangle\bigoplus \langle \mu_i\rangle$. Define $e_i=\frac{1}{d_i}\mu_i$. We have seen that $\{e_i:\ 1\leq i \leq g\}$ is a $\CC$-vector space basis. Consider the period matrix with respect to $\{e_i\}$ for $V$ and $\{\lambda_i,\mu_i\}$ for $\Lambda$ such that $\Pi = (Z|D)_{g\times 2g}$ for some $Z\in M_{g\times g}(\CC)$. One can check that 
+\begin{enumerate}
+\item $Z=Z^T$ and $Im(Z)>0$. That is, $Z$ is in Siegel's upper half space. 
+\item with respect to $\{e_1,\cdots,e_g\}$ basis for $V$:
+\begin{itemize}
+\item (?????) is the matrix for $H$.
+\item  $B(v,w)=v^T(Im Z)^{-1}w$.
+\item $(H-B)(v,w)=-2iv^Tw_1$ where $w=w_1+w_2\in V_1\bigoplus V_2$.
+\end{itemize} 
+\end{enumerate}
+
+Next, we want to find an explicit basis for $H^0(X,L)$. Suppose $L\in \Pic(X)$ with $char(L)=c$ with respect to $V_1\bigoplus V_2$. Our goal is to express one $\vartheta$ very explicitly, then show that we can produce a lot more by twisting. We define $\vartheta^c:V\to \CC$ by 
+$$v\mapsto e^{-\pi(H(v,c)+1/2H(c,c)+1/2 B(v+c,v+c))}\times \sum_{\lambda\in \Lambda_1} e^{\pi((H-B)(v+c,\lambda)-1/2(H-B)(\lambda,\lambda))}.$$
+
+\begin{theorem}
+$\vartheta^c$ is a canonical theta function for $L=t_{\overline{\CC}}^* L_0$. 
+\end{theorem}
+
+\begin{proof}
+We sketch the proof. 
+\begin{itemize}
+\item $\vartheta^c$ is holomorphic on $V$. To see this, we need to show that $f(v)=\sum_{\lambda\in \Lambda_1} |e^{\pi((H-B)(v+c,\lambda)-1/2(H-B)(\lambda,\lambda))}|$ converges uniformly on every compact subset of $V_1$. This can be achieved by fixing a norm $||\cdot||:V\to \RR$ such that $||\Lambda||\subset \ZZ$. Since $Re(H-B)$ is positive definite on $V_1$ and $V_1$ is discrete, there exists $R>0$ such that $|e^{1/2(H-B)(\lambda,\lambda))}|\geq e^{-R||\lambda||^2}$. Also, for all $r>0$, there exists $R'>0$ such that if $||v||<r$, then $|e^{\pi(H-B)(v,\lambda))}|<e^{R'||\lambda||}$. So 
+$$f(v)\leq \sum_{\lambda\in \Lambda_1} (e^{R'||\lambda||}/e^{R||\lambda||^2})<\infty.$$
+
+\item We need to check the equation of the automorphy. That is, we want to show that $\vartheta^c(v+\lambda)=a_L(\lambda,v)\vartheta^c(v)$ for all $(\lambda,v)\in \Lambda\times V$. For $c=0$, this boils down to \ref{thelemma}. For $c\not=0$, it follows from 
+$$\vartheta^c(v)=e^{-\pi(H(v,c))+1/2H(c,c)}\vartheta^0(v+c).$$
+
+
+\end{itemize}
+\end{proof}
+
+Remark: The proof actually shows that $\vartheta^c$ is a canonical theta function for $M_2$ (descent of $L$ to $V/(\Lambda_1\bigoplus \Lambda(L)_2)$). 
+
+So far we constructed \emph{one} canonical theta for $L$, that is, an element of $H^0(X,L)$. We can get more as follows: for $\overline{\omega}\in K(L)=\Lambda(L)/\Lambda$, define 
+$$\vartheta_{\overline{\omega}}^c(\cdot):=a_L(\omega,\cdot)^{-1}\vartheta^c(\cdot + \omega)$$
+where $\omega\in \Lambda(L)$ is any lift of $\overline{\omega}$. It is easy to check that this definition is independent of the choice of $\omega$. 
+
+\begin{lemma}
+For all $\overline{\omega}\in K(L)$, $\vartheta_{\overline{\omega}}^c$ is a \emph{canonical} theta function for $L$. 
+\end{lemma}
+
+\begin{proof}
+It follows from \ref{thelemma}.
+\end{proof}
+
+\begin{theorem}
+$\{\vartheta_{\overline{\omega}}^c:\ \overline{\omega}\in K(L)_1\}$ is a basis of canonical theta function for the $\CC$-vector space $H^0(X,L)$. 
+\end{theorem}
+
+\begin{corollary}
+If $L$ is positive definite line bundle, then $h^0(X,L)=Pf(E)$.
+\end{corollary}
+
+
+
