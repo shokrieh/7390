@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.1)  22 MAR 2016 15:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.28)  23 MAR 2016 19:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1232,11 +1232,11 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 84.
  ) 
 Here is how much of TeX's memory you used:
- 24760 strings out of 493033
- 441633 string characters out of 6134140
+ 24762 strings out of 493033
+ 441649 string characters out of 6134139
  589721 words of memory out of 5000000
  27201 multiletter control sequences out of 15000+600000
- 30111 words of font info for 182 fonts, out of 8000000 for 9000
+ 30219 words of font info for 183 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  61i,15n,84p,3215b,671s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
@@ -1269,10 +1269,10 @@ texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/20
 15/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb></usr/local/texlive/2015
 /texmf-dist/fonts/type1/public/xypic/xyatip10.pfb></usr/local/texlive/2015/texm
 f-dist/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on 7390.pdf (47 pages, 540430 bytes).
+Output written on 7390.pdf (47 pages, 540822 bytes).
 PDF statistics:
- 1000 PDF objects out of 1000 (max. 8388607)
- 911 compressed objects within 10 object streams
+ 1001 PDF objects out of 1200 (max. 8388607)
+ 912 compressed objects within 10 object streams
  385 named destinations out of 1000 (max. 500000)
  22421 words of extra memory for PDF output out of 24883 (max. 10000000)
 
