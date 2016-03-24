@@ -50,8 +50,10 @@
 \contentsline {paragraph}{}{38}{section*.8}
 \contentsline {paragraph}{}{39}{section*.9}
 \contentsline {subsection}{\numberline {2.33}Global sections of a positive definite line bundle}{39}{subsection.2.33}
-\contentsline {section}{\numberline {3}Appendix}{42}{section.3}
-\contentsline {subsection}{\numberline {3.1}Poincar\'{e} lemmas, De Rham cohomology, Dolbeault cohomology}{42}{subsection.3.1}
-\contentsline {subsubsection}{\numberline {3.1.1}Classical Poincar\'{e} lemma and De Rham cohomology}{42}{subsubsection.3.1.1}
-\contentsline {subsubsection}{\numberline {3.1.5}$\overline {\partial }$ Dolbeault cohomology}{43}{subsubsection.3.1.5}
-\contentsline {subsection}{\numberline {3.2}Hodge decomposition}{44}{subsection.3.2}
+\contentsline {subsection}{\numberline {2.34}Positive semi-definite line bundles}{42}{subsection.2.34}
+\contentsline {subsection}{\numberline {2.35}Vanishing theorem of Mumford and Kempf}{43}{subsection.2.35}
+\contentsline {section}{\numberline {3}Appendix}{44}{section.3}
+\contentsline {subsection}{\numberline {3.1}Poincar\'{e} lemmas, De Rham cohomology, Dolbeault cohomology}{44}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Classical Poincar\'{e} lemma and De Rham cohomology}{44}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.5}$\overline {\partial }$ Dolbeault cohomology}{45}{subsubsection.3.1.5}
+\contentsline {subsection}{\numberline {3.2}Hodge decomposition}{46}{subsection.3.2}

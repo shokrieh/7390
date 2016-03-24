@@ -1469,12 +1469,118 @@ It follows from \ref{thelemma}.
 \end{proof}
 
 \begin{theorem}
+Let $L=L(H,\chi)$ be a positive definite line bundle on $X$ and $C=char(L)$ be the characteristic with respect to $V=V_1\bigoplus V_2$ for $L$. The set of canonical theta functions
 $\{\vartheta_{\overline{\omega}}^c:\ \overline{\omega}\in K(L)_1\}$ is a basis of canonical theta function for the $\CC$-vector space $H^0(X,L)$. 
 \end{theorem}
 
+\begin{proof}
+First, we already know $h^0(X,L)\leq Pf(E)$. So it suffices to show that $\vartheta_{\overline{\omega}}^c$ is independent of $(\# K(L)_1=Pf(E))$.
+
+Next, the expression from earlier generalizes to $\vartheta_{\overline{\omega}}^c(v)=e^{-\pi(H(v,c)+1/2H(c,c))}\theta_{\overline{\omega}}^0(v+c)$. So we may further assume that $c=0$.
+
+Furthermore, by $e_L(\lambda,v)=a_L(\lambda,v)\frac{e^{\pi B(v,v)}}{e^\pi B(v+\lambda,v+\lambda)}$. Therefore, we see that $\vartheta_{\overline{\omega}}^c(v)=e^{-\pi/2 B(v,v)}\vartheta_{\overline{\omega}}^c(v)$ is classical. So it suffices to show that $\{\vartheta_{\overline{\omega}}^c(\cdot):\ \overline{\omega}\in K(K)_1\}_{c=0}$ with is independent.
+
+Let $\omega_1,\cdots,\omega_N\in \Lambda(L)_1$ be representations for $K(L)_1$. We will show that $\vartheta_{\overline{\omega_1}}^0(\cdot)=e^{-\pi/2 B(\cdot,\cdot)}\vartheta_{\overline{\omega_i}}^0$ with $1\leq i\leq N$ are linearly independent. 
+
+Note that 
+$$\vartheta_{\overline{\omega_i}}^0=e^{-\pi/2B(v,v)}\vartheta_{\overline{\omega_i}}^0(v)=\cdots
+=\sum_{\lambda\in \Lambda_1-\omega_1} e^{-\pi/2(H-B)(\lambda,\lambda)}e^{\pi (H-B)(v,\lambda)}.$$
+Recall that a general Fourier series is of the form
+$$\sum_{\lambda\in \Lambda(L)_1} \alpha_\lambda e^{\pi (H-B)(v,\lambda)}.$$
+Note that $\vartheta_{\overline{\omega_i}}^0(\cdot)$ only have coefficients in the coset $-\omega_i+\Lambda_i$ (in $\Lambda(L)_1/\Lambda_1$) and cosets are disjoint. So they are independent. 
+\end{proof}
+
+
+
 \begin{corollary}
-If $L$ is positive definite line bundle, then $h^0(X,L)=Pf(E)$.
+$h^0(L)=d_1\cdots d_g$.
 \end{corollary}
+
+\begin{corollary}
+For any $L\in L(H,\chi)$ and $L'\in L(H,\chi')$ with $c=char(L)$ and $c'=char(L)$, define $\tau:V\to \CC^\times$ by 
+$$v\mapsto e^{\pi i Im H(c',c)-\pi H(v,c-c')-\pi/2 H(c'-c,c'-c)},$$
+then the map $H^0(X,L)\to H^0(X,L')$ by $\vartheta\mapsto \tau t_{c'-c}^\times \vartheta$ is an isomorphism. Moreover, it is diagonal with respect to the bases given above. 
+\end{corollary}
+
+\subsection{Positive semi-definite line bundles}
+Recall that if $L$ is degenerate, then $K(L)=\ker(\varphi_L)$ is not finite. Equivalently, $\Lambda(L)/\Lambda$ is infinite, where $\Lambda(L)=\{v\in V:\ Im H(v,\lambda)\in \ZZ\ \forall \lambda\in \Lambda\}$. Therefore, they can not be lattices of the same rank.
+Let $\Lambda(L)_0$ be the connected component of $\Lambda(L)$ containing $0$,m which is also a subspace of $V$. By an earlier fact that $\varphi_L^{an}(v)=H(v,\cdot)$, we have $\Lambda(L)_0=\{v\in V: H(v,x)=0\ \forall x\in V\}$. Therefore $K(L)_0=\Lambda(L)_0/\Lambda(L)_0\cap \Lambda$ is a subtorus of $X$. 
+
+Now define $\overline{X}=X/K(L)_0=\overline{V}/\overline{\Lambda}$ where $\overline{V}=V/\Lambda(L)_0$ and $\overline{\Lambda}=\Lambda/(\Lambda(L)_0\cap \Lambda)$. Let $p:X\to \overline{X}$ be the projection map.
+
+\begin{lemma}
+\noindent
+\begin{enumerate}
+\item There exists $\overline{L}$ on $\overline{X}$ with $L\isom p^* \overline{L}$ if and only if $L|_{K(L)_0}$ is trivial.
+\item If $\overline{L}$ exists, then $h^0(X,L)=h^0(\overline{X},\overline{L})$ and $\overline{L}$ is non-degenerate. 
+\end{enumerate}
+\end{lemma}
+
+\begin{theorem}
+If $L=L(H,\chi)$ is positive semi-definite on $X$, then $h^0(X,L)=Pf_{reduced}(E)$ if $L|_{K(L)_0}$ is trivial and $0$ otherwise, where $Pf_{reduced}(E)=1$ if all $d_i=0$ and $\prod_{d_i\not= 0}d_i$ otherwise.
+\end{theorem}
+
+Now we will go into some deeper results. For $L\in \Pic(X)$ on $X=V/\Lambda$ a $g$-dimensional complex torus with $H=c_1(L)$. Assume $H$ has $r$ positive and $s$ negative eigenvalues. Note then that $r+s\leq g$. Our goal is to prove the following theorem:
+
+\begin{theorem}[Mumford-Kempf-Deligne,$\cdots$]
+\noindent
+\begin{enumerate}
+\item $H^q(X,L)=0$ if $q<s$ or $q>g-r$.  
+\item $h^q(X,L)=\binom{g-s-r}{q-s}h^s(x,L)$ for $s\leq q\leq g-r$.
+\item $h^s(X,L)=Pf_{reduced}(E)$ for $L|_{K(L)_0}$ trivial and $0$ otherwise.
+\end{enumerate}
+\end{theorem}
+
+\begin{corollary}
+\noindent
+\begin{enumerate}
+\item If $L$ is non-degenerate, then $r+s=g$. So cohomology is non-trivial only for $q=s=g-r$. We call such $q$ the \emph{index of $L$} and denote it by $i(L)$.
+
+\item If $h^s\not=0$, then $H^q(X,L)$ are nontrivial for all $s\leq q\leq g-r$.
+\item If $L$ is positive-definite, then $r=g$ and $s=0$ and so only $H^0$ is non-trivial.
+\item If $L$ is positive-semi-definite and if $L|_{K(L)_0}$ is trivial, then $f<g$ and $s=0$ and so $H^0,\cdots,H^{g-r}$ are all non-trivial.
+\end{enumerate}
+\end{corollary}
+
+Recall that the Riemann-Roch Theorem is a statement relating algebraic objects 
+$$\chi(X,L):=\sum_{i=s}^{g-r}(-1)^i h^i(X,L)$$
+to topological objects.
+Now we state a deeper result, by Deligne.
+
+\begin{corollary}[Analytic Riemann-Roch theorem for complex tori]
+As usual, define
+$$\chi(X,L):=\sum_{i=s}^{g-r}(-1)^i h^i(X,L).$$
+Assume $c_i(L)=H$ has $s$ negative eigenvalues, then 
+$$\chi(X,L)=(-1)^s Pf(E)$$
+where $E=Im(H)$ and $Pf(E)=d_1\cdots d_g$.
+
+\end{corollary}
+
+\begin{proof}
+If $L_{K(L)_0}$ is non-trivial, then there is nothing to prove.
+We may hence assume that 
+$$\chi(X,L)=\sum_{q=s}^{g-r} (-1)^q \binom{g-r-s}{q-s} Pf_{reduced}(E).$$
+By putting $N=g-r-s$, since $(1-1)^N=\sum_{i=0}^N (-1)^i\binom{N}{i}$ equals to $1$ if $N=0$ and $0$ otherwise, we hence have $\chi(X,L)=(-1)^s Pf(E)$. 
+
+\end{proof}
+
+Remarks: 
+\begin{enumerate}
+\item $\deg(\varphi_L)=\det(E)=(Pf(E))^2=\chi(X,L)^2$.
+\item It is useful (for instance to get an algebraic/geometric statement) to use $\frac{1}{g!}(L^g)$ instead of $(-1)^s Pf(E)$. (Later we will be able to express $\frac{1}{g!}(L^g)$ in terms of $\bigwedge^g c_1(L)$.)
+\item For $f:X'\to X$ and $L\in \Pic(X)$, we have $\chi(X',f^* L)=(\deg (f))\chi(X,L)$.
+\item It is a good exercise to show that for a Poincar\'{e} bundle $\mathcal{P}$ on $X\times \hat{X}$, we have $h^q(X\times\hat{X},\mathcal{P})=\CC$ for $q=g$ and $0$ otherwise. (Hint: we have given the first chern class $c_i(\mathcal{P})$ explicitly.)
+\end{enumerate}
+
+\subsection{Vanishing theorem of Mumford and Kempf}
+
+Recall that we have by $\overline{\partial}$-Poincar\'{e} an exact sequence of sheaves:
+$$0\to \Omega_{hol}^p\to \Omega^{p,0}\overset{\overline{\partial}}{\to} \Omega^{p,1}\overset{\overline{\partial}}{\to}\cdots$$
+and in particular when $p=0$, we have
+$$0\to \mathcal{O}_X\injects \Omega^{0,0}\overset{\overline{\partial}}{\to} \Omega^{0,1}\overset{\overline{\partial}}{\to}\cdots$$
+Since $L$ is locally free, we also get exact sequence of sheaves 
+$$0\to L \to \Omega^{0,0}(L)\overset{\overline{\partial}}{\to} \Omega^{0,1}(L)\to \cdots$$
+with $\Omega^{0,q}(L)=\Omega^{0,q}\bigotimes_{\mathcal{O}_X}L$ which is called the \emph{Dolbeault resolution}. 
 
 
 
