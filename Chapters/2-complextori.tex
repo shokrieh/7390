@@ -1585,4 +1585,109 @@ $$0\to L \to \Omega^{0,0}(L)\overset{\overline{\partial}}{\to} \Omega^{0,1}(L)\t
 with $\Omega^{0,q}(L)=\Omega^{0,q}\bigotimes_{\mathcal{O}_X}L$ which is called the \emph{Dolbeault resolution}. 
 
 
+By tensoring with the \emph{locally free} sheaf $L$, we get an exact sequence:
+
+When $p=0$:
+\[
+0\to L \to \Omega^{0,0}(L)\overset{\bar{\partial}=\bar{\partial}\otimes id}{\to} \Omega^{0,1}(L)\to \cdots
+\]
+
+where $\Omega^{p,q}(L):=\Omega^{p,q}\bigotimes L$ is the sheaf of $C^\infty$-forms of type $(p,q)$ with values in $L$. Now, we apply $\Gamma(X,-)$ to get the complex 
+\[
+0\to H^0(X,L)\to \Gamma(X,\Omega^{0,0}(L))\to \Gamma(X,\Omega^{0,1}(L))\to \cdots
+\]
+
+and therefore we get cohomology groups $H_{\bar{\partial}}^{0,q}(X,L)$. By Dolbeault theorem, this is isomorphic to $H^q(X,L)$. Moreover, we have a Hodge theorem stating $H^{0,q}_{\bar{\partial}}(X,L)$ is isomorphic to $H^q(L)$ which is the subvector space $\ker \Delta$ of $\Gamma(X,\Omega^{0,q}(L))$, i.e. ``Harmonic forms with values in $L$ with respect to the Laplacian $\Delta$''. 
+
+Question: What is $\Delta$? We need $\Delta=\bar{\partial}\bar{\delta}+\bar{\delta}\bar{\partial}$. What is $\bar{\delta}$? We want $\bar{\delta}$ to be the ``adjoint'' of $\bar{\delta}$, with respect to a global ``inner product'' on $\Gamma(X,\Omega^{0,q}(L))$. Recall previously we have a metric $ds^2$ on $X$ which gives rise to a $(1,1)$-form $\omega$ and hence a $(n,n)$-form $dv=\frac{1}{g!}\bigwedge^g \omega$ which is a volume form. Therefore, we have an inner product 
+$$(\varphi,\psi)=\sum\int \varphi_{IJ}\psi_{IJ}dv.$$
+
+However, this is not enough - we need to fix some ``metric data'' on $L$. 
+
+\begin{definition}
+A \textbf{Hermitian metric} on a line bundle $L$ is a positive definite Hermitian form on each fibre $L_x$ depending smoothly on $x\in X$. In other words, $h\in \Gamma_{sm}(X,(L\bigotimes L)^v)$ such that 
+$$h_P(\eta,\bar{\xi})=\overline{h_P(\xi,\bar{\eta})}$$
+and 
+$h_P(\xi,\bar{\xi})>0$ if $\xi\not= 0$
+for all $\xi,\eta\in L_P$.  
+\end{definition}
+
+
+Irrelevant remark: If $(L,h)$ is  Hermitian line bundle, then the first chern class $c_1(L,h)$ gives a \emph{curvature form} which is also a $(1,1)$-form on $X$. It turns out that $[c_1(L,h)]=c_1(L)$. 
+
+\subsection{Construction on $L\to X$}
+
+Let $L=(H,\chi)$ be a Hermitian line bundle and $X$ be our complex torus. If we consider the $(0,0)$ case as in above, then notice that 
+\[
+\Gamma(X,\Omega^{0,0}(L))=\{f:V\to \CC:\ f\in C^\infty,\ 
+f(x+\lambda)=a_L(\lambda,v)f(v)\ \forall (v,\lambda)\in V\times \Lambda\}
+\]
+are what we call ``smooth'' theta functions. For $f,g\in \Gamma(X,\Omega^{0,0}(L))$, define $h=\langle f,g\rangle$ by 
+\[
+h(v)=\langle f,g \rangle (v) = f(v)\overline{g(v)}e^{-\pi H(v,v)}.
+\]
+It is easy to check that $h(v+\lambda)=h(v)$ and that $h$ is $C^\infty$, so $h$ gives an element of $\Gamma(X,\Omega^{0,0})$. Therefore, $\langle \cdot ,\cdot \rangle: \Gamma(X,\Omega^{0,0}(L))\times \Gamma(X,\Omega^{0,0}(L))\to \Gamma(X,\Omega^{0,0}))$ defines a \emph{Hermitian metric}. 
+
+Recall that a \emph{K\"{a}hler metric} $ds^2$ on $V/\Lambda=X$ is given by the following: fix $\{e_1,\cdots, e_g\}$ a basis for $V$ such that $H=c_1(L)$ with respect to the basis is diagonal. (Hermitian matrices are diagonalizable.) We let $h_1,\cdots, h_g$ diagonal entries of the matrix, that is, let $\{v_1,\cdots,v_g\}$ be the coordinate functions corresponding to $\{e_1,\cdots, e_g\}$. Then 
+$H(v,w)=\sum h_i v_i w_i$.
+
+If we fix $k_1,\cdots, k_g\in \RR^{>0}$, then 
+\[
+ds^2=\sum_{i=1}^g k_i dv_i\otimes d\overline{v_i}
+\]
+defines a K\"{a}hler metric
+ and so the associated $(1,1)$ form $\omega=1\frac{1}{2}Im(ds^2)$ is closed ($d\omega=0$) and given by 
+\[
+\omega=\frac{i}{2}\sum_{j=1}^g k_j dv_j\bigwedge d\overline{v_j}
+\]
+and hence we have a volume form 
+\[
+dv=\frac{1}{g!}\bigwedge^g \omega = (i/2)^g (\prod k_i) dv_1\wedge d\overline{v_1}\wedge dv_2\wedge\cdots
+\]
+which is also a $(g,g)$-form. Now, we define 
+\[
+(\cdot, \cdot):\Gamma(X,\Omega^{0,0}(L))\times \Gamma(X,\Omega^{0,0}(L))\to \CC
+\]
+by 
+\[
+(f,g)=\int_X \langle f,g\rangle dv
+\]
+
+\subsection{The $(0,q)$ case}
+Let $\omega=\sum_{|I|=q}\varphi_I d\overline{v_I}, \omega'=\sum_{|I|=q}\psi_I d\overline{v_I}\in \Gamma(X,\Omega^{0,q}(L))$ for $\varphi_I\in \Gamma(X,\Omega^{0,0}(L))$. Define 
+\[
+(\omega,\omega')=\sum_{|I|=q} K^{-I}(\varphi_I,\psi_I)
+\]
+where $K^{-I}=\prod_{i\in I} K_i^{-1}$. Recall the notations $\partial_i=\frac{\partial}{\partial v_i}$ and $\overline{\partial_i}=\frac{\partial}{\partial \overline{v_i}}$. Also recall that $\Gamma(X,\Omega^{0,0}(L))=\{f:V\to \CC: f(v+\lambda)=a_L(\lambda,v)f(v)\}$. Since $a_L(\lambda,v)$ is holomorphic, so $\overline{\partial_i}a_L=0$ and so $\overline{\partial_i}$ is a linear operator on $\Gamma(X,\Omega^{0,0}(L))$. So there exists $\overline{\partial}:\Gamma(X,\Omega^{0,q}(L))\to \Gamma(X,\Omega^{0,q+1}(L))$ given by 
+\[
+\overline{\partial}(\varphi d\overline{v_I})=\sum_i (\overline{\partial_i}\varphi) d\overline{v_i}\wedge d\overline{v_I}.
+\]
+Note that this is the map on the complex we had. Define $\overline{\delta_i}$ the adjoint of $\overline{\partial_i}$ and $\overline{\delta}$ the adjoint of $\partial$ with respect to $(\cdot,\cdot)$. Explicitly, we have the following lemma.
+
+\begin{lemma}
+Let $\varphi\in \Gamma(X,\Omega^{0,0}(L))$.
+\begin{enumerate}[(a)]
+\item $\overline{\delta_i}\varphi=-\partial_i\varphi+\pi h_i \overline{v_i}\varphi$
+\item $\overline{\delta}(\varphi d\overline{v_J})=\sum_{i=1}^{q+1}(-1)^{i-1}\frac{1}{k_{j_i}}(\overline{\delta_{j_i}}\varphi)d\overline{v_{J-j_i}}$ where $J=(j_1<\cdots <j_{q+1})$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(b) follows from (a). To show (a), we need to prove that for all $\varphi,\psi\in \Gamma(X,\Omega^{0,0}(L))$, we have
+\[
+(\overline{\partial_i}\varphi, \psi)=(\varphi, -\partial_i \psi +\pi h_i\overline{v_i}\psi)
+\]
+but $\langle \overline{\partial_i}\varphi,\psi\rangle-\langle \varphi, -\partial_i \psi +\pi h_i\overline{v_i}\psi\rangle=\overline{\partial_i}\langle \varphi,\psi\rangle$
+but $\int_X \overline{\partial_i}\langle \varphi, \psi\rangle=(i/2)^g(\prod k_i)\int_X d(\langle \varphi, \psi\rangle dv_1\wedge d\overline{v_1}\wedge dv_2\wedge\cdots )=0$ by Stokes theorem. 
+\end{proof} 
+ 
+\begin{lemma}
+Let $\Delta=\overline{\partial}\overline{\delta}+\overline{\delta}\overline{\partial}$ and $\varphi d\overline{v_I}\in \Gamma(X,\Omega^{0,q}(L))$ where $I=(i_1<\cdots <i_q)$ and $\varphi\in \Gamma(X,\Omega^{0,0}(L))$.
+Then 
+\[
+\Delta(\varphi d\overline{v_I})=\sum_{i=1}^g \frac{1}{k_i}\overline{\delta_i}\overline{\partial_i}\varphi d\overline{v_I}+\pi \sum_{j=1}^q \frac{1}{k_{i_j}}h_{i_j}\varphi d\overline{v_I}.
+\]
+\end{lemma}
+ 
+The proof is just computations. 
 
