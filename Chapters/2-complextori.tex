@@ -1631,18 +1631,18 @@ It is easy to check that $h(v+\lambda)=h(v)$ and that $h$ is $C^\infty$, so $h$ 
 Recall that a \emph{K\"{a}hler metric} $ds^2$ on $V/\Lambda=X$ is given by the following: fix $\{e_1,\cdots, e_g\}$ a basis for $V$ such that $H=c_1(L)$ with respect to the basis is diagonal. (Hermitian matrices are diagonalizable.) We let $h_1,\cdots, h_g$ diagonal entries of the matrix, that is, let $\{v_1,\cdots,v_g\}$ be the coordinate functions corresponding to $\{e_1,\cdots, e_g\}$. Then 
 $H(v,w)=\sum h_i v_i w_i$.
 
-If we fix $k_1,\cdots, k_g\in \RR^{>0}$, then 
+If we fix $K_1,\cdots, K_g\in \RR^{>0}$, then 
 \[
-ds^2=\sum_{i=1}^g k_i dv_i\otimes d\overline{v_i}
+ds^2=\sum_{i=1}^g K_i dv_i\otimes d\overline{v_i}
 \]
 defines a K\"{a}hler metric
  and so the associated $(1,1)$ form $\omega=1\frac{1}{2}Im(ds^2)$ is closed ($d\omega=0$) and given by 
 \[
-\omega=\frac{i}{2}\sum_{j=1}^g k_j dv_j\bigwedge d\overline{v_j}
+\omega=\frac{i}{2}\sum_{j=1}^g K_j dv_j\bigwedge d\overline{v_j}
 \]
 and hence we have a volume form 
 \[
-dv=\frac{1}{g!}\bigwedge^g \omega = (i/2)^g (\prod k_i) dv_1\wedge d\overline{v_1}\wedge dv_2\wedge\cdots
+dv=\frac{1}{g!}\bigwedge^g \omega = (i/2)^g (\prod K_i) dv_1\wedge d\overline{v_1}\wedge dv_2\wedge\cdots
 \]
 which is also a $(g,g)$-form. Now, we define 
 \[
@@ -1668,7 +1668,7 @@ Note that this is the map on the complex we had. Define $\overline{\delta_i}$ th
 Let $\varphi\in \Gamma(X,\Omega^{0,0}(L))$.
 \begin{enumerate}[(a)]
 \item $\overline{\delta_i}\varphi=-\partial_i\varphi+\pi h_i \overline{v_i}\varphi$
-\item $\overline{\delta}(\varphi d\overline{v_J})=\sum_{i=1}^{q+1}(-1)^{i-1}\frac{1}{k_{j_i}}(\overline{\delta_{j_i}}\varphi)d\overline{v_{J-j_i}}$ where $J=(j_1<\cdots <j_{q+1})$.
+\item $\overline{\delta}(\varphi d\overline{v_J})=\sum_{i=1}^{q+1}(-1)^{i-1}\frac{1}{K_{j_i}}(\overline{\delta_{j_i}}\varphi)d\overline{v_{J-j_i}}$ where $J=(j_1<\cdots <j_{q+1})$.
 \end{enumerate}
 \end{lemma}
 
@@ -1678,16 +1678,110 @@ Let $\varphi\in \Gamma(X,\Omega^{0,0}(L))$.
 (\overline{\partial_i}\varphi, \psi)=(\varphi, -\partial_i \psi +\pi h_i\overline{v_i}\psi)
 \]
 but $\langle \overline{\partial_i}\varphi,\psi\rangle-\langle \varphi, -\partial_i \psi +\pi h_i\overline{v_i}\psi\rangle=\overline{\partial_i}\langle \varphi,\psi\rangle$
-but $\int_X \overline{\partial_i}\langle \varphi, \psi\rangle=(i/2)^g(\prod k_i)\int_X d(\langle \varphi, \psi\rangle dv_1\wedge d\overline{v_1}\wedge dv_2\wedge\cdots )=0$ by Stokes theorem. 
+but $\int_X \overline{\partial_i}\langle \varphi, \psi\rangle=(i/2)^g(\prod K_i)\int_X d(\langle \varphi, \psi\rangle dv_1\wedge d\overline{v_1}\wedge dv_2\wedge\cdots )=0$ by Stokes theorem. 
 \end{proof} 
  
 \begin{lemma}
 Let $\Delta=\overline{\partial}\overline{\delta}+\overline{\delta}\overline{\partial}$ and $\varphi d\overline{v_I}\in \Gamma(X,\Omega^{0,q}(L))$ where $I=(i_1<\cdots <i_q)$ and $\varphi\in \Gamma(X,\Omega^{0,0}(L))$.
 Then 
 \[
-\Delta(\varphi d\overline{v_I})=\sum_{i=1}^g \frac{1}{k_i}\overline{\delta_i}\overline{\partial_i}\varphi d\overline{v_I}+\pi \sum_{j=1}^q \frac{1}{k_{i_j}}h_{i_j}\varphi d\overline{v_I}.
+\Delta(\varphi d\overline{v_I})=\sum_{i=1}^g \frac{1}{K_i}\overline{\delta_i}\overline{\partial_i}\varphi d\overline{v_I}+\pi \sum_{j=1}^q \frac{1}{K_{i_j}}h_{i_j}\varphi d\overline{v_I}.
 \]
 \end{lemma}
  
 The proof is just computations. 
 
+\begin{corollary}
+$\Delta$ acts on subvector space of ``monomials'' $A_I=\{\varphi_Id\overline{v_I}\}$ (for a fix $I$) of $\Gamma(X,\Omega^{0,q}(L))$. So $\ker\Delta=H^q(L)=\bigoplus_{|I|=q}\ker\Delta|_{A_I}=:\bigoplus_{|I|=q}H_I^q(L)$. 
+\end{corollary}
+
+Now, we fix ``nice'' $h_i,k_i$ so that the computations would be easier.
+\begin{enumerate}
+\item (after permuting and scaling $\{e_1,\cdots,e_g\}$) we may assume $h_i=1$ for $1\leq i\leq r$, $h_i=-1$ for $r+1\leq i\leq r+s$ and $h_i=0$ for $r+s< i\leq g$. 
+\item $K_i=\frac{1}{s+1}$ for $i\leq r$ and $K_i=0$ for $i>r$.
+\end{enumerate}
+
+Given a multi-index set $I=\{i_1<\cdots <i_q\}$, we write 
+$$R_I=|I\cap \{1,\cdots, r\}|$$
+and 
+$$S_I=|I\cap \{r+1,\cdots, r+s\}|.$$
+
+Below we give the key proposition.
+
+\begin{proposition}
+With $K_i$ and $h_i$ as above, for any $pd\overline{v_I}\in \Gamma(X,\Omega^{0,q}(L))$, we have 
+$$(\Delta(\varphi_Id\overline{v_I}),\varphi_Id\overline{v_I})\geq \pi((s+1)R_I-S_I)(\varphi d\overline{v_I},\varphi d\overline{v_I}).$$
+\end{proposition}
+\begin{proof}
+Note that
+$$(\Delta(\varphi_Id\overline{v_I}),\varphi_Id\overline{v_I})=\sum_{i=1}^g \frac{1}{K_i}(\overline{\delta_i}\overline{\partial_i}\varphi d\overline{v_I},\varphi d\overline{v_I})+\pi(\sum_{j=1}^q \frac{h_{i_j}}{k_{i_j}})(\varphi d\overline{v_I},\varphi d \overline{v_I}).$$
+Since $(\overline{\delta_i}\overline{\partial_i}\varphi d\overline{v_I},\varphi d\overline{v_I})\geq 0$ and 
+$(\sum_{j=1}^q \frac{h_{i_j}}{k_{i_j}})(\varphi d\overline{v_I},\varphi d \overline{v_I})=(s+1)R_I-S_I$, the result follows.
+\end{proof}
+
+\begin{corollary}
+$H_I^q(L):=\ker\Delta|_{\{\varphi_I d\overline{v_I}\}}=0$ if $R_I>0$. 
+\end{corollary}
+\begin{proof}
+Let $\varphi d\overline{v_I}\in H^q(L)$, i.e. $\Delta(\varphi d\overline{v_I})=0$. Therefore the above proposition implies that $0\geq \pi((s+1)R_I-S_I)(\varphi d\overline{v_I},\varphi d\overline{v_I})\geq 0$. Since $R_I\geq 1$ and $S_I\leq s$, so $(\varphi d\overline{v_I},\varphi d\overline{v_I})=0$. Therefore, $\varphi d\overline{v_I}=0$.
+\end{proof}
+
+\begin{theorem}[Mumford-Kempf]
+Let $X=V/\Lambda$ be a complex torus. Suppose $H=c_i(L)$ has $r$ positive and $s$ negative eigenvalues, then $H^q(X,L)=0$ if $q>g-r$ or $q<s$. 
+\end{theorem}
+
+\begin{proof}
+Let $q>g-r$. Then for any $I$, $|I|=q$ and so we have $R_I>0$. So $H_I^q(L)=0$ but $H^q(L)=\bigoplus_{|I|=q} H_I^q(L)=0$ but $H^q(X,L)=H^q(L)=0$ by Hodge.
+
+For $q<s$ we use Serre duality: If $X$ is a smooth compact complex manifold and $L$ is a holomorphic line (or vector) bundle over $X$ and $K$ is a canonical bundle (which is a line bundle), then there is a canonical line bundle isomorphism $H^q(X,L)\isom H^{g-q}(X,K\bigotimes L^v)^\times$. 
+In our situation, $X$ is a complex torus and $K=\Omega^g$ which is free of rank $\binom{g}{g}=1\isom \mathcal{O}_X$ and $L^v\isom L^{-1}$. Therefore, by Serre duality, we have 
+$$H^q(X,L)\isom H^{g-q}(X,L^{-1})^\times.$$
+Note that $c_1(L^{-1})=-c_1(L)$ has $s$ positive eigenvalues. Since $q<s$, $g-q>g-s$ and therefore $H^q(X,L)=0$.  
+\end{proof}
+
+Remark: Coherent duality of Grothendieck gives a more general version of Serre duality.
+
+\subsection{$q=s,s+1,...,g-r$}
+
+\begin{theorem}
+For $s\leq q \leq g-r$, we have 
+$$h^q(X,L)=\dim H^q(X,L)=\binom{g-r-s}{q-s} h^s(X,L).$$
+Indeed, 
+$$H^q(X,L)\isom \bigoplus_{i=1}^{\binom{g-r-s}{q-s}}H^s(X,L)$$
+\end{theorem}
+\begin{proof}
+First, we claim that $H^q(L)=\bigoplus_{|I|=q, R_I=0, S_I=s} H_I^q(L)$. 
+Really, we only need to show that $S_I=s$. To show this, we may assume that $R_i=0$ from above. We know that $S_I\leq s$. Note that 
+$$\Delta(\varphi d\overline{v_I})=\psi d\overline{v_I}$$
+where $\psi=\sum_{j=1}^g \frac{1}{k_j} \overline{\delta_j}\overline{\partial_j}\varphi-(\pi \sum_{j=1}^q \frac{h_{i_j}}{K_{i_j}})\varphi$. We can write $\pi S_I=(\pi \sum_{j=1}^q \frac{h_{i_j}}{K_{i_j}})\varphi$. If we pick any $J=I\cap \{r+1,\cdots,r+s\}$ then $R_J=0$ and $S_J=S_I$, and hence $\Delta(\varphi d\overline{v_J})=\Delta(\varphi d\overline{v_I})$. 
+Moreover, the map $H_I^q(L)\to H_J^{S_I}(L)$ given by $\varphi d\overline{v_I}\mapsto \varphi d\overline{v_J}$ is an isomorphism! Since $S_I<s$, by the vanishing theorem, we have $H_J^{S_I}(L)=0$ and so $S_I=s$. 
+
+Next, we claim that $H^q(L)\isom H^s(L)^{\binom{g-r-s}{q-s}}$. Let $J=(r+1<\cdots <r+s)$. Note then that $R_J=0$ and $S_J=s$. By the first claim, we have $H^q(L)=\bigoplus_{|I|=q, R_I=0, S_I=s} H_I^q(L)$ which is isomorphic to $H_J^s(L)$. By picking $q$ numbers from $\{1,\cdots, g\}$ such that all of $\{r+1,\cdots,r+s\}$ are being picked but not picking any of $\{1,\cdots, r\}$, there are exactly $\binom{g-r-s}{q-s}$ ways and hence the theorem.
+\end{proof}
+
+\subsection{$q=s$}
+In the last section we have reduced every to the case $q=s$ and so we can focus on this for now. Note that if $s=0$, then this is a positive semi-definite case and therefore we are done! 
+
+If $s>0$, it then suffices to find another complex torus $X',L'$ such that $L'$ is positive semi-definite on $X'$ and $H^s(X,L)\isom H^0(X',L')$. Here we introduce \emph{Wirtinger's trick}. The idea is o change the ``complex structure''. Recall that the connected component $\Lambda(L)_0$ of $\Lambda(L)$ is a radical of $H$. Also we have fixed a basis $\{e_1,\cdots, e_g\}$ two sections earlier such that $H$ is diagonal matrix with eigenvalues $1,-1,0$. Note that $\Lambda(L)_0=\text{span}\{e_{r+s+1},\cdots, e_g\}$.
+Define $V_+=\text{span}\{e_1,\cdots,e_r\}$ and $V_-=\text{span}\{e_{r+1},\cdots,e_{r+s}\}$. Then as $\CC$ vector spaces, we have
+$$\CC^g\isom V = V_+\bigoplus V_- \bigoplus V_0.$$
+
+
+Let $\RR^{2g}\isom W$ be the underlying $\RR$-vector space. Let $j$ be the complex structure on $w$ corresponding to $V$. In particular, $j:W\to W$ given by $v\mapsto iv$ is $\RR$-linear. We therefore have 
+$$\RR^g\isom W = W_+\bigoplus W_- \bigoplus W_0.$$
+induced by above. We define $j'(w):=j(w)$ if $w\in W_+\bigoplus W_0$ and $j'(w):=-j(w)$ if $w\in W_-$. Now let $V'=(W,j')$ be a complex vector space and note that $\Lambda\subset V'$ is obviously a lattice. Let 
+$$X':=V'/\Lambda$$
+which is a new complex torus. Recall that for $H=c_i(L)$, we have 
+$$H(v,w)=E(j(v),w)+i E(v,w)$$
+where $E=Im(H)$ and $L=L(H,X)$. We now define 
+$$H'(v,w):=E(j'(v),w)+iE(v,w).$$
+One can check that $Im(H'(\Lambda,\Lambda))\subset \ZZ$. Since $Im(H)=Im(H')$, $X$ works for $H'$ as well. We can then define
+$$L':=L(H',X).$$
+
+\begin{theorem}
+$H^s(X,L)\isomto H^0(X',L')$ and $L'$ positive semi-definite. 
+\end{theorem}
+
+\begin{proof}
+The idea is to let $f:W\to \CC^\times$ which is given by $w\mapsto e^{\pi H'(w_-,w_+)}$ where $w=w_+ + w_- +w_0$. Then one can consider the map $\{\varphi d\overline{v_J}:\ \varphi\in \Gamma(X,\Omega^{0,0}(L))\}\to \Gamma(X',\Omega^{0,0}(L'))$ given by mapping $\varphi d\overline{v_J}$ which is a $(0,s)$-form on $V$ to $\varphi f$ which is a $C\infty$ function on $V'$. Then this induces the above isomorphism.
+\end{proof}
