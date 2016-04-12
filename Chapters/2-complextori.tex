@@ -1785,3 +1785,91 @@ $H^s(X,L)\isomto H^0(X',L')$ and $L'$ positive semi-definite.
 \begin{proof}
 The idea is to let $f:W\to \CC^\times$ which is given by $w\mapsto e^{\pi H'(w_-,w_+)}$ where $w=w_+ + w_- +w_0$. Then one can consider the map $\{\varphi d\overline{v_J}:\ \varphi\in \Gamma(X,\Omega^{0,0}(L))\}\to \Gamma(X',\Omega^{0,0}(L'))$ given by mapping $\varphi d\overline{v_J}$ which is a $(0,s)$-form on $V$ to $\varphi f$ which is a $C\infty$ function on $V'$. Then this induces the above isomorphism.
 \end{proof}
+
+\begin{definition}
+For line bundles $L_1,\cdots, L_g\in \Pic(X)$ where $X$ is a $g$ dimensional abelian variety, the \textbf{intersection number} of $L_1,\cdots, L_g\in \Pic(X)$ is given by
+$$(L_1,\cdots,L_g):=\int_X c_1(L)\bigwedge c_1(L_2)\bigwedge \cdots \bigwedge c_1(L_g).$$
+\end{definition}
+
+Remarks: 
+\begin{enumerate}
+\item $c_1(L)\in H^2(X,\ZZ)\injects H^2(X,\CC)\isom H^{2,0}\bigoplus H^{1,1}\bigoplus H^{0,2}$. In fact, we have $c_1(L)\in H^2(X,\ZZ)\cap H^{1,1}$. 
+\item Note that $c_1(L)\bigwedge c_1(L_2)\bigwedge \cdots \bigwedge c_1(L_g)$ is a $(g,g)$-form which can be viewed as a volume form, and so the integral makes sense.
+\item $c_1(L)\in H^2(X,\ZZ)$ is Poincar\'{e} dual to $\{D\}\in H_{2g-2}(X,\ZZ)$, for any divisor $D$ associated to $L$. (Also $\{D\}\in H_{2g-2}(X,\ZZ)$ makes sense because it is ``triangulizable''.) So $(L_1,\cdots, L_g)$ can be thought of as \emph{intersection} (in the topological sense) of associated divisor.
+\end{enumerate}
+
+\begin{definition}
+For $L\in \Pic(X)$, the \textbf{self intersection} of $L$ is defined by 
+$$(L^g):=(L,\cdots, L)=\int_X \bigwedge^g c_1(L).$$
+\end{definition}
+
+\begin{theorem}
+If $L\in \Pic(X)$ is type $(d_1,\cdots,d_g)$ where $X$ is a complex torus, and $H$ has $s$ negative eigenvalues, then
+$$\frac{1}{g!}(L^g)=(-1)^s Pf(L)$$
+where $Pf(L)=d_1\cdots d_g$. 
+\end{theorem}
+
+\begin{corollary}
+$$\chi(X,L)=\frac{1}{g!}(L^g).$$
+\end{corollary}
+
+\begin{lemma}
+If $L$ is type $(d_1,\cdots,d_g)$. Let $\{\lambda_1,\cdots,\lambda_g; \mu_1,\cdots,\mu_g\}$ be a symplectic basis for $E=Im(H)$ with corresponding coordinate functions given by $\{x_1,\cdots, x_g; y_1,\cdots, y_g\}$, then 
+$$c_1(L)=-\sum_{j=1}^g d_j dx_j\wedge dy_j$$
+as a $(1,1)$-form.
+\end{lemma}
+
+The proof follows from the definitions.
+
+Remark: If $L$ is degenerate, then there exists $d_i=0$ and so $\bigwedge^g c_1(L)=0$ and $Pf(L)=0$. Therefore, in this case $\frac{1}{g!}(L^g)=0$. So we may assume that $L$ is non-degenerate. In the non-degenerate case, note that $s=g-r$ which is the index of $L$ and $\chi(X,L)=h^s(X,L)$. 
+
+\begin{lemma}
+$\int_X \bigwedge_{j=1}^g dx_j\wedge dy_j=(-1)^{g+s}.$
+\end{lemma}
+
+Remark: This lemma can be thought of as the orientation associated to the symplectic basis is $\pm 1$ depending on $s$.
+
+\begin{proof}
+We have seen that $\{\mu_1,\cdots, \mu_g\}$ is a $\CC$-vector space basis for $V$ with $\{v_1,\cdots,g_g\}$ the corresponding coordinate functions. Then $(1/2)^g \bigwedge_{j=1}^g dv_j\wedge d\overline{v_j}$ gives the natural \emph{positive} orientation. Let $\Pi$ be the period matrix with respect to $\{\lambda_1,\cdots, \lambda_g; \mu_1,\cdots, \mu_g\}$. Note that $\{\lambda_1,\cdots, \lambda_g; \mu_1,\cdots, \mu_g\}$ is a $\ZZ$-basis for $\Lambda$ and $\{\mu_1,\cdots,\mu_g\}$ is a $\CC$-basis for $V$. Write $\Pi=(Z|I)$. Then we have 
+$$(i/2)^g \bigwedge_{j=1}^g dv_j\wedge d\overline{v_j} = (-1)^g \det(Im(Z))\bigwedge_{j=1}^g dx_j\wedge dy_j.$$
+It then suffices to show that $(-1)^s\det(Im(Z))>0$. 
+
+Let $y\in M_{g\times g}(\CC)$ be the matrix of $H$ with respect to the $\CC$-basis $\{\mu_1,\cdots, \mu_g\}$ of $V\isom \CC^g$, then the matrix of $H$ with respect to $\{\lambda_1,\cdots, \lambda_g; \mu_1,\cdots, \mu_g\}$ of $V\isom \RR^{2g}$ is 
+$$\Pi^t Y \overline{\Pi}=\binom{Z^t}{I}Y(\overline{Z}| I)=
+\left(
+\begin{array}{cc}
+Z^t Y \overline{Z} & Z^t Y\\
+Y\overline{Z} & Y\\
+\end{array}
+\right).$$ 
+Therefore, the matrix of $E$ with respect to $\{\lambda_1,\cdots, \lambda_g; \mu_1,\cdots, \mu_g\}$ is just $Im(H)=Im \left(
+\begin{array}{cc}
+Z^t Y \overline{Z} & Z^t Y\\
+Y\overline{Z} & Y\\
+\end{array}
+\right)$. On the other hand, the matrix is also given by $\left(
+\begin{array}{cc}
+0 & D\\
+-D & 0\\
+\end{array}
+\right)$. This implies that $Y$ is real, and $D=(Im Z^t)Y$. Therefore, the result follows.
+\end{proof}
+
+Note that $\bigwedge_{i=1}^g c_1(L)=(-1)^g (g!)(d_1\cdots d_g)\bigwedge_{i=1}^g dx_j\wedge dy_j$. Integrating this expression gives the following corollary:
+
+\begin{corollary}
+$(L^g)=\int_X \bigwedge_{i=1}^g c_1(L)=(-1)^s g! Pf(L)$.
+\end{corollary}
+
+The proof is done with Algebraic/Geometric Riemann Roch.
+
+\begin{corollary}
+Let $f:X'\to X$ be a surjective homomorphism of complex tori. For any $L\in \Pic(X)$, we have 
+$$\chi(X', f^* L)=(\deg f)(\chi(X,L)).$$
+\end{corollary}
+
+\begin{proof}
+If $f$ is not an isogeny, then we have seen that $f^* L$ is degenerate and the statement follows trivially. If $f$ is an isogeny, then $\deg (f)=[\Lambda:f_{Int}(\Lambda')]$ and 
+$$\int_{X'} \bigwedge_{i=1}^g c_1(f^* L)=(\deg f)\int_X \Lambda^g c_1(L).$$
+Note that equality sign follows from the surjectivity assumption (so that the ``change of variable'' is okay). Now the rest is done by Geometric Riemann-Roch.
+\end{proof}

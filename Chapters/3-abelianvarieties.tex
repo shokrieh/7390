@@ -1,0 +1,42 @@
+% !TEX root = 7390.tex
+
+
+
+
+\section{Abelian varieties}\label{Chapters/abelianvarieties}
+
+\subsection{Intersection of line bundles and Geometric Riemann-Roch}
+
+\begin{definition}
+$X=V/\Lambda$ is called an \textbf{abelian variety} if it admits a positive definite line bundle, i.e. there exists $H\in NS(X)$ such that $H$ is positive definite. 
+\end{definition}
+
+Remark: We will see this agrees with our initial definition, i.e. such complex tori are ``algebraic/algebraizable''. (Hint: If $f:X\injects \PP^N$, then $f^*\mathcal{O}(1)$ must be positive definite.)
+
+\begin{definition}
+\noindent
+\begin{enumerate}
+\item A \textbf{polarization} on $X$ is $c_1(L)$ where $L$ is positive definite.
+\item The \textbf{type} of a polarization is defined to be the type $(d_1,\cdots, d_g)$ of $L$ (or $c_1(L)$.)
+\item A polarization is called \textbf{principal} if its type is $(1,\cdots, 1)$. 
+\item For $(X,L)$ where $X$ is a complex torus and $L\in \Pic(X)$ is positive definite and $H=c_1(L)$, the pair $(X,H)$ is called a \textbf{polarized abelian variety} (P.A.V.).
+\item A \textbf{homomorphism} of polarized abelian varieties is a map $f:(Y,M)\to (X,L)$ such that $f:Y\to X$ is a homomorphism of complex tori and $f^* c_1(L)=c_1(M)$. (We have seen that $c_1(f^*L)=f* c_1(L)$.)
+\end{enumerate}
+\end{definition}
+
+Remark: 
+$f^*L\sim_{an} M$. This forces any homomorphism $f$ to have a finite kernel. (Otherwise $f^*L$ would be degenerate and so would $M$ be degenerate.) Conversely, if $f:Y\to X$ is a homomorphism of complex tori with finite kernel and $L\in \Pic(X)$ is positive definite, then $f^*L\in \Pic(Y)$ is positive definite. We call this the ``induced'' polarization. 
+
+\begin{corollary}
+\noindent
+\begin{enumerate}
+\item Any complex subtorus of an abelian variety is an abelian variety.
+\item Let $X$ be an abelian variety and $Y$ be a complex torus. If $X$ is isogenous to $Y$, then $Y$ is also abelian variety. 
+\item For any abelian variety $X$, $\hat{X}=\Pic^0(X)$ is also an abelian variety.
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+(c) follows from the fact that any non-degenerate $\varphi_L:X\to \hat{X}$ has finite kernel.
+\end{proof}
+
