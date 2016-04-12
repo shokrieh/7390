@@ -57,8 +57,9 @@
 \contentsline {subsection}{\numberline {2.38}The $(0,q)$ case}{45}{subsection.2.38}
 \contentsline {subsection}{\numberline {2.39}$q=s,s+1,...,g-r$}{47}{subsection.2.39}
 \contentsline {subsection}{\numberline {2.40}$q=s$}{48}{subsection.2.40}
+\contentsline {subsection}{\numberline {2.41}Intersection of line bundles and Geometric Riemann-Roch}{48}{subsection.2.41}
 \contentsline {section}{\numberline {3}Abelian varieties}{51}{section.3}
-\contentsline {subsection}{\numberline {3.1}Intersection of line bundles and Geometric Riemann-Roch}{51}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.1}Definition and basic properties}{51}{subsection.3.1}
 \contentsline {section}{\numberline {4}Appendix}{52}{section.4}
 \contentsline {subsection}{\numberline {4.1}Poincar\'{e} lemmas, De Rham cohomology, Dolbeault cohomology}{52}{subsection.4.1}
 \contentsline {subsubsection}{\numberline {4.1.1}Classical Poincar\'{e} lemma and De Rham cohomology}{52}{subsubsection.4.1.1}
