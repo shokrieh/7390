@@ -40,3 +40,98 @@ $f^*L\sim_{an} M$. This forces any homomorphism $f$ to have a finite kernel. (Ot
 (c) follows from the fact that any non-degenerate $\varphi_L:X\to \hat{X}$ has finite kernel.
 \end{proof}
 
+\begin{lemma}
+Every polarization is ``induced by'' a principal polarization via an isogeny. 
+\end{lemma}
+
+\begin{proof}
+Let $(X,L)$ be a polarized abelian variety of type $(d_1,\cdots, d_g)$. Recall [insert label] we have an isogeny $p_1: X\to X_1$ where $X_1=V/(\Lambda_1\bigoplus \Lambda_2)$ and we have $M_1\in \Pic(X_1)$ with $P^* M_1\isom L$. Clearly $M_1$ is positive definite. 
+
+We claim that $\text{type}(M_1)=(1,\cdots,1)$. We need Riemann-Roch to show this:
+\[
+d_1\cdots d_g = \chi(L)=(\deg p_1)\chi(M_1)=d_1\cdots d_g \chi(M_1)
+\]
+which implies that $\chi(M_1)=1=(-1)^s Pf(M_1)=Pf(M_1)$. 
+\end{proof}
+
+\begin{example}
+When $X=\CC/\Lambda$ where $\Lambda=\ZZ \omega_1 \bigoplus \ZZ \omega_2\isom \ZZ^2$. (With loss of generality, we may assume that $\omega_1=1, \omega_2 = \tau$ with $Im \tau>0$.) Define $H:\CC\times \CC\to \CC$ by 
+$$(v,w)\mapsto \frac{v\overline{ w}}{Im(\overline{\omega_1}\omega_2)}.$$
+$H$ is obviously positive definite.
+It is easy to show that $H$ is Hermitian and that $Im(H(\Lambda,\Lambda))\subset \ZZ$. (That is, $H$ is a Riemann form.) Hence, $\CC/\Lambda$ is an abelian variety. 
+
+(Remark: $\CC^g/\Lambda$ where $g>1$ is usually not an abelian variety.)
+\end{example}
+
+Recall the theorem of the square says that for $\bar{v}\bar{w}\in X$, we have
+\[
+t^*_{\bar{v}+\bar{w}}L \isom t^*_{\bar{v}}L \bigotimes t^*_{\bar{w}}L \bigotimes L^{-1}.
+\]
+Note that $t^*_{\bar{w}}L \bigotimes L^{-1}$ can be re-written as $t^*_xL\bigotimes t^*_{-x}L\isom L^2$, hence we have 
+\[
+t^*_{\bar{v}}L \bigotimes t^*_{\bar{w}}L \bigotimes t^*_{-\bar{v}-\bar{w}}L \isom L^3.
+\]
+This generalizes to the following lemma:
+
+\begin{lemma}
+For $\bar{v_1},\cdots,\bar{v_n}\in X$, if $\sum_{i=1}^n \bar{v_i}=0$, then $\bigotimes_{i=1}^n t^*_{v_i} L\isom L^n$.
+\end{lemma}
+\begin{proof}
+Since $L=L(H,\chi)$, $\bigotimes_{i=1}^n t^*_{v_i} L
+=L(nH,\prod \chi e^{2\pi i Im H(v_i,\cdot)})=L(nH,\chi^n)
+\isom L^n$.
+\end{proof}
+
+Remarks:
+\begin{enumerate}
+\item I will give an interpretation in terms of divisors.
+\item one can use this to give an explicit basis for $H^0(X,L^n)$ in terms of basis for $H^0(X,L)$. For instance, if $(X,L)$ is of type $(1,\cdots,1)$, then $H^0(X,L)$ is one dimensional.
+\end{enumerate}
+
+\subsection{Riemann relations}
+
+We now turn to the following question: What does it mean, in terms of a period matrix $\Pi$, for $X$ to be an abelian variety?
+Let $X=V/\Lambda$. Let $\{e_1,\cdots , e_g\}$ be a $\CC$-basis for $V$ and $\{\lambda_1,\cdots, \lambda_{2g}\}$ be a $\ZZ$-basis for $\Lambda$. Then we have 
+$$X=\frac{\CC^g}{\Pi \ZZ^{2g}/}$$
+where $\Pi$ is the $g\times 2g$ period matrix. 
+
+\begin{theorem}[Riemann relations]
+$X$ is an abelian variety if and only if there exists a non-degenerate antisymmetric (i.e. alternating) matrix $A\in M_{2g\times 2g}(\ZZ)$ such that 
+\begin{enumerate}
+\item (Hermitian condition) $\Pi A^{-1} \Pi^t=0$; and
+\item (positive definite condition) $i\Pi A^{-1}\overline{\Pi}^t>0$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+We sketch the proof. Let $E:\Lambda\times \Lambda \to \ZZ$ be an arbitrary non-degenerate alternating form on $\Lambda$ (in $NS(X)$). Let $A$ be its matrix with respect to $\lambda_i$'s: $a_{ij}=E(\lambda_i,\lambda_j)$. Define $H:\CC^g\times \CC^g\to \CC$ by 
+\[
+H(u,v):=E(iu,v)+iE(u,v) \in \RR^{2g}
+\]
+where $E$ is the natural extension to $\RR^{2g}$. Define 
+\[
+\mathcal{J}=\binom{\Pi}{\overline{\Pi}}^{-1}_{2g\times 2g} \left(
+\begin{array}{cc}
+iIg & \ \\
+\ & -i I_g\\
+\end{array}
+\right)\binom{\Pi}{\overline{\Pi}}.
+\]
+Such a construction is useful because $i\Pi = \Pi \mathcal{J}$. Note also that $E(\Pi x,\Pi y)=x^t A y$ for $x,y\in \ZZ^{2g}$. 
+
+We claim that $A$ is Hermitian if and only if $\Pi A^{-1} \Pi^t=0$. We have seen that $H$ is Hermitian if and only if $E(iu,iv)=E(u,v)$ for all $u,v\in \CC^{g}\isom \RR^{2g}$. So $H$ is Hermitian if and only if $\mathcal{J}^t A \mathcal{J}=A$.
+
+Next, we claim that assume $\Pi A^{-1} \Pi^t=0$, then the matrix of $H$ with respect to $\{e_1,\cdots,e_g\}$ is $2i(\Pi A^{-1} \overline{\Pi}^t)^{-1}$. Therefore, $H(u,v)=E(iu,v)+i E(u,v)$ is positive definite.
+\end{proof}
+
+Remark: If we assume that $\{\lambda_i\}$ is symplectic, and if we write $A=\left(
+\begin{array}{cc}
+0 & D\\
+-D & 0 \\
+\end{array}
+\right)$
+and $\Pi = ((\Pi_1)_{g\times g} | (\Pi_2)_{g\times g})$. Then the Riemann relations can be stated as 
+\begin{enumerate}
+\item $\Pi_2 D^{-1} \Pi_1^t-\Pi_1 D^{-1}\Pi_2^t=0$.
+\item $i(\Pi_2 D^{-1}\overline{\Pi_1}^t-\Pi D^{-1}\overline{\Pi}^t)>0$. 
+\end{enumerate}
