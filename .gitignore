@@ -1,0 +1,8 @@
+# Logs and databases #
+######################
+*.log
+*.brf
+*.log
+*.toc
+*.synctex.gz
+*.toc
