@@ -1,7 +1,10 @@
-# Logs and databases #
+#exclude files#
 ######################
-*.log
+*.aux
+*.bbl
 *.brf
-*.toc
+*.log
+*.pdf
 *.synctex.gz
 *.toc
+
