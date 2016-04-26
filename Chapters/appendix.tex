@@ -152,3 +152,286 @@ where $\mathcal{K}_X^\times$ is the sheaf of multiplicative subgroups of $\mathc
 \[
 H^0(X,\mathcal{K_X^\times})\overset{j_*}{\to } H^0(X,\mathcal{K}_X^\times/\mathcal{O}_X^\times) \overset{\delta}{\to} H^1(X,\mathcal{O}_X^\times)\to \cdots
 \]
+
+If $X$ is a submanifold of $\PP^{N}$ (algebraically, if $X$ is projective), then $H^1(X,\sK^*_X) = 0$. So $\delta$ induces an isomorphism $\Pic(X) \simeq \CDiv(X)/\CPrin(X)$.
+
+We are going to make all of these objects very explicit.
+
+\subsubsection{$\Pic(X)$}
+Let $L$ be a line bundle, there exists an open cover $\langle U_\alpha\rangle$ of $X$ with trivialization $\{\phi_\alpha : L(U_\alpha) \to U_\alpha \times \bC\}$. The associated transition functions $\{g_{\alpha\beta} : U_\alpha \cap U_\beta \to \bC\}$ are defined by
+\begin{align*}
+\phi_\alpha \circ \phi_\beta^{-1} : (U_\alpha \cap U_\beta) \times \bC &\to  (U_\alpha \cap U_\beta) \times \bC\\
+(z,\cdot) &\mapsto (z,g_{\alpha\beta}(\cdot))
+\end{align*}
+and satisfy that $\{g_{\alpha\beta} : U_\alpha \cap U_\beta \to \bC^*\}$ are holomorphic, and $g_{\alpha\beta}g_{\beta\alpha} = 1$ and $g_{\alpha\beta}g_{\beta\gamma}g_{\gamma\alpha} = 1$, so $\{g_{\alpha\beta}\}$ is a $1$-\v{C}hech-cocycle.
+
+Changing $\phi_\alpha$ to $\phi'_\alpha = f_\alpha\phi_\alpha$ gives a 1-coboundary $g'_{\alpha\beta} = (f_\alpha/f_\beta)g_{\alpha\beta}$.
+
+
+Conversely, $\{g_{\alpha\beta}\}$ gives a line bundle $\bigsqcup U_\alpha \times \bC/\sim$
+
+
+\subsubsection{$\CDiv(X)$}
+$\CDiv(X) = H^0(X,\sK^*_X/\sO^*_X)$ (this makes sense for any scheme). A global section of $\sK^*_X/\sO^*_X$ (i.e., a Cartier divisor) can be presented by
+\begin{enumerate}
+\item An open cover $\{U_\alpha\}$ of $X$.
+\item Meromorphic functions $f_\alpha$ on $U_\alpha$ (not identically zero). (\textbf{Remark:} Changing $f_\alpha$ to $s_\alpha f_\alpha$ for $s_\alpha \in \sO_X^*$ is ok!) such that for all $\alpha$ and $\beta$, $f_\alpha/f_\beta \in \sO_X^*(U_\alpha\cap U_\beta)$.
+\end{enumerate}
+We write $D = (\{U_\alpha\}, \{f_\alpha\})$.
+\subsubsection{$\CPrin(X)$}
+$\CPrin(X) = \Im(H^0(X,\sK^*_X) \xrightarrow{j_*} \CDiv(X))$, so $D \in \CPrin(X)$ if $D = (\{U_\alpha\}, \{f_\alpha\})$, where $f_\alpha = f|_{U_\alpha}$ for some $f \in H^0(X,\sK^*_X)$.
+
+\begin{definition} 
+ $D_1 = (\{U_\alpha^{(1)}\}, \{f_\alpha^{(1)}\})$ and $D_2 = (\{U_\alpha^{(2)}\}, \{f_\alpha^{(2)}\})$ are linearly equivalent, $D_1 \sim D_2$, if $D_1 - D_2 := (\{U_\alpha ^{(1)}\cap U_{\alpha'}^{(2)}\}, \{f_\alpha^{(1)}/f_{\alpha'}^{(2)}\})\in \CPrin(X)$. 
+\end{definition}
+
+\subsubsection{Weil Divisors}
+In nice situations, for example, 
+\begin{itemize}
+\item Complex manifold
+\item Noetherian, integral, separated, regular in codimension $1$ (if $\dim \sO_{X,p} = 1$, then $\sO_{X,p}$ is \emph{regular}, i.e., $\dim(\fm_p/\fm_p^2) = 1$.
+\end{itemize}
+Let $Y$ be a codimension $1$ analytic submanifold of $X$.
+\begin{fact}
+  Then $Y$ is an ``analytic hypersurface'', i.e., for any $p \in Y$, there is an open set $U$ containing $p$ such that $U\cap Y$ is the zero set of some holomorphic function $g$. 
+
+$Y = Y_1 \cup \dotsb \cup Y_m$, where each $Y_i$ is the closure of a connected component of $Y\setminus Y_{\text{sing}}$. 
+
+We say that $Y$ is irreducible if $m = 1$.
+\end{fact}
+
+\begin{definition}
+  A \emph{Weil divisor} $D$ on $X$ is a ``locally finite'' formal linear combination $D = \sum_i a_i Y_i$, $a_i \in \bZ$, where the \emph{prime divisors} $Y_i$ are irreducible, analytic codimension $1$ submanifolds. (Algebraically, finite sum, prime divisors are closed integral (implies irreducible) codimension $1$ subschemes.
+
+``locally finite'' means that for every $p \in X$, there is an open set $U$ containing $p$ such that only finitely many of the intersections $U \cap Y_i$ are nonempty. 
+
+If $X$ is compact, locally finite is the same as the sum being finite.
+
+$\WDiv(X) = \{\sum_i a_i Y_i \text{ locally finite, $a_i \in \bZ$}  \}$
+\end{definition}
+We will now answer two questions:
+\begin{enumerate}
+\item What is $\WPrin(X)$?
+\item How does $\WDiv$ compare to $\CDiv$?
+\end{enumerate}
+\subsubsection{Answer 1}
+Let $Y$ be a prime divisor. 
+
+In the analytic case, for $p \in Y$, given $f$ holomorphic, we say that the order of $f$ along $Y$ at $p$ is $n$ if in $\sO_{X,p}$, $f = g^nh$, where $g$ is a local equation for $Y$ and $n$ is the largest such number.
+\begin{fact}
+  The order is independent of $p \in Y$, and let $\ord_Y f$ be this number.
+\end{fact}
+For meromorphic $f$, locally $f = g/h$, and we define $\ord_Y f = \ord_Y g - \ord_Y h$.
+
+In the algebraic case, lLet $\eta \in Y$ be a generic point (e.g., $\eta = (0) \in \{(0), (p)\} = \Spec \bZ$. $\sO_\eta$ is DVR, so we define $\ord_Y f = \Val_\eta(f)$. 
+
+Given $f$, we define $\Div(f) = \sum_Y \ord_Y(f) Y$. The collection of divisors is $\WPrin(X)$.
+\begin{fact}
+  The above sum is locally finite in the analytic case and finite in the algebraic case.
+\end{fact}
+If $\ord_Y(f) = n > 0$, we say that $f$ has a zero with multiplicity $n$ along $Y$, similarily, if $n < 0$, $f$ has a pole with multiplicity $n$ along $Y$.
+
+\subsubsection{Answer 2}
+In our situation (complex manifolds or integral, Noetherian, separable, regular in codimension $1$ and locally factorial), 
+there exists an isomorphism $\CDiv \to \WDiv$ respecting principal divisors. 
+
+Given $D = (\{U_\alpha\}, \{f_\alpha\}) \in \CDiv$, since $f_\alpha/f_\beta \in \sO^*_X(U_\alpha\cap U_\beta)$, for all prime divisors $Y$, we get $\ord_Y(f_\alpha) = \ord_Y(f_\beta)$, so we can define $D' = \sum_{Y \cap U_\alpha \neq \emptyset}\ord_Y(f_\alpha) Y \in \WDiv(X)$.
+
+Conversely, given $D = \sum_i a_i Y_i \in \WDiv(X)$, we fix $\{U_\alpha\}$ such that $Y_i$ has a local defining function $g_{i\alpha} \in \sO(U_\alpha)$, and let $f_\alpha = \prod_i g_{i\alpha}^{a_i} \in \sK_X(U_\alpha)$, and let $D' = (\{U_\alpha\}, \{f_\alpha\}) \in \CDiv(X)$.
+
+
+
+Now we have set up a correspondence between Cartier divisors $CDiv(X)$ and Weil divisors $WDiv(X)$.
+
+\begin{lemma}
+ These maps (corresponding to $Cdiv(X)~\leftrightarrow~WDiv(X)$) are homomorphisms and inverses of each other, respecting $WPrin$ and $CPrin$.
+\end{lemma}
+
+Note that in "nice situations", we will talk about $Div(X):= CDiv(X)$ and we can identify them as Weil divisors also. Then, $Prin(X)= CPrin(X)$, can be identified with $WPrin(X)$.
+
+\begin{remark}
+If $X$ is a Riemann surface, then the points are prime divisors. So $Div(X)$ is huge, but in general $Div(X)$ might even be empty. However, if $i: X \hookrightarrow \mathbb{P}^N$, then we obtain lots of divisors by intersecting $i(X)$ with hyperplanes. Converse is also true, if one has enough divisors then $\exists~ X \hookrightarrow \mathbb{P}^N$ (Kodaira embedding).
+
+\end{remark}
+Recall that we have a connecting homomorphism $\delta: \dfrac{CDiv(X)}{CPrin(X)} \rightarrow Pic(X)= H^1(X,\mathcal{O}^{*}_X)$. We will describe this map explicitly in next section, i.e. going from a divisor to a line bundle.
+
+\subsubsection{Divisors vs Line bundles}
+
+Consider a map $\delta: Div(X) \rightarrow Pic(X)$ denoted by $D \mapsto \mathcal{L}(D)$ or ($\mathcal{O}_X(D)$). It can be described explicitly as follows. Given a Cartier divisor, $({U_{\alpha}}, {f_{\alpha}})$ define $g_{\alpha\beta}=\frac{f_{\alpha}}{f_{\beta}} \in \mathcal{O}^{*}_{X}(U_{\alpha}\cap U_{\beta})$.\\
+
+It is easy to check the following facts:
+
+\begin{itemize}
+\item[a.] $g_{\alpha\beta}$ is a \v{C}ech 1-cocycle.
+\item[b.] The map is well-defined because changing $f_{\alpha}$ (for the same divisor $D$) gives us a 1-coboundary condition.
+\item[c.] The map is a homomorphism and coincides with the connecting homomorphism $\delta$.
+\item[d.] If D is principal, then $g_{\alpha\beta}=1$ and $\mathcal{L}(D)\simeq \mathcal{O}_X$, i.e. is trivial.
+\item[e.] Conversely, if $\mathcal{L}(D)$ is trivial then 
+\begin{center}
+$g_{\alpha\beta}=\frac{h_{\alpha}}{h_{\beta}}$, $h_{\alpha}\in\mathcal{O}_X(U_{\alpha})$\\
+$g_{\alpha\beta}~=~\frac{f_{\alpha}}{f_{\beta}}$\\
+$f_{\alpha} h_{\alpha}^{-1}~=~f_{\beta} h_{\beta}^{-1}$ 
+\end{center}
+So, if we define $f=f_{\alpha} h_{\alpha}^{-1}$ on $U_{\alpha}$ then $f$ extends to a global meromorphic function. Hence, $D$ is principal divisor.
+
+\end{itemize}
+
+Observe that by (d) and (e) we get kernel $\delta=Prin(X)$.
+
+\begin{definition}
+
+Two divisors D and D' are called linearly equivalent, $D\sim D'$ if $$D-D'=div(f)$$ for some $f \in H^0(X,K^*_X)$.
+
+\end{definition}
+
+\begin{remark}
+
+\begin{itemize}
+\item[a.] If $D\sim D'$, then $\mathcal{L}(D)=\mathcal{L}(D')$.
+\item[b.] $\mathcal{L}$(.) is functorial.
+\item[c.] If $f:~X\rightarrow X'$ is a morphism then we can define a pullback $f^*:$ Div($X)\rightarrow$ Div($X'$) as follows. If $D=({U_{\alpha}}, {f_{\alpha}}) \in$ Div($X$) then it maps to $({f^{-1}(U_{\alpha})}, {f_{\alpha}\circ f})$. It makes sense if $f(X') \not\subset D$ as Weil Divisor.
+In terms of Weil divisors $\sum a_{i}Y_{i} \mapsto \sum a_{i}f^{*}(Y)$, $f^*(Y)$ lies over hypersurface $f^{-1}(Y)$ but perhaps with multiplicity.
+\item[d.] $f^*(\mathcal{L}(D))=\mathcal{L}(f^*(D))$
+
+\end{itemize}
+\end{remark}
+
+\subsubsection{Divisors of Sections}
+
+For a global meromorphic function $f \in H^0(X,K^*_{X})$, we defined $div(f)$. We now want to define a notion of $div(s)$ for a global meromorphic section of an arbitrary line bundle $L$ $s \in H^0(X, L\otimes_{\mathcal{O}_{X}}K_X)$.
+
+The following theorem explains well the reason behind studying $div(s)$.
+
+\begin{theorem}
+ Let $L$ be a line divisor. Then, $L=\mathcal{L}(div(S))$. 
+\end{theorem}
+
+\begin{corollary}
+
+$L \in Im\bigg(\delta:~\dfrac{Div(X)}{Prin(X)} \rightarrow Pic(X)\bigg)$ $\Leftrightarrow$ $L$ has a non-zero global meromorphic section. 
+\end{corollary}
+
+Let $L$ be a line bundle on $X$. Fix $\{U_{\alpha}\}$ with trivializations $\phi_{\alpha}:L(U_{\alpha})\rightarrow U_{\alpha} \times \mathbb{C}$ and transition functions $g_{\alpha\beta}\in {\mathcal{O}^*_{X}(U_{\alpha}\cap U_{\beta})}$.
+
+Note that:
+\begin{itemize}
+\item[a.] A holomorphic (respectively, meromorphic) section of $L$ over $U$ open is given by a collection of functions $s_{\alpha} \in \mathcal{O}_{X}(U \cap U_{\alpha})~($respectively, $K_{X}(U \cap U_{\alpha}))$ satisfying $s_{\alpha}=g_{\alpha\beta}s_{\beta}$ on $U \cap U_{\alpha} \cap U_{\beta}$.
+\item[b.] If $s$ and $s'$ are global meromorphic sections then $\dfrac{s}{s'}$ is a global meromorphic function. One consequence of this is if $D=div(s)$ and $D'=div(s')$ then $D-D'=div\bigg(\dfrac{s}{s'}\bigg)=div(f)$, which is a principal divisor hence, $D$ and $D'$ are linearly equivalent so, $\mathcal{L}(D)=\mathcal{L}(D')$.
+
+\end{itemize}
+
+Let $s$ be a meromorphic section of $L$ given by ${s_{\alpha}}$. Then $\dfrac{s_{\alpha}}{s_{\beta}}=g_{\alpha\beta} \in \mathcal{O}_{X}(U_{\alpha} \cap U_{\beta})$. So, $ord_{Y}(s_{\alpha})= ord_{Y}(s_{\beta})$. 
+
+Therefore, we can define $div(s)= \sum_{U_{\alpha} \cap Y \neq \emptyset} ord(s_{\alpha})Y$.
+
+\begin{example}
+Let $D=({U_{\alpha}}, {f_{\alpha}}) \in Div(X)$. Then ${f_{\alpha}}$ gives a global section $s$ for $\mathcal{L}(D)$. Also, $div(s)$ is the element of $WDiv(X)$. The theorem and corollary from before hold in this case.
+
+\end{example}
+
+\begin{remark}
+
+$D$ is called effective divisor if one of the following equivalent condition holds:
+
+\begin{itemize}
+\item[a.] $D=\sum a_{i}Y_{i}~a_{i}\geq0$
+\item[b.] $D=({U_{\alpha}}, {f_{\alpha}}),~f_{\alpha}\in \mathcal{O}_{X}(U_{\alpha})$
+\item[c.] $D=div(s)$, where $s$ is a global holomorphic section
+\end{itemize}
+\end{remark}
+
+\subsubsection{Another interpretation of global holomorphic sections $(H^0(X,L))$ and effective divisors}
+
+Let $D=\sum a_{i}Y_{i} \in Div(X)$
+\begin{definition}
+
+\begin{itemize}
+\item[a.]$R(D)=\{f\in H^0(X,K^*_{X})\mid div(f)+D \geq 0\}$.
+A function $f \in R(D)$ is holomorphic on $X \setminus \cup Y_{i}$ and $ord_{Y_{i}}(f) \geq -a_{i}$
+
+\item[b.] The complete linear system of $D,~|D|=\{E\in Div(X) \mid E\sim D, E \geq 0\}$ 
+
+\end{itemize}
+
+\end{definition}
+
+Let $L$ be a line bundle, define $|L|:=|D|$, if there exists a divisor $D$ such that $\mathcal{L}(D)=L$.
+
+\begin{lemma}
+
+Let $D=div(s_{0})$ for a global meromorphic section $s_{0}$ of $L$. Then
+\begin{center}
+$R(D) \rightarrow H^0(X,L)$\\
+$f \mapsto fs_{0}$
+\end{center}
+is an isomorphism.
+\end{lemma}
+
+\begin{proof}
+The map is well defined because $div(fs_{0})=div(f)+div(s_{0})=div(f)+D\geq0$. So, $fs_{0}$ is holomorphic. 
+It is easy to see that the map is injective.
+Let $s$ be a global holomorphic section. Define $f_{s}:=\dfrac{s}{s_{0}}$, we have shown before that $f_{s}$ is a global meromorphic function and $div(f_{s})=div(s)-div(s_{0}) \geq-D$. So, $f_{s} \in R(D)$. Hence, the map is surjective.
+\end{proof}
+
+\subsubsection{$R(D)$ vs $|D|$}
+
+Let $E \in |D|$, then $\exists~f \in R(D)$ such that $E=D+div(f)$.
+If $X$ is compact, any two such $f$ are related by a multiplicative constant. This is because, if $E=D+div(f)=D+div(h)$ then $div\bigg(\dfrac{f}{h}\bigg)=0$. Compactness implies that $\dfrac{f}{g}$ is constant.
+
+\begin{corollary}
+$|D|=\mathbb{P}(R(D)) \simeq \mathbb{P}(H^0(X,L))$. Since, $R(D)$ is a vector space, $|D|$ is projective space.
+\end{corollary}
+
+\subsubsection{linear system}
+
+Recall that $|D|=\{E\geq 0:\ E\sim D\}$ is called a \textbf{complete linear system} of $D$. Here we introduce a more general notion.
+
+\begin{definition}
+A \textbf{linear system} is a family of effective divisor $\mathcal{E}=\{D_\lambda\}_{\lambda\in I}$ corresponding to a linear subspace of $\PP^N\isom \PP(H^0(X,L))$ for some $L$, i.e. $I\isom \PP^n$ for some $n\leq N$. That is, fix a subspace $V\subset H^0(X,L)$ and $\mathcal{E}=\PP(V)$.
+\end{definition}
+
+\begin{definition}
+The \textbf{dimension} (or \textbf{rank}) of $\mathcal{E}=\{D_\lambda\}_{\lambda\in I\isom \PP^n}$ is the projective dimension $n$.
+\end{definition}
+
+For example, $\dim|D|=\dim H^0(X,L)-1$. We also have the following names:
+\begin{itemize}
+\item a \textbf{pencil} is a linear system of dimension $1$
+\item a \textbf{net} is a linear system of dimension $2$
+\item a \textbf{web} is a linear system of dimension $3$
+\end{itemize}
+
+\begin{definition}
+Let $\mathcal{E}=\{D_\lambda\}_{\lambda\in I}\subset |D|$ be a linear system. The \textbf{base locus} of $\mathcal{E}$ is defined to be
+$$\cap_{\lambda\in I} D_\lambda :=\{F\in Div(X):\ D_\lambda-F\geq 0\ \forall \lambda\in I\}.$$
+We also take \textbf{fixed component} of $\mathcal{E}$ to be the divisor $F$ which is the base locus. 
+\end{definition}
+
+\begin{theorem}[Bertini]
+If $D$ is a ``generic'' element of a linear system $\mathcal{E}$, then $D$ is smooth away from the base locus.
+\end{theorem}
+
+\subsubsection{Maps to $\PP^N$}
+\begin{definition}
+Let $\mathcal{E}=\PP(W)$ where $X$ is a compact complex manifold $W$ is a subspace of $H^0(X,L)$. We say that $\mathcal{E}$ is \textbf{base point free} if not all $s\in W$ (global holomorphic sections of $L$) vanish at any point $P\in X$. That is, there does not exist $P\in X$ such that for all $s\in W$ we have $s(P)=0$. 
+\end{definition}
+
+Let $X$ be a compact complex manifold. We have a one-to-one correspondence between non-degenerate maps $f:X\to \PP^N$ modulo projective transformations and line bundles $L\in \Pic(X)$ with subspace $W\subset H^0(X,L)$ such that the linear system $\mathcal{E}=\PP(N)$ is base-point free. 
+
+We are going to give explicit maps that lead to the above correspondence. For a given line bundle $L\in \Pic(X)$ and $W\subset H^0(X,L)$, there are three versions of defining maps from $X$ to $\PP^N$ which we will list them all below:
+
+\begin{enumerate}
+\item $f:X\to \PP(W^*)$ given by 
+$$P\mapsto \{s\in W: s(P)=0\}/\text{scaling}.$$
+We denote $\{s\in W: s(P)=0\}$ by $\tilde{H_P}$. 
+\item $f:X\to \PP(W^*)$ given by
+$$P\mapsto \{D\in \mathcal{E}:\ P\in D\}.$$
+We denote $\{D\in \mathcal{E}:\ P\in D\}$ by $H_P$. Note that $H_P$ is already scaled.
+\item Let $s_0,\cdots, s_n$ be a basis for $W$. Then $f:X\to \PP^n$ is given by
+$$P\mapsto [s_0(P):s_1(P):\cdots:s_n(P)].$$
+Note that this is an explicit map. 
+\end{enumerate}
+
+Now, suppose we are given $f:X\to \PP^n$, we let $W=f^*(H^0(\PP^n,\mathcal{L}(H)))$ where $H$ is any hyperplane. Then $W\subset H^0(X,L)$ where $L=f^*(\mathcal{L}(H))$. It is easy to show that this construction is base point free. 
+
+Remark: The choice of $\{s_0,\cdots, s_n\}$ for $W$ corresponds to the choice of $\{x_0,\cdots,x_n\}$ for $\PP^n$. Also, note that $\deg(f(X))=\int_X \bigwedge^n c_1(L)=(L^n)=:(D^n)$. 

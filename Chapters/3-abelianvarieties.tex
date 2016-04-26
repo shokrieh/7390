@@ -135,3 +135,26 @@ and $\Pi = ((\Pi_1)_{g\times g} | (\Pi_2)_{g\times g})$. Then the Riemann relati
 \item $\Pi_2 D^{-1} \Pi_1^t-\Pi_1 D^{-1}\Pi_2^t=0$.
 \item $i(\Pi_2 D^{-1}\overline{\Pi_1}^t-\Pi D^{-1}\overline{\Pi}^t)>0$. 
 \end{enumerate}
+
+\subsection{Divisors and Maps to $\PP^n$ for abelian varieties}
+Let $X=V/\Lambda$ be an abelian variety of dimension $g$ with (positive definite) polarization $L\in \Pic(X)$. Define the rational (meromorphic?) map $\Psi_L: X\dashrightarrow \PP^N$ by
+$$x\mapsto [\sigma_0(x):\cdots:\sigma_N(x)]$$
+whenever there exists $i$ such that $\sigma_1(x)\not= 0$ where $\text{span}_\CC\{\sigma_0,\cdots,\sigma_N\}=H^0(X,L)$. 
+
+By fixing a factor of automorphy, we may identify $H^0(X,L)$ with theta functions: fix a basis $\mathcal{V}_0,\cdots,\mathcal{V}_N$ for $H^0(X,L)$ and write $\Psi_L(\overline{v})=[\mathcal{V}_0(v):\cdots:\mathcal{V}_N(v)]$ where $\overline{v}=v$ modulo $\Lambda$. 
+
+The big question is: when is $\Psi_L$ an embedding? Our goal is to show the following theorem.
+\begin{theorem}[Lefschetz]
+If $L$ is of the type $(d_1,\cdots,d_g)$ and $d_i\geq 3$, then $\Psi_L$ is an embedding.
+\end{theorem}
+
+\begin{example}
+It is a good exercise to show that if $L$ is positive definite and of the type $(d_1,\cdots,d_g)$, then 
+$$N+1=\dim H^0(X,\mathcal{L}^k)=\chi(L^{\otimes k})=Pf(L^{\otimes k})=Pf(k c_1(L))=((kd_1)(kd_2)\cdots (kd_g))=k^g(d_1d_2\cdots d_g).$$
+
+Now assume $L$ is principal (i.e. of type $(1,\cdots,1)$), so $\dim H^0(X,L^k)=k^g$. This gives that $N=k^g-1$. So for example when $k=3$, $N=3^g-1$. When when $g=1$, we can embed elliptic curves inside $\PP^2$ which says that the quantity $N=k^g-1$ is sharp in some sense. 
+\end{example}
+
+If $L$ is principally polarized, then $\dim H^0(X,L)=1$, so there exists a unique (up to scaling) theta function generating $H^0(X,L)$, which is called a \emph{Riemann's theta function}. 
+
+It is a good exercise to give $\mathcal{V}_0,\cdots,\mathcal{V}_N$ a basis for $L^{\otimes k}$ in terms of Riemann's theta function. (Hint: Recall that $L^{\otimes k}\isom \bigotimes_{i=1}^k t_{\bar{v}_1}^* L$ and $\sum_{i=1}^k \overline{v_i}=0$. Then shift and multiply $\theta$.)
