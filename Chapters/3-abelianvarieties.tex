@@ -150,11 +150,102 @@ If $L$ is of the type $(d_1,\cdots,d_g)$ and $d_i\geq 3$, then $\Psi_L$ is an em
 
 \begin{example}
 It is a good exercise to show that if $L$ is positive definite and of the type $(d_1,\cdots,d_g)$, then 
-$$N+1=\dim H^0(X,L^{\otimes k})=\chi(L^{\otimes k})=Pf(L^{\otimes k})=Pf(k c_1(L))=(kd_1)(kd_2)\cdots (kd_g)=k^g(d_1d_2\cdots d_g).$$
+\begin{align*}
+N+1 &=\dim H^0(X,L^{\otimes k})=\chi(L^{\otimes k})=Pf(L^{\otimes k})\\
+&=Pf(k c_1(L))=(kd_1)(kd_2)\cdots (kd_g)=k^g(d_1d_2\cdots d_g).
+\end{align*}
 
 Now assume $L$ is principal (i.e. of type $(1,\cdots,1)$), so $\dim H^0(X,L^k)=k^g$. This gives that $N=k^g-1$. So for example when $k=3$, $N=3^g-1$. When $g=1$, we can embed elliptic curves inside $\PP^2$ which says that the quantity $N=k^g-1$ is sharp in some sense. 
 \end{example}
 
 If $L$ is principally polarized, then $\dim H^0(X,L)=1$, so there exists a unique (up to scaling) theta function $\theta$ generating $H^0(X,L)$, which is called a \emph{Riemann's theta function}. 
 
-It is a good exercise to give $\vartheta_0,\cdots,\vartheta_N$ a basis for $H^0(X,L^{k})$ in terms of Riemann's theta function. (Hint: Recall that $L^{\otimes k}\isom \bigotimes_{i=1}^k t_{\bar{v}_1}^* L$ and $\sum_{i=1}^k \bar{v}_i=0$. So one needs to ``shift and multiply'' $\theta$'s. Another hint: $\#\frac{1}{k} \Lambda / \Lambda = ?$ )
+It is a good exercise to give $\vartheta_0,\cdots,\vartheta_N$ a basis for $H^0(X,L^{k})$ in terms of Riemann's theta function. (Hint: Recall that $L^{\otimes k}\isom \bigotimes_{i=1}^k t_{\bar{v}_1}^* L$ and $\sum_{i=1}^k \bar{v}_i=0$. So one needs to take appropriate shits of $\theta$ (by, say $(\frac{1}{k}\Lambda/\Lambda)$) and appropriate products to get a basis.)
+
+\subsection{Basic properties of divisors on Abelian Varieties}
+we said that if $X$ is an abelian variety and $L$ is a positive-definite line bundle and $\vartheta_0,\cdots, \vartheta_N$ are a basis of theta-functions for $H^0(X,L)$, then we have a rational map $\Psi_L: X\dashrightarrow \PP^N$ by
+$$\bar{p}\mapsto [\vartheta_0(p):\cdots:\vartheta_N(p)]$$. We want to study when this is defined everywhere.
+
+\begin{lemma}
+Let $X$ be a complex torus.
+Suppose $\bar{v_1},\cdots,\bar{v_n}\in X$ such that $$\sum \bar{v_i}=0.$$ Suppose $D\in |L|$ is an effective divisor, then 
+$$\sum_{i=1}^n t_{\bar{v_i}}^* D\sim nD.$$
+\end{lemma}
+
+\begin{proof}
+$\bigotimes_{i=1}^n t_{\bar{v_i}}^* L \isom L^{\otimes n}$.
+\end{proof}
+
+\begin{remark}
+\noindent
+\begin{enumerate}
+\item $t_x^* D = D-x$.
+\item $y\in t_x^*D \Leftrightarrow x+y\in D\Leftrightarrow x\in t_y^*D$.  
+\end{enumerate}
+\end{remark}
+
+\begin{proposition}
+Let $X$ be a complex torus. Let $L$ be a positive definite line bundle of type $(d_1,\cdots, d_g)$. If $d_1\geq 2$, then $\Psi_L$ is holomorphic (i.e. $|L|$ is base-point free). 
+\end{proposition}
+
+\begin{example}
+If $L$ is principal, then $L^2$ is base point free.
+\end{example}
+
+\begin{remark}
+Why do we have $2$ in the above example? This is because of the Theorem of the square!
+\end{remark}
+
+\begin{remark}
+Recall that $L\isom L_1^n$ for some $L_1$ if and only if $X[n]\subset K(L)=(\bigotimes \ZZ/d_i\ZZ)^2$ where $K(L)=\ker(\varphi_L:X\to \hat{X})$. It follows that $L=L_1^{d_1}$ where $d_1\geq 2$. 
+\end{remark}
+
+Now we will give the proof of the above proposition.
+\begin{proof}
+(In the proof, we use the notation $u\in D$ to denote $u\in Supp(D)$.)
+Let $x\in X$. We need to show that there exists $E\in |L|$ not containing $x$ (i.e. $x\not\in Supp(E)$).  
+By the above remark, $L=M^{d_1}$ for some $M$. Then $M$ is also positive definite (because $L$ is). So there exists $D\in |M|$. (Note that $\dim H^0(X,M)\geq 1$ and so $|D|\not=\emptyset$.) Consider $t_x^* D=D-x$. We choose $x_1,\cdots, x_{d_1-1}\not\in t_x^* D$. Let $x_{d_1}=-\sum_{i=1}^{d_1-1} x_i$ be such that $x_{d_1}\not\in t_x^*D$ by continuity of summation. 
+Therefore, $x\not\in t_{x_i}^* D$ for all $1\leq i \leq d_1$. So $x\not\in \sum_{i=1}^{d_1} t_{x_i}^* D$ and hence $x\not\in \cup Supp(t_{x_i}^* D)$. But $\sum_{i=1}^{d_1} t_{x_i}^* D \sim d_1D\in |L|$. 
+
+\end{proof}
+
+\begin{definition}
+$D=\sum a_i Y_i$ is called \textbf{reduced} if all nonzero $a_i=1$.
+\end{definition}
+
+\begin{lemma}
+Let $L\in \Pic(X)$ where $X$ is a complex torus. Suppose $|L|\not=\emptyset$ and $L$ is positive definite (i.e. $L$ is positive semi-definite with $L|_{K(L)_0}$ trivial). A ``general member'' of $|L|$ is reduced. More precisely, if $D=nE+F\in |L|$ with $E>0,F\geq 0$ and $n\geq 2$, then $D$ is reduced.
+\end{lemma}
+
+\begin{proof}
+Assume $D=nE+F\in |L|$ with $E>0, F\geq 0$ and $n\geq 2$. But $nE\sim \sum_{i=1}^n t_{x_i}^* E$ for $\sum x_i=0$. Since we may pick $x_1,\cdots, x_{n-1}$ arbitrarily, we are done.
+\end{proof}
+
+\begin{lemma}
+Suppose $L\in\Pic(X)$ is positive definite, then there exists an open dense $\mathcal{U}\subset |L|\isom \PP^N$ such that if $D\in \mathcal{U}$, then $t_x^* D=D$ only holds for $x=0$.  
+\end{lemma}
+
+\begin{remark}
+Let $D$ be an effective divisor. Define $H(D)=\{x\in X:\ t_x^*D=D\}$. The above lemma says that for ``almost all'' $D$, we have $H(D)=\{0\}$. Also, we have $H(D)$ is Zariski closed. Moreover, if $L=\mathcal{L}(D)=\mathcal{O}_X(L)$, then the following are equivalent:
+\begin{enumerate}
+\item $L$ is positive definite.
+\item $K(L)$ is finite.
+\item $H(D)$ is finite.
+\end{enumerate}
+\end{remark}
+
+The proof of the lemma uses $K(L)$ is finite: if there exists $x\not=0$ such that $t_x^* D = D$, then $x\in K(L)$ and $G:=\langle x\rangle$ is finite. Then the idea is to consider the projection map $X\to X/G$ which is of degree $|G|\geq 2$ and we will omit the rest of the proof.
+
+\subsection{Decomposition of Polarized abelian variety}
+Let $(X,L)$ be a polarized abelian variety. We want to decompose it to ``irreducible'' polarized abelian varieties. One benefit of doing so is for studying $X\to \PP^N$. (If $d_1=2$, then $\Psi_L$ is sometimes an embedding. If it is not an embedding, then on irreducibles $\Psi_L$ factors through the \emph{Kummer} variety $X/\langle -1\rangle$.) Let $|L|=|M|+F_1+\cdots+F_r$ where $|M|$ is the ``moving part'' and $F_1+\cdots+F_r$ is the ``fixed component''. Since generating elements are reduced ($F_i\not=F_j$ for $i\not=j$), one can consider $M$ and $N_i=\mathcal{L}(F_i)$ for $1\leq i\leq r$ and therefore we have $h^0(X,M)>1$ and $h^0(X,N_i)=1$. So we have $M|_{K(M)_0}$ is trivial and $N_i|_{K(N_i)_0}$ is trivial and hence $P_M:X\to X_M:=X/K(M)_0$ and $P_{N_i}:X\to X_{N_i}:=X/K(N_i)_0$ and so there exists descents $\overline{M}$ on $X_M$ and $\overline{N_i}$ on $X_{N_i}$. So we get polarized abelian varieties $(X_M,\overline{M}),(X_{N_i},\overline{N_i})_{1\leq i \leq r}$. 
+
+\begin{theorem}
+The homomorphism 
+$$P=(P_M,P_{N_1},\cdots,P_{N_r}):X\to X_m\times X_{N_1}\times\cdots \times X_{N_r}$$
+induces an isomorphism of polarized abelian varieties
+$$P:(X,L)\to (X_M\times X_{N_1}\times \cdots \times X_{N_r}, q_M^* \overline{M}\bigotimes \cdots \bigotimes q_{N_r}^* \overline{N_r})$$
+which informally gives 
+$$(X,L)\isom (X_M,\overline{M})\times \cdots \times (X_{N_r},\overline{N_r}).$$
+\end{theorem}
+
+For the proof, one uses new inequalities for $(L_1,\cdots, L_g)$, Riemann Roch, Lefschetz decomposition in Hodge theory.
