@@ -250,3 +250,114 @@ Here $q_M: X_M\times X_{N_1}\times \cdots \times X_{N_r} \rightarrow X_M$ and $q
 \end{theorem}
 
 For the proof, one uses new inequalities for $(L_1,\cdots, L_g)$, Riemann Roch, and other tools that we have seen so far. Since this is not used in Lefschetz theorem, I will skip the proof.
+
+\subsection{Gauss map}
+
+Let $(X,L)$ be a polarized abelian variety of dimension $g$. Take $D\in |L|$ such that $D$ reduced (the theorem of squares guarantees existence; in fact, one can pick any general member). Let $D_{sm}$ be the smooth locus of $supp(D)$ which has dimension $g-1$. For $\bar{\omega}\in D_{sm}$, the tangent $T_{D,\bar{\omega}}$ to $D$ at $\bar{\omega}$ is a $(g-1)$-dimensional $\CC$-vector space. Let $W_{\bar{\omega}}$ be the translation of $T_{D,\bar{\omega}}$ (via $t_{-\bar{\omega}}$) to the origin; it is a $(g-1)$-dimensional subspace of the $g$-dimensional tangent space $T_{x,0}=V$ at $0$. Then we define the \textbf{Gauss map} $G:D_{sm}\to \PP(V^*)$ by 
+\[
+\bar{\omega}\mapsto W_{\bar{\omega}}^\perp.
+\]
+
+Explicitly, we can identify $H^0(X,L)$ with the space of theta functions. Then the covering map $\pi:V\to X=V/\Lambda$ satisfies 
+\[
+\pi^*D=div(\vartheta)
+\]
+for some holomorphic function $\vartheta$ on the universal cover. (Note that $div(\vartheta)$ is periodic with respect to $\Lambda$ because $\vartheta(v+\lambda)=a_L(\lambda,v)\vartheta(v)$. So the ``zero set'' is periodic.) Let $\{v_1,\cdots,v_g\}$ be coordinate functions with respect to some basis. Let $\bar{\omega}=\omega+\Lambda$. Then 
+\[
+T_{D,\bar{\omega}}=\{(v_1,\cdots,v_g):\ \sum_{i=1}^g \frac{\partial \vartheta}{\partial v_i}(\omega)(v_i-\omega_i)=0\}.
+\]
+So the dual to $T_{D,\bar{\omega}}$ is $\left(\frac{\partial \vartheta}{\partial v_i}(\omega)\right)_{1\leq i\leq g}$. So the Gauss map maybe identified with $G:D_{sm}\to \PP^{g-1}$ defined by 
+\[
+\bar{\omega}\mapsto \left(\frac{\partial \vartheta}{\partial v_i}(\omega)\right)_{1\leq i\leq g}.
+\]
+
+It is easy to check that $G$ is holomorphic and independent of the choice of factors of automorphy. 
+
+\begin{proposition}
+Let $L$ be positive definite and $D\in |L|$ be reduced. Then $Im(G:D_{sm}\to \PP(V^*)\isom \PP^{g-1}$ is \emph{not} contained in a hyperplane. 
+\end{proposition}
+
+\begin{proof}
+Assume not; i.e. assume there exists some nonzero $t\in V$ contained in all tangent spaces $T_{D,\bar{\omega}}$ for $\bar{\omega}\in D_{sm}$. Choose basis for $V$ such that $t=(1,0,\cdots,0)$. Fix $\vartheta$ canonical: $a_L=a_{L(H,\chi)}$. So $\frac{\partial \vartheta}{\partial v_i}(\omega)=0$ for all $\omega\in V$ for which $\vartheta(\omega)=0$ (because it is true for an open dense subset). 
+
+Let $f=\frac{1}{\vartheta}\cdot \frac{\partial \vartheta}{\partial v_i}$. Since $D$ is reduced, $f$ is holomorphic on $V$. From $\vartheta(v+\lambda)=a_{L(H,\chi)} \vartheta(v)$ we obtain 
+\[
+f(v+\lambda)=f(v)+\pi H(t,\lambda)
+\]
+for all $v\in V$ and $\lambda\in \Lambda$.
+Since $df$ is $\Lambda$-periodic, it is a pullback of a holomorphic differential form on $X$. Hence 
+\[
+df=\sum \alpha_i dv_i
+\]
+for some $\alpha_i\in \CC$. So $f=\sum \alpha_i v_i+C$. By $f(v+\lambda)=f(v)+\pi H(t,\lambda)$, we obtain
+\[
+\sum \alpha_i \lambda_i=\pi H(t,\lambda)
+\]
+where $\lambda_1,\cdots,\lambda_g$ are coordinates of $\lambda$. So $f(v)=\pi H(t,v)+C$. Note that $f$ is holomorphic, but $H(t,\cdot)$ is anti-$\CC$-linear (as $H$ is Hermitian). Since $H$ is non-degenerate, we must have $t=0$ and this is a contradiction.
+\end{proof}
+
+\subsection{Projective embedding and Lefschetz theorem}
+Let $(X,L)$ be a polarized abelian variety of type $(d_1,\cdots, d_g)$. Let $\Psi_L:X\to \PP^N$ be the associated map. We have seen that $d_1\geq 2$ and $\Psi_L$ is holomorphic. 
+
+\begin{theorem}[Lefschetz]
+If $d_1\geq 3$, then $\Psi_L$ is an embedding. 
+\end{theorem} 
+
+\begin{proof}
+Recall that we have $\Psi_L:X\to \PP(W^*)$ which is defined by $P\mapsto \{D\in |W|:\ P\in D\}$. We need to show that $\Psi_L$ is injective and for all $x\in X$, $d\Psi_{L,x}$ is injective. 
+
+Assume $\Psi_L(y_1)=\Psi_L(y_2)$ for $y_1,y_2\in X$; i.e. for any $D\in |L|$, we have $y_1\in D$ if and only if $y_2\in D$. Since $X[d_1]\subset K(L)\isom (\bigoplus \ZZ/d_i)^2$, we know $L=M^{d_1}$ for some $M$ positive definite. For a general member $D_M\in |M|$, we have $-D_M$ is reduced and $-t_x^* D_M=D_M$ only for $x=0$. Pick any point $x_1\in t_{y_1}^*D_M$. Then pick $x_2,\cdots, x_{d_1}\in X$ (where $d_1\geq 3$) with $\sum_{1}^{d_1} x_i=0$ such that $y_2\not\in t_{x_i}^* D_M$ for $2\leq i \leq d_1$. (This can be done because summation is continuous and $d_1\geq 3$.) Let 
+\[
+E=\sum_{i=1}^{d_1} t_{x_i}^* D_M\in |M^{d_1}|=|L|. 
+\]
+Since $y_1\in t_{x_1}^* D_M$ we have $y_1\in E$. By assumption, $y_2\in E$ but $y_2\not\in t_{x_i}^* D_M$ for $2\leq i \leq d_1$. So $y_2\in t_{x_1}^* D_M$ and hence $x_1\in t_{y_2}^* D_M$. Therefore, $t_{y_1}^* D_M\subset t_{y_2}^* D_M$ and by symmetry we also have $t_{y_1}^* D_M\supset t_{y_2}^* D_M$. Since $D_M$ is reduced, we get $t_{y_1}^* D_M=t_{y_2}^* D_M$ as divisors. So $t_{y_1-y_2}^* D_M=d_M$ and thus $y_1-y_2=0$. Therefore, $\Psi_L$ is injective.
+
+Next, let $0\not=t\in T_{X,x}$ be the tangent vector at $x\in X$. We need to show that there exist $D\in |L|$ and $x\in D$ such that $t$ is \emph{not} tangent to $D$ at $x$. Assume not, i.e. $t$ is tangent to $D$ at $x$ for all $D\in |L|$ with $x\in D$. Pick $D_M\in |M|$ generic and so it is reduced. Pick $x_1\in t_{x}^* D_M$ and choose (as above) $x_2,\cdots, x_{d_1}\in X$ such that $\sum_1^{d_1} x_i=0$ and $x\not\in t_{x_i}^* D_M$ for $2\leq i \leq d_1$. Let $E'=\sum_{i=1}^{d_1} t_{x_i}^* D_M\in |L|$. Note that $x\in E'$. By assumption, $t$ is tangent to $E'$ at $x$. So $t$ is tangent to $t_{x_1}^* D_M$ at $x$. Since this is true for all $x_1\in t_x^* D_M$, it follows that $t$ is tangent to $D_M$ at all points $u\in D_M$. (This is because for $u\in D_M$, $0\in D_M-u=t_u^* D_M$ and hence $x\in t_{u-x}^* D_M$.) This implies that the image of the Gauss map is contained in a hyperplane.    
+\end{proof}
+
+\begin{definition}
+A line bundle is called \textbf{very ample} if $\Psi_L$ is an embedding. A line bundle is called \textbf{ample} if $L^{\bigotimes n}$ is very ample for some $n\geq 1$. 
+\end{definition}
+
+\begin{proposition}
+Let $X$ be a complex torus and $L\in \Pic(X)$. Then the following are equivalent:
+\begin{enumerate}
+\item $L$ is ample.
+\item $L$ is positive definite.
+\item $H^0(X,L)\not=0$ and $K(L)$ is finite.
+\item $H^0(X,L)\not=0$ and $(L^g)>0$.
+\end{enumerate}
+\end{proposition}
+
+\begin{corollary}
+If $L\in \Pic(X)$ is ample, then $L^3$ is very ample.
+\end{corollary}
+\begin{proof}
+Since $L$ is ample, by the above proposition, $L$ is positive definite and hence of type $(d_1,\cdots, d_g)$ with $d_1\geq 1$. Hence $L^3$ is of type $(3d_1,\cdots, 3d_g)$ with $3d_1\geq 3$. 
+\end{proof}
+
+\begin{theorem}
+Let $X$ be a complex torus. The following are equivalent:
+\begin{enumerate}
+\item $X$ is an abelian variety (ie. has positive definite $L$).
+\item $X$ admits the structure of a projective algebraic variety.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Chow's theorem (GAGA) says if $Y$ is a complete algebraic variety and $Z$ is a closed analytic subset of $Y^{an}$, then there exists an algebraic subvariety $Z$ of $Y$ such that $Z^{an}=Z$. 
+\end{proof}
+
+
+\subsection{$L^2$}
+Let $(X,L)\isom (X_M,M)\times (X_{N_1}, \overline{N_1})\times \cdots \times (X_{N_r},\overline{N_r})$. If suffices to understand $(X_M,\overline{M})$ and $(X_{N_i},\overline{N_i})$. And thus it suffices to understand 
+\begin{enumerate}
+\item $L=M$. (no fixed component)
+\item $L=N_i$. (irreducible principal polarization)
+\end{enumerate} 
+
+Let $K_x:=X/\langle (-1)_x\rangle$ be a \emph{Kummer variety} which is an algebraic variety with $2^{2g}$ singular points.
+
+\begin{theorem}
+When $L=M$, $L^2$ gives an embedding. When $L=N_i$, if $L$ is symmetric, then $\Psi:K_X\to \PP^{2^g-1}$ is an embedding. 
+\end{theorem}
