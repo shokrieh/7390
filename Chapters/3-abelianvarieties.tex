@@ -20,7 +20,7 @@ Remark: We will see this agrees with our initial definition, i.e. such complex t
 \item The \textbf{type} of a polarization is defined to be the type $(d_1,\cdots, d_g)$ of $L$ (or $c_1(L)$.)
 \item A polarization is called \textbf{principal} if its type is $(1,\cdots, 1)$. 
 \item For $(X,L)$ where $X$ is a complex torus and $L\in \Pic(X)$ is positive definite and $H=c_1(L)$, the pair $(X,H)$ is called a \textbf{polarized abelian variety} (P.A.V.).
-\item A \textbf{homomorphism} of polarized abelian varieties is a map $f:(Y,M)\to (X,L)$ such that $f:Y\to X$ is a homomorphism of complex tori and $f^* c_1(L)=c_1(M)$. (We have seen that $c_1(f^*L)=f* c_1(L)$.)
+\item A \textbf{homomorphism} of polarized abelian varieties is a map $f:(Y,M)\to (X,L)$ such that $f:Y\to X$ is a homomorphism of complex tori and $f^* c_1(L)=c_1(M)$. (We have seen that $c_1(f^*L)=f^* c_1(L)$.)
 \end{enumerate}
 \end{definition}
 
@@ -31,13 +31,13 @@ $f^*L\sim_{an} M$. This forces any homomorphism $f$ to have a finite kernel. (Ot
 \noindent
 \begin{enumerate}
 \item Any complex subtorus of an abelian variety is an abelian variety.
-\item Let $X$ be an abelian variety and $Y$ be a complex torus. If $X$ is isogenous to $Y$, then $Y$ is also abelian variety. 
+\item Let $X$ be an abelian variety and $Y$ be a complex torus. If $X$ is isogenous to $Y$, then $Y$ is also an abelian variety. 
 \item For any abelian variety $X$, $\hat{X}=\Pic^0(X)$ is also an abelian variety.
 \end{enumerate}
 \end{corollary}
 
 \begin{proof}
-(c) follows from the fact that any non-degenerate $\varphi_L:X\to \hat{X}$ has finite kernel.
+(3) follows from the fact that any non-degenerate $\varphi_L:X\to \hat{X}$ has finite kernel.
 \end{proof}
 
 \begin{lemma}
@@ -55,7 +55,7 @@ which implies that $\chi(M_1)=1=(-1)^s Pf(M_1)=Pf(M_1)$.
 \end{proof}
 
 \begin{example}
-When $X=\CC/\Lambda$ where $\Lambda=\ZZ \omega_1 \bigoplus \ZZ \omega_2\isom \ZZ^2$. (With loss of generality, we may assume that $\omega_1=1, \omega_2 = \tau$ with $Im \tau>0$.) Define $H:\CC\times \CC\to \CC$ by 
+When $X=\CC/\Lambda$ where $\Lambda=\ZZ \omega_1 \bigoplus \ZZ \omega_2\isom \ZZ^2$. (Without loss of generality, we may assume that $\omega_1=1, \omega_2 = \tau$ with $Im \tau>0$.) Define $H:\CC\times \CC\to \CC$ by 
 $$(v,w)\mapsto \frac{v\overline{ w}}{Im(\overline{\omega_1}\omega_2)}.$$
 $H$ is obviously positive definite.
 It is easy to show that $H$ is Hermitian and that $Im(H(\Lambda,\Lambda))\subset \ZZ$. (That is, $H$ is a Riemann form.) Hence, $\CC/\Lambda$ is an abelian variety. 
@@ -85,14 +85,14 @@ Since $L=L(H,\chi)$, $\bigotimes_{i=1}^n t^*_{v_i} L
 Remarks:
 \begin{enumerate}
 \item I will give an interpretation in terms of divisors.
-\item one can use this to give an explicit basis for $H^0(X,L^n)$ in terms of basis for $H^0(X,L)$. For instance, if $(X,L)$ is of type $(1,\cdots,1)$, then $H^0(X,L)$ is one dimensional.
+\item One can use this to give an explicit basis for $H^0(X,L^n)$ in terms of basis for $H^0(X,L)$. For instance, if $(X,L)$ is of type $(1,\cdots,1)$, then $H^0(X,L)$ is one dimensional.
 \end{enumerate}
 
 \subsection{Riemann relations}
 
 We now turn to the following question: What does it mean, in terms of a period matrix $\Pi$, for $X$ to be an abelian variety?
 Let $X=V/\Lambda$. Let $\{e_1,\cdots , e_g\}$ be a $\CC$-basis for $V$ and $\{\lambda_1,\cdots, \lambda_{2g}\}$ be a $\ZZ$-basis for $\Lambda$. Then we have 
-$$X=\frac{\CC^g}{\Pi \ZZ^{2g}/}$$
+$$X=\frac{\CC^g}{\Pi \ZZ^{2g}}$$
 where $\Pi$ is the $g\times 2g$ period matrix. 
 
 \begin{theorem}[Riemann relations]
@@ -139,7 +139,7 @@ and $\Pi = ((\Pi_1)_{g\times g} | (\Pi_2)_{g\times g})$. Then the Riemann relati
 \subsection{Divisors and Maps to $\PP^n$ for abelian varieties}
 Let $X=V/\Lambda$ be an abelian variety of dimension $g$ with (positive definite) polarization $L\in \Pic(X)$. Define the rational (meromorphic?) map $\Psi_L: X\dashrightarrow \PP^N$ by
 $$x\mapsto [\sigma_0(x):\cdots:\sigma_N(x)]$$
-whenever there exists $i$ such that $\sigma_1(x)\not= 0$ where $\text{span}_\CC\{\sigma_0,\cdots,\sigma_N\}=H^0(X,L)$. 
+whenever there exists $i$ such that $\sigma_i(x)\not= 0$ where $\text{span}_\CC\{\sigma_0,\cdots,\sigma_N\}=H^0(X,L)$. 
 
 By fixing a factor of automorphy, we may identify $H^0(X,L)$ with theta functions: fix a basis $\vartheta_0,\cdots,\vartheta_N$ for $H^0(X,L)$ and write $\Psi_L(\overline{v})=[\vartheta_0(v):\cdots:\vartheta_N(v)]$ where $\overline{v}=v$ modulo $\Lambda$. 
 
@@ -160,7 +160,6 @@ Now assume $L$ is principal (i.e. of type $(1,\cdots,1)$), so $\dim H^0(X,L^k)=k
 
 If $L$ is principally polarized, then $\dim H^0(X,L)=1$, so there exists a unique (up to scaling) theta function $\theta$ generating $H^0(X,L)$, which is called a \emph{Riemann's theta function}. 
 
-It is a good exercise to give $\vartheta_0,\cdots,\vartheta_N$ a basis for $H^0(X,L^{k})$ in terms of Riemann's theta function. (Hint: Recall that $L^{\otimes k}\isom \bigotimes_{i=1}^k t_{\bar{v}_1}^* L$ and $\sum_{i=1}^k \bar{v}_i=0$. So one needs to take appropriate shits of $\theta$ (by, say $(\frac{1}{k}\Lambda/\Lambda)$) and appropriate products to get a basis.)
 It is a good exercise to give $\vartheta_0,\cdots,\vartheta_N$ a basis for $H^0(X,L^{k})$ in terms of Riemann's theta function. (Hint: Recall that $L^{\otimes k}\isom \bigotimes_{i=1}^k t_{\bar{v}_1}^* L$ and $\sum_{i=1}^k \bar{v}_i=0$. So one needs to take appropriate shifts of $\theta$ (by, say $(\frac{1}{k}\Lambda/\Lambda)$) and appropriate products to get a basis.)
 
 \subsection{Basic properties of divisors on Abelian Varieties}
