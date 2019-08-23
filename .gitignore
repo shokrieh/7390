@@ -8,7 +8,6 @@
 *-blx.bib
 *.log
 *.out
-*.pdf
 *.brf
 *.run.xml
 *.synctex.gz
